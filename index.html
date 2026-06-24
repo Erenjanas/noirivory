@@ -27,88 +27,144 @@ body{font-family:'Inter',sans-serif;background:#faf7f2;overflow-x:hidden}
 ::-webkit-scrollbar-track{background:#f5f0eb}
 ::-webkit-scrollbar-thumb{background:#c9a96e;border-radius:4px}
 html{scroll-behavior:smooth}
-.loader-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:#1a1a1a;z-index:9999;display:flex;align-items:center;justify-content:center;flex-direction:column}
+
+.loader-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:#1a1a1a;z-index:9999;display:flex;align-items:center;justify-content:center;flex-direction:column;transition:opacity .5s ease}
 .loader-text{font-family:'Playfair Display',serif;font-size:2.5rem;color:#c9a96e;letter-spacing:8px}
 .loader-bar{width:200px;height:2px;background:#333;margin-top:20px;border-radius:2px;overflow:hidden}
 .loader-progress{width:0%;height:100%;background:#c9a96e;animation:loadProgress 2s ease forwards}
 @keyframes loadProgress{0%{width:0%}100%{width:100%}}
+
 .hero-section{height:100vh;position:relative;overflow:hidden;background:linear-gradient(135deg,#1a1a1a 0%,#2d2d2d 100%)}
 .hero-bg{position:absolute;top:0;left:0;width:100%;height:100%;background:url('https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=1920&q=80') center/cover;opacity:0.4}
 .hero-overlay{position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(to bottom,rgba(26,26,26,0.3) 0%,rgba(26,26,26,0.8) 100%)}
+
 .product-card{transition:all 0.5s cubic-bezier(0.4,0,0.2,1);position:relative;overflow:hidden}
 .product-card:hover{transform:translateY(-12px);box-shadow:0 30px 60px rgba(0,0,0,0.15)}
 .product-card .product-img{transition:transform 0.7s cubic-bezier(0.4,0,0.2,1)}
 .product-card:hover .product-img{transform:scale(1.08)}
 .product-card .quick-view{position:absolute;bottom:-60px;left:0;right:0;background:rgba(26,26,26,0.95);padding:16px;transition:bottom 0.4s cubic-bezier(0.4,0,0.2,1);display:flex;justify-content:center;gap:12px}
 .product-card:hover .quick-view{bottom:0}
+
 .badge-new{position:absolute;top:16px;left:16px;background:#c9a96e;color:white;padding:6px 14px;font-size:0.7rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;z-index:2}
 .badge-sale{position:absolute;top:16px;right:16px;background:#dc2626;color:white;padding:6px 14px;font-size:0.7rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;z-index:2}
+.badge-bestseller{position:absolute;top:16px;left:16px;background:#dc2626;color:white;padding:6px 14px;font-size:0.7rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;z-index:2}
+
 .countdown-box{background:rgba(26,26,26,0.9);backdrop-filter:blur(10px);border:1px solid rgba(201,169,110,0.3)}
 .countdown-digit{font-variant-numeric:tabular-nums}
+
 .testimonial-card{background:white;border:1px solid rgba(201,169,110,0.2);transition:all 0.4s ease}
 .testimonial-card:hover{border-color:rgba(201,169,110,0.5);box-shadow:0 20px 40px rgba(0,0,0,0.08)}
+
 .trust-badge{transition:all 0.3s ease}
 .trust-badge:hover{transform:translateY(-5px)}
+
 .newsletter-input{background:rgba(255,255,255,0.1);border:1px solid rgba(201,169,110,0.3);transition:all 0.3s ease}
 .newsletter-input:focus{border-color:#c9a96e;outline:none;box-shadow:0 0 20px rgba(201,169,110,0.2)}
+
 .cart-sidebar{position:fixed;top:0;right:-450px;width:450px;height:100%;background:white;z-index:200;box-shadow:-10px 0 40px rgba(0,0,0,0.2);transition:right 0.5s cubic-bezier(0.4,0,0.2,1);overflow-y:auto}
 .cart-sidebar.open{right:0}
 .cart-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.5);z-index:199;opacity:0;pointer-events:none;transition:opacity 0.3s ease}
 .cart-overlay.open{opacity:1;pointer-events:all}
+
 .toast{position:fixed;bottom:30px;right:30px;background:#1a1a1a;color:white;padding:16px 24px;border-radius:8px;box-shadow:0 10px 30px rgba(0,0,0,0.3);z-index:300;transform:translateX(400px);opacity:0;transition:all 0.4s cubic-bezier(0.4,0,0.2,1);display:flex;align-items:center;gap:12px}
 .toast.show{transform:translateX(0);opacity:1}
+
 .star-rating{color:#c9a96e}
 .insta-item{position:relative;overflow:hidden}
 .insta-item .insta-overlay{position:absolute;inset:0;background:rgba(26,26,26,0.7);display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity 0.3s ease}
 .insta-item:hover .insta-overlay{opacity:1}
 .insta-item img{transition:transform 0.5s ease}
 .insta-item:hover img{transform:scale(1.1)}
+
 .animated-underline{position:relative;display:inline-block}
 .animated-underline::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:2px;background:#c9a96e;transition:width 0.4s ease}
 .animated-underline:hover::after{width:100%}
-.reveal{opacity:0;transform:translateY(40px);transition:all 0.8s cubic-bezier(0.4,0,0.2,1)}
-.reveal.active{opacity:1;transform:translateY(0)}
-.parallax-section{background-attachment:fixed;background-position:center;background-repeat:no-repeat;background-size:cover}
+
+.reveal{opacity:0;transform:translateY(40px)}
+.reveal.active{opacity:1;transform:translateY(0);transition:all 0.8s cubic-bezier(0.4,0,0.2,1)}
+
+.img-zoom{overflow:hidden}
+.img-zoom img{transition:transform 0.7s cubic-bezier(0.4,0,0.2,1)}
+.img-zoom:hover img{transform:scale(1.1)}
+
 .size-btn{width:40px;height:40px;border:1px solid #ddd;display:flex;align-items:center;justify-content:center;font-size:0.8rem;font-weight:500;cursor:pointer;transition:all 0.3s ease}
 .size-btn:hover,.size-btn.active{background:#1a1a1a;color:white;border-color:#1a1a1a}
+
 .mobile-menu{position:fixed;top:0;left:-100%;width:80%;max-width:400px;height:100%;background:white;z-index:200;transition:left 0.4s cubic-bezier(0.4,0,0.2,1);overflow-y:auto}
 .mobile-menu.open{left:0}
+
 .stagger-children>*{opacity:0;transform:translateY(20px)}
 .stagger-children.active>*{animation:staggerIn 0.6s ease forwards}
 .stagger-children.active>*:nth-child(1){animation-delay:0.1s}
 .stagger-children.active>*:nth-child(2){animation-delay:0.2s}
 .stagger-children.active>*:nth-child(3){animation-delay:0.3s}
 .stagger-children.active>*:nth-child(4){animation-delay:0.4s}
-.stagger-children.active>*:nth-child(5){animation-delay:0.5s}
-.stagger-children.active>*:nth-child(6){animation-delay:0.6s}
 @keyframes staggerIn{to{opacity:1;transform:translateY(0)}}
-.img-zoom{overflow:hidden}
-.img-zoom img{transition:transform 0.7s cubic-bezier(0.4,0,0.2,1)}
-.img-zoom:hover img{transform:scale(1.1)}
+
 .tooltip{position:relative}
 .tooltip::before{content:attr(data-tooltip);position:absolute;bottom:100%;left:50%;transform:translateX(-50%) translateY(-8px);background:#1a1a1a;color:white;padding:6px 12px;font-size:0.75rem;white-space:nowrap;border-radius:4px;opacity:0;pointer-events:none;transition:all 0.3s ease}
 .tooltip:hover::before{opacity:1;transform:translateX(-50%) translateY(0)}
+
 .live-dot{width:8px;height:8px;background:#22c55e;border-radius:50%;animation:pulse 2s infinite}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:0.5}}
+
 .marquee-container{overflow:hidden;white-space:nowrap}
 .marquee-content{display:inline-block;animation:marquee 30s linear infinite}
 @keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
 .product-modal{position:fixed;inset:0;z-index:250;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity 0.3s ease}
 .product-modal.open{opacity:1;pointer-events:all}
 .product-modal .modal-overlay{position:absolute;inset:0;background:rgba(0,0,0,0.6)}
 .product-modal .modal-content{position:relative;background:white;max-width:900px;width:90%;max-height:90vh;overflow-y:auto;border-radius:0;transform:scale(0.9);transition:transform 0.4s cubic-bezier(0.4,0,0.2,1)}
 .product-modal.open .modal-content{transform:scale(1)}
-@media(max-width:768px){.hero-section{height:80vh}.loader-text{font-size:1.8rem;letter-spacing:4px}.cart-sidebar{width:100%;right:-100%}}
+
+/* ACCOUNT MODAL */
+.account-modal{position:fixed;inset:0;z-index:260;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity 0.3s ease}
+.account-modal.open{opacity:1;pointer-events:all}
+.account-modal .modal-overlay{position:absolute;inset:0;background:rgba(0,0,0,0.6)}
+.account-modal .modal-content{position:relative;background:white;max-width:420px;width:90%;border-radius:12px;transform:scale(0.9) translateY(20px);transition:transform 0.4s cubic-bezier(0.4,0,0.2,1);overflow:hidden}
+.account-modal.open .modal-content{transform:scale(1) translateY(0)}
+
+.auth-tab-btn{flex:1;padding:16px;text-align:center;font-size:0.9rem;font-weight:600;cursor:pointer;transition:all 0.3s ease;border-bottom:2px solid transparent;color:#8a8a8a}
+.auth-tab-btn.active{color:#1a1a1a;border-bottom-color:#c9a96e}
+.auth-input{width:100%;padding:14px 16px;border:1px solid #e5e5e5;border-radius:8px;font-size:0.9rem;transition:all 0.3s ease;background:#fafafa}
+.auth-input:focus{outline:none;border-color:#c9a96e;box-shadow:0 0 0 3px rgba(201,169,110,0.1);background:white}
+.auth-btn{width:100%;padding:14px;background:#c9a96e;color:white;font-weight:600;font-size:0.9rem;border:none;border-radius:8px;cursor:pointer;transition:all 0.3s ease}
+.auth-btn:hover{background:#b8985d;transform:translateY(-1px)}
+.auth-social-btn{width:100%;padding:12px;border:1px solid #e5e5e5;border-radius:8px;background:white;display:flex;align-items:center;justify-content:center;gap:8px;font-size:0.85rem;cursor:pointer;transition:all 0.3s ease}
+.auth-social-btn:hover{background:#fafafa;border-color:#c9a96e}
+
+/* WISHLIST HEART */
+.wishlist-btn{position:absolute;top:16px;right:16px;width:36px;height:36px;background:rgba(255,255,255,0.9);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all 0.3s ease;z-index:3}
+.wishlist-btn:hover{background:white;transform:scale(1.1)}
+.wishlist-btn i{color:#ccc;transition:color 0.3s ease}
+.wishlist-btn.active i{color:#dc2626}
+
+/* REVIEW PHOTOS */
+.review-photo{width:60px;height:60px;border-radius:6px;object-fit:cover;cursor:pointer;transition:all 0.3s ease;border:2px solid transparent}
+.review-photo:hover{border-color:#c9a96e;transform:scale(1.05)}
+
+/* PROGRESS BAR for reviews */
+.review-bar-bg{width:100%;height:6px;background:#eee;border-radius:3px;overflow:hidden}
+.review-bar-fill{height:100%;background:#c9a96e;border-radius:3px;transition:width 1s ease}
+
+@media(max-width:768px){
+.hero-section{height:80vh}
+.loader-text{font-size:1.8rem;letter-spacing:4px}
+.cart-sidebar{width:100%;right:-100%}
+.account-modal .modal-content{width:95%;border-radius:8px}
+}
 </style>
 <base target="_blank">
 </head>
 <body>
+
 <!-- LOADER -->
 <div class="loader-overlay" id="loader">
     <div class="loader-text">NOIR & IVORY</div>
     <div style="font-size:0.7rem;letter-spacing:6px;color:#666;margin-top:8px;text-transform:uppercase">Premium Butik Moda</div>
     <div class="loader-bar"><div class="loader-progress"></div></div>
-    <div style="font-size:0.65rem;color:#555;margin-top:12px">Yükleniyor...</div>
+    <div style="font-size:0.65rem;color:#555;margin-top:12px">Yukleniyor...</div>
 </div>
 
 <!-- ANNOUNCEMENT BAR -->
@@ -158,8 +214,9 @@ html{scroll-behavior:smooth}
                     <i class="fas fa-shopping-bag text-lg"></i>
                     <span id="cart-count" class="absolute -top-2 -right-2 w-5 h-5 bg-gold text-white text-[0.65rem] rounded-full flex items-center justify-center font-bold">0</span>
                 </button>
-                <button class="text-noir hover:text-gold transition-colors tooltip hidden sm:block" data-tooltip="Hesabim">
+                <button class="text-noir hover:text-gold transition-colors tooltip relative" data-tooltip="Hesabim" onclick="openAccountModal()">
                     <i class="fas fa-user text-lg"></i>
+                    <span id="user-badge" class="absolute -top-1 -right-1 w-2.5 h-2.5 bg-green-500 rounded-full border-2 border-ivory hidden"></span>
                 </button>
             </div>
         </div>
@@ -179,9 +236,111 @@ html{scroll-behavior:smooth}
         <a href="#hakkimizda" onclick="toggleMobileMenu()" class="block text-lg font-medium text-noir hover:text-gold transition-colors">HAKKIMIZDA</a>
         <a href="#musteri-yorumlari" onclick="toggleMobileMenu()" class="block text-lg font-medium text-noir hover:text-gold transition-colors">YORUMLAR</a>
         <hr class="border-gray-100">
+        <button onclick="toggleMobileMenu();openAccountModal();" class="block text-lg font-medium text-noir hover:text-gold transition-colors text-left w-full"><i class="fas fa-user mr-2"></i> Hesabim</button>
         <a href="#" class="block text-sm text-warm-gray hover:text-gold">Siparis Takibi</a>
         <a href="#" class="block text-sm text-warm-gray hover:text-gold">Iade ve Degisim</a>
         <a href="#" class="block text-sm text-warm-gray hover:text-gold">Musteri Hizmetleri</a>
+    </div>
+</div>
+
+<!-- ACCOUNT MODAL -->
+<div class="account-modal" id="account-modal">
+    <div class="modal-overlay" onclick="closeAccountModal()"></div>
+    <div class="modal-content">
+        <div class="p-6 border-b border-gray-100 flex justify-between items-center">
+            <h3 class="font-serif text-xl font-bold text-noir" id="auth-title">Giris Yap</h3>
+            <button onclick="closeAccountModal()" class="text-noir hover:text-red-500 transition-colors"><i class="fas fa-times text-xl"></i></button>
+        </div>
+        <div class="flex border-b border-gray-100">
+            <button class="auth-tab-btn active" onclick="switchAuthTab('login')" id="tab-login">Giris Yap</button>
+            <button class="auth-tab-btn" onclick="switchAuthTab('register')" id="tab-register">Uye Ol</button>
+        </div>
+        <div class="p-6" id="auth-login">
+            <form onsubmit="handleLogin(event)">
+                <div class="mb-4">
+                    <label class="block text-sm font-medium text-noir mb-2">E-posta Adresi</label>
+                    <input type="email" id="login-email" placeholder="ornek@email.com" required class="auth-input">
+                </div>
+                <div class="mb-4">
+                    <label class="block text-sm font-medium text-noir mb-2">Sifre</label>
+                    <div class="relative">
+                        <input type="password" id="login-password" placeholder="Sifrenizi girin" required class="auth-input pr-10">
+                        <button type="button" onclick="togglePassword('login-password')" class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-noir"><i class="fas fa-eye"></i></button>
+                    </div>
+                </div>
+                <div class="flex items-center justify-between mb-6">
+                    <label class="flex items-center gap-2 cursor-pointer">
+                        <input type="checkbox" class="w-4 h-4 accent-gold rounded">
+                        <span class="text-sm text-warm-gray">Beni hatirla</span>
+                    </label>
+                    <a href="#" class="text-sm text-gold hover:underline">Sifremi unuttum</a>
+                </div>
+                <button type="submit" class="auth-btn">Giris Yap</button>
+            </form>
+            <div class="mt-6">
+                <div class="flex items-center gap-4 mb-4">
+                    <div class="flex-1 h-px bg-gray-200"></div>
+                    <span class="text-xs text-warm-gray">veya</span>
+                    <div class="flex-1 h-px bg-gray-200"></div>
+                </div>
+                <button class="auth-social-btn mb-3" onclick="socialLogin('google')">
+                    <img src="https://www.svgrepo.com/show/475656/google-color.svg" alt="Google" class="w-5 h-5">
+                    <span>Google ile devam et</span>
+                </button>
+                <button class="auth-social-btn" onclick="socialLogin('apple')">
+                    <i class="fab fa-apple text-xl"></i>
+                    <span>Apple ile devam et</span>
+                </button>
+            </div>
+        </div>
+        <div class="p-6 hidden" id="auth-register">
+            <form onsubmit="handleRegister(event)">
+                <div class="mb-4">
+                    <label class="block text-sm font-medium text-noir mb-2">Ad Soyad</label>
+                    <input type="text" id="reg-name" placeholder="Adiniz Soyadiniz" required class="auth-input">
+                </div>
+                <div class="mb-4">
+                    <label class="block text-sm font-medium text-noir mb-2">E-posta Adresi</label>
+                    <input type="email" id="reg-email" placeholder="ornek@email.com" required class="auth-input">
+                </div>
+                <div class="mb-4">
+                    <label class="block text-sm font-medium text-noir mb-2">Telefon</label>
+                    <input type="tel" id="reg-phone" placeholder="0 (5xx) xxx xx xx" required class="auth-input">
+                </div>
+                <div class="mb-4">
+                    <label class="block text-sm font-medium text-noir mb-2">Sifre</label>
+                    <div class="relative">
+                        <input type="password" id="reg-password" placeholder="En az 8 karakter" required class="auth-input pr-10" oninput="checkPasswordStrength(this.value)">
+                        <button type="button" onclick="togglePassword('reg-password')" class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-noir"><i class="fas fa-eye"></i></button>
+                    </div>
+                    <div class="flex gap-1 mt-2" id="password-strength">
+                        <div class="flex-1 h-1 bg-gray-200 rounded"></div>
+                        <div class="flex-1 h-1 bg-gray-200 rounded"></div>
+                        <div class="flex-1 h-1 bg-gray-200 rounded"></div>
+                        <div class="flex-1 h-1 bg-gray-200 rounded"></div>
+                    </div>
+                    <p class="text-xs text-warm-gray mt-1" id="password-text">Sifre guclulugu</p>
+                </div>
+                <div class="mb-6">
+                    <label class="flex items-start gap-2 cursor-pointer">
+                        <input type="checkbox" required class="w-4 h-4 accent-gold rounded mt-0.5">
+                        <span class="text-sm text-warm-gray"><a href="#" class="text-gold hover:underline">Kullanim Kosullari</a> ve <a href="#" class="text-gold hover:underline">Gizlilik Politikasi</a>'ni okudum ve kabul ediyorum.</span>
+                    </label>
+                </div>
+                <button type="submit" class="auth-btn">Uye Ol</button>
+            </form>
+            <div class="mt-6">
+                <div class="flex items-center gap-4 mb-4">
+                    <div class="flex-1 h-px bg-gray-200"></div>
+                    <span class="text-xs text-warm-gray">veya</span>
+                    <div class="flex-1 h-px bg-gray-200"></div>
+                </div>
+                <button class="auth-social-btn mb-3" onclick="socialLogin('google')">
+                    <img src="https://www.svgrepo.com/show/475656/google-color.svg" alt="Google" class="w-5 h-5">
+                    <span>Google ile kaydol</span>
+                </button>
+            </div>
+        </div>
     </div>
 </div>
 
@@ -281,7 +440,7 @@ html{scroll-behavior:smooth}
         </div>
     </div>
 </section>
-<!-- NEW ARRIVALS -->
+<!-- NEW ARRIVALS with REAL images -->
 <section class="py-20 bg-cream" id="yeni-sezon">
     <div class="max-w-7xl mx-auto px-6">
         <div class="text-center mb-16 reveal">
@@ -291,11 +450,13 @@ html{scroll-behavior:smooth}
             <p class="text-warm-gray mt-4 max-w-xl mx-auto">Bu sezonun en trend parcalari, ozenle secilmis kumaslar ve zamansiz tasarimlarla karsinizda.</p>
         </div>
         <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 stagger-children">
+            <!-- Product 1: Saten Elbise -->
             <div class="product-card bg-white rounded-lg shadow-sm border border-gray-100" data-product-id="1">
                 <div class="relative overflow-hidden rounded-t-lg">
                     <span class="badge-new">YENI</span>
                     <span class="badge-sale">-%30</span>
-                    <img src="https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?w=400&q=80" alt="Saten Elbise" class="product-img w-full h-80 object-cover">
+                    <button class="wishlist-btn" onclick="toggleWishlist(this,1)"><i class="fas fa-heart"></i></button>
+                    <img src="https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=400&q=80" alt="Saten Midi Elbise" class="product-img w-full h-80 object-cover">
                     <div class="quick-view">
                         <button onclick="quickView(1)" class="text-white text-sm hover:text-gold transition-colors flex items-center gap-2"><i class="fas fa-eye"></i> Hizli Bakis</button>
                         <button onclick="addToCart(1)" class="text-white text-sm hover:text-gold transition-colors flex items-center gap-2"><i class="fas fa-shopping-bag"></i> Sepete Ekle</button>
@@ -306,7 +467,7 @@ html{scroll-behavior:smooth}
                     <h3 class="font-medium text-noir mb-2 line-clamp-2">Saten Midi Elbise - Bej</h3>
                     <div class="flex items-center gap-1 mb-2">
                         <div class="star-rating text-xs"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                        <span class="text-xs text-warm-gray">(124)</span>
+                        <span class="text-xs text-warm-gray">(324)</span>
                     </div>
                     <div class="flex items-center gap-2">
                         <span class="font-serif text-lg font-bold text-noir">1.299 TL</span>
@@ -314,10 +475,12 @@ html{scroll-behavior:smooth}
                     </div>
                 </div>
             </div>
+            <!-- Product 2: Blazer Ceket -->
             <div class="product-card bg-white rounded-lg shadow-sm border border-gray-100" data-product-id="2">
                 <div class="relative overflow-hidden rounded-t-lg">
                     <span class="badge-new">YENI</span>
-                    <img src="https://images.unsplash.com/photo-1594938298603-c8148c4dae35?w=400&q=80" alt="Blazer Ceket" class="product-img w-full h-80 object-cover">
+                    <button class="wishlist-btn" onclick="toggleWishlist(this,2)"><i class="fas fa-heart"></i></button>
+                    <img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=400&q=80" alt="Keten Blazer" class="product-img w-full h-80 object-cover">
                     <div class="quick-view">
                         <button onclick="quickView(2)" class="text-white text-sm hover:text-gold transition-colors flex items-center gap-2"><i class="fas fa-eye"></i> Hizli Bakis</button>
                         <button onclick="addToCart(2)" class="text-white text-sm hover:text-gold transition-colors flex items-center gap-2"><i class="fas fa-shopping-bag"></i> Sepete Ekle</button>
@@ -328,18 +491,20 @@ html{scroll-behavior:smooth}
                     <h3 class="font-medium text-noir mb-2 line-clamp-2">Keten Blazer Ceket - Krem</h3>
                     <div class="flex items-center gap-1 mb-2">
                         <div class="star-rating text-xs"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div>
-                        <span class="text-xs text-warm-gray">(89)</span>
+                        <span class="text-xs text-warm-gray">(189)</span>
                     </div>
                     <div class="flex items-center gap-2">
-                        <span class="font-serif text-lg font-bold text-noir">1.899 TL</span>
+                        <span class="font-serif text-lg font-bold text-noir">1.599 TL</span>
                     </div>
                 </div>
             </div>
+            <!-- Product 3: Ipek Gomlek -->
             <div class="product-card bg-white rounded-lg shadow-sm border border-gray-100" data-product-id="3">
                 <div class="relative overflow-hidden rounded-t-lg">
                     <span class="badge-new">YENI</span>
                     <span class="badge-sale">-%25</span>
-                    <img src="https://images.unsplash.com/photo-1551163943-3f6a29e39426?w=400&q=80" alt="Ipek Gomlek" class="product-img w-full h-80 object-cover">
+                    <button class="wishlist-btn" onclick="toggleWishlist(this,3)"><i class="fas fa-heart"></i></button>
+                    <img src="https://images.unsplash.com/photo-1598532163257-ae3c6b2524b6?w=400&q=80" alt="Ipek Gomlek" class="product-img w-full h-80 object-cover">
                     <div class="quick-view">
                         <button onclick="quickView(3)" class="text-white text-sm hover:text-gold transition-colors flex items-center gap-2"><i class="fas fa-eye"></i> Hizli Bakis</button>
                         <button onclick="addToCart(3)" class="text-white text-sm hover:text-gold transition-colors flex items-center gap-2"><i class="fas fa-shopping-bag"></i> Sepete Ekle</button>
@@ -350,18 +515,20 @@ html{scroll-behavior:smooth}
                     <h3 class="font-medium text-noir mb-2 line-clamp-2">Ipek Gomlek - Beyaz</h3>
                     <div class="flex items-center gap-1 mb-2">
                         <div class="star-rating text-xs"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                        <span class="text-xs text-warm-gray">(156)</span>
+                        <span class="text-xs text-warm-gray">(256)</span>
                     </div>
                     <div class="flex items-center gap-2">
-                        <span class="font-serif text-lg font-bold text-noir">899 TL</span>
-                        <span class="text-sm text-warm-gray line-through">1.199 TL</span>
+                        <span class="font-serif text-lg font-bold text-noir">849 TL</span>
+                        <span class="text-sm text-warm-gray line-through">1.129 TL</span>
                     </div>
                 </div>
             </div>
+            <!-- Product 4: Wide Leg Pantolon -->
             <div class="product-card bg-white rounded-lg shadow-sm border border-gray-100" data-product-id="4">
                 <div class="relative overflow-hidden rounded-t-lg">
                     <span class="badge-new">YENI</span>
-                    <img src="https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?w=400&q=80" alt="Wide Leg Pantolon" class="product-img w-full h-80 object-cover">
+                    <button class="wishlist-btn" onclick="toggleWishlist(this,4)"><i class="fas fa-heart"></i></button>
+                    <img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?w=400&q=80" alt="Wide Leg Pantolon" class="product-img w-full h-80 object-cover">
                     <div class="quick-view">
                         <button onclick="quickView(4)" class="text-white text-sm hover:text-gold transition-colors flex items-center gap-2"><i class="fas fa-eye"></i> Hizli Bakis</button>
                         <button onclick="addToCart(4)" class="text-white text-sm hover:text-gold transition-colors flex items-center gap-2"><i class="fas fa-shopping-bag"></i> Sepete Ekle</button>
@@ -372,7 +539,7 @@ html{scroll-behavior:smooth}
                     <h3 class="font-medium text-noir mb-2 line-clamp-2">Wide Leg Pantolon - Siyah</h3>
                     <div class="flex items-center gap-1 mb-2">
                         <div class="star-rating text-xs"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                        <span class="text-xs text-warm-gray">(203)</span>
+                        <span class="text-xs text-warm-gray">(403)</span>
                     </div>
                     <div class="flex items-center gap-2">
                         <span class="font-serif text-lg font-bold text-noir">749 TL</span>
@@ -398,7 +565,7 @@ html{scroll-behavior:smooth}
         </div>
         <div class="grid md:grid-cols-3 gap-6 stagger-children">
             <div class="img-zoom relative h-[500px] rounded-lg overflow-hidden cursor-pointer group">
-                <img src="https://images.unsplash.com/photo-1558171813-4c088753af8f?w=600&q=80" alt="Elbise Koleksiyonu" class="w-full h-full object-cover">
+                <img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=600&q=80" alt="Elbise Koleksiyonu" class="w-full h-full object-cover">
                 <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
                 <div class="absolute bottom-0 left-0 right-0 p-8">
                     <span class="text-gold text-xs tracking-[0.3em] uppercase">2026 Yaz</span>
@@ -431,7 +598,7 @@ html{scroll-behavior:smooth}
     </div>
 </section>
 
-<!-- BEST SELLERS -->
+<!-- BEST SELLERS with REAL images -->
 <section class="py-20 bg-cream" id="cok-satanlar">
     <div class="max-w-7xl mx-auto px-6">
         <div class="text-center mb-16 reveal">
@@ -441,10 +608,12 @@ html{scroll-behavior:smooth}
             <p class="text-warm-gray mt-4 max-w-xl mx-auto">Musterilerimizin en cok tercih ettigi, yuksek puanli urunler.</p>
         </div>
         <div class="grid grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- Best Seller 1: Abiye -->
             <div class="product-card bg-white rounded-lg shadow-sm border border-gray-100" data-product-id="5">
                 <div class="relative overflow-hidden rounded-t-lg">
-                    <span class="badge-new" style="background:#dc2626;">COK SATAN</span>
-                    <img src="https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=400&q=80" alt="Abiye" class="product-img w-full h-80 object-cover">
+                    <span class="badge-bestseller">COK SATAN</span>
+                    <button class="wishlist-btn" onclick="toggleWishlist(this,5)"><i class="fas fa-heart"></i></button>
+                    <img src="https://images.unsplash.com/photo-1566174053879-31528523f8ae?w=400&q=80" alt="Abiye Elbise" class="product-img w-full h-80 object-cover">
                     <div class="quick-view">
                         <button onclick="quickView(5)" class="text-white text-sm hover:text-gold transition-colors flex items-center gap-2"><i class="fas fa-eye"></i> Hizli Bakis</button>
                         <button onclick="addToCart(5)" class="text-white text-sm hover:text-gold transition-colors flex items-center gap-2"><i class="fas fa-shopping-bag"></i> Sepete Ekle</button>
@@ -455,18 +624,20 @@ html{scroll-behavior:smooth}
                     <h3 class="font-medium text-noir mb-2 line-clamp-2">Tul Detayli Abiye - Pudra</h3>
                     <div class="flex items-center gap-1 mb-2">
                         <div class="star-rating text-xs"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                        <span class="text-xs text-warm-gray">(312)</span>
+                        <span class="text-xs text-warm-gray">(512)</span>
                     </div>
                     <div class="flex items-center gap-2">
-                        <span class="font-serif text-lg font-bold text-noir">2.499 TL</span>
-                        <span class="text-sm text-warm-gray line-through">3.499 TL</span>
+                        <span class="font-serif text-lg font-bold text-noir">2.199 TL</span>
+                        <span class="text-sm text-warm-gray line-through">3.299 TL</span>
                     </div>
                 </div>
             </div>
+            <!-- Best Seller 2: Triko -->
             <div class="product-card bg-white rounded-lg shadow-sm border border-gray-100" data-product-id="6">
                 <div class="relative overflow-hidden rounded-t-lg">
-                    <span class="badge-new" style="background:#dc2626;">COK SATAN</span>
-                    <img src="https://images.unsplash.com/photo-1581044777550-4cfa60707c03?w=400&q=80" alt="Triko" class="product-img w-full h-80 object-cover">
+                    <span class="badge-bestseller">COK SATAN</span>
+                    <button class="wishlist-btn" onclick="toggleWishlist(this,6)"><i class="fas fa-heart"></i></button>
+                    <img src="https://images.unsplash.com/photo-1576566588028-4147f3842f27?w=400&q=80" alt="Triko Kazak" class="product-img w-full h-80 object-cover">
                     <div class="quick-view">
                         <button onclick="quickView(6)" class="text-white text-sm hover:text-gold transition-colors flex items-center gap-2"><i class="fas fa-eye"></i> Hizli Bakis</button>
                         <button onclick="addToCart(6)" class="text-white text-sm hover:text-gold transition-colors flex items-center gap-2"><i class="fas fa-shopping-bag"></i> Sepete Ekle</button>
@@ -477,7 +648,7 @@ html{scroll-behavior:smooth}
                     <h3 class="font-medium text-noir mb-2 line-clamp-2">Triko Kazak - Krem</h3>
                     <div class="flex items-center gap-1 mb-2">
                         <div class="star-rating text-xs"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div>
-                        <span class="text-xs text-warm-gray">(178)</span>
+                        <span class="text-xs text-warm-gray">(378)</span>
                     </div>
                     <div class="flex items-center gap-2">
                         <span class="font-serif text-lg font-bold text-noir">649 TL</span>
@@ -485,10 +656,12 @@ html{scroll-behavior:smooth}
                     </div>
                 </div>
             </div>
+            <!-- Best Seller 3: Canta -->
             <div class="product-card bg-white rounded-lg shadow-sm border border-gray-100" data-product-id="7">
                 <div class="relative overflow-hidden rounded-t-lg">
-                    <span class="badge-new" style="background:#dc2626;">COK SATAN</span>
-                    <img src="https://images.unsplash.com/photo-1591561954557-26941169b49e?w=400&q=80" alt="Canta" class="product-img w-full h-80 object-cover">
+                    <span class="badge-bestseller">COK SATAN</span>
+                    <button class="wishlist-btn" onclick="toggleWishlist(this,7)"><i class="fas fa-heart"></i></button>
+                    <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=400&q=80" alt="Deri Canta" class="product-img w-full h-80 object-cover">
                     <div class="quick-view">
                         <button onclick="quickView(7)" class="text-white text-sm hover:text-gold transition-colors flex items-center gap-2"><i class="fas fa-eye"></i> Hizli Bakis</button>
                         <button onclick="addToCart(7)" class="text-white text-sm hover:text-gold transition-colors flex items-center gap-2"><i class="fas fa-shopping-bag"></i> Sepete Ekle</button>
@@ -499,17 +672,19 @@ html{scroll-behavior:smooth}
                     <h3 class="font-medium text-noir mb-2 line-clamp-2">Deri Omuz Cantasi - Siyah</h3>
                     <div class="flex items-center gap-1 mb-2">
                         <div class="star-rating text-xs"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                        <span class="text-xs text-warm-gray">(95)</span>
+                        <span class="text-xs text-warm-gray">(195)</span>
                     </div>
                     <div class="flex items-center gap-2">
                         <span class="font-serif text-lg font-bold text-noir">1.199 TL</span>
                     </div>
                 </div>
             </div>
+            <!-- Best Seller 4: Trenckot -->
             <div class="product-card bg-white rounded-lg shadow-sm border border-gray-100" data-product-id="8">
                 <div class="relative overflow-hidden rounded-t-lg">
-                    <span class="badge-new" style="background:#dc2626;">COK SATAN</span>
-                    <img src="https://images.unsplash.com/photo-1550614000-4b9519e02a48?w=400&q=80" alt="Trenckot" class="product-img w-full h-80 object-cover">
+                    <span class="badge-bestseller">COK SATAN</span>
+                    <button class="wishlist-btn" onclick="toggleWishlist(this,8)"><i class="fas fa-heart"></i></button>
+                    <img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=400&q=80" alt="Trenckot" class="product-img w-full h-80 object-cover">
                     <div class="quick-view">
                         <button onclick="quickView(8)" class="text-white text-sm hover:text-gold transition-colors flex items-center gap-2"><i class="fas fa-eye"></i> Hizli Bakis</button>
                         <button onclick="addToCart(8)" class="text-white text-sm hover:text-gold transition-colors flex items-center gap-2"><i class="fas fa-shopping-bag"></i> Sepete Ekle</button>
@@ -520,7 +695,7 @@ html{scroll-behavior:smooth}
                     <h3 class="font-medium text-noir mb-2 line-clamp-2">Klasik Trenckot - Bej</h3>
                     <div class="flex items-center gap-1 mb-2">
                         <div class="star-rating text-xs"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div>
-                        <span class="text-xs text-warm-gray">(267)</span>
+                        <span class="text-xs text-warm-gray">(467)</span>
                     </div>
                     <div class="flex items-center gap-2">
                         <span class="font-serif text-lg font-bold text-noir">1.499 TL</span>
@@ -571,7 +746,7 @@ html{scroll-behavior:smooth}
     </div>
 </section>
 
-<!-- TESTIMONIALS -->
+<!-- TESTIMONIALS - ENHANCED with MORE reviews, photos, rating bars -->
 <section class="py-20 bg-cream" id="musteri-yorumlari">
     <div class="max-w-7xl mx-auto px-6">
         <div class="text-center mb-16 reveal">
@@ -579,77 +754,152 @@ html{scroll-behavior:smooth}
             <h2 class="font-serif text-4xl md:text-5xl text-noir font-bold mt-3">Musterilerimiz Ne Diyor?</h2>
             <div class="w-16 h-[2px] bg-gold mx-auto mt-6"></div>
         </div>
-        <div class="grid md:grid-cols-3 gap-8">
-            <div class="testimonial-card p-8 rounded-lg reveal">
-                <div class="flex items-center gap-1 mb-4 star-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                <p class="text-warm-gray leading-relaxed mb-6">"Saten elbise siparis ettim ve kalitesine hayran kaldim. Kumas cok yumusak, dikisler mukemmel. Kesinlikle tekrar alisveris yapacagim. Kargo da cok hizli geldi!"</p>
-                <div class="flex items-center gap-4">
-                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&q=80" alt="Ayse Y." class="w-12 h-12 rounded-full object-cover">
-                    <div><h4 class="font-semibold text-noir">Ayse Yilmaz</h4><p class="text-xs text-warm-gray">Istanbul - 3 gun once</p></div>
+
+        <!-- Rating Summary -->
+        <div class="bg-white rounded-xl p-8 shadow-sm border border-gray-100 mb-12 reveal">
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div class="text-center md:text-left">
+                    <div class="flex items-center justify-center md:justify-start gap-3 mb-2">
+                        <span class="font-serif text-5xl font-bold text-noir">4.8</span>
+                        <div>
+                            <div class="star-rating text-lg"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div>
+                            <p class="text-sm text-warm-gray mt-1">2.847 degerlendirme</p>
+                        </div>
+                    </div>
+                    <p class="text-sm text-warm-gray mt-2">Son 30 gunde 486 yeni degerlendirme</p>
                 </div>
-                <div class="mt-4 pt-4 border-t border-gray-100 flex items-center gap-2"><i class="fas fa-check-circle text-green-500 text-sm"></i><span class="text-xs text-warm-gray">Dogrulanmis Alisveris</span></div>
-            </div>
-            <div class="testimonial-card p-8 rounded-lg reveal">
-                <div class="flex items-center gap-1 mb-4 star-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                <p class="text-warm-gray leading-relaxed mb-6">"Triko kazak aldim, rengi fotograftakiyle birebir ayni. Beden kilavuzu cok dogru, tam oturdu. Musteri hizmetleri de cok ilgiliydi, tesekkurler NOIR & IVORY!"</p>
-                <div class="flex items-center gap-4">
-                    <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&q=80" alt="Zeynep K." class="w-12 h-12 rounded-full object-cover">
-                    <div><h4 class="font-semibold text-noir">Zeynep Kaya</h4><p class="text-xs text-warm-gray">Ankara - 1 hafta once</p></div>
+                <div class="space-y-2">
+                    <div class="flex items-center gap-3"><span class="text-sm text-warm-gray w-8">5 <i class="fas fa-star text-gold text-xs"></i></span><div class="review-bar-bg flex-1"><div class="review-bar-fill" style="width:78%"></div></div><span class="text-sm text-warm-gray w-12 text-right">%78</span></div>
+                    <div class="flex items-center gap-3"><span class="text-sm text-warm-gray w-8">4 <i class="fas fa-star text-gold text-xs"></i></span><div class="review-bar-bg flex-1"><div class="review-bar-fill" style="width:15%"></div></div><span class="text-sm text-warm-gray w-12 text-right">%15</span></div>
+                    <div class="flex items-center gap-3"><span class="text-sm text-warm-gray w-8">3 <i class="fas fa-star text-gold text-xs"></i></span><div class="review-bar-bg flex-1"><div class="review-bar-fill" style="width:5%"></div></div><span class="text-sm text-warm-gray w-12 text-right">%5</span></div>
+                    <div class="flex items-center gap-3"><span class="text-sm text-warm-gray w-8">2 <i class="fas fa-star text-gold text-xs"></i></span><div class="review-bar-bg flex-1"><div class="review-bar-fill" style="width:1.5%"></div></div><span class="text-sm text-warm-gray w-12 text-right">%1.5</span></div>
+                    <div class="flex items-center gap-3"><span class="text-sm text-warm-gray w-8">1 <i class="fas fa-star text-gold text-xs"></i></span><div class="review-bar-bg flex-1"><div class="review-bar-fill" style="width:0.5%"></div></div><span class="text-sm text-warm-gray w-12 text-right">%0.5</span></div>
                 </div>
-                <div class="mt-4 pt-4 border-t border-gray-100 flex items-center gap-2"><i class="fas fa-check-circle text-green-500 text-sm"></i><span class="text-xs text-warm-gray">Dogrulanmis Alisveris</span></div>
-            </div>
-            <div class="testimonial-card p-8 rounded-lg reveal">
-                <div class="flex items-center gap-1 mb-4 star-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div>
-                <p class="text-warm-gray leading-relaxed mb-6">"Abiye elbise icin cok arastirdim ve burada buldum. Fiyat/performans acisindan harika. Paketleme cok ozenliydi, hediye paketi gibi geldi. Kesinlikle tavsiye ederim!"</p>
-                <div class="flex items-center gap-4">
-                    <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&q=80" alt="Elif S." class="w-12 h-12 rounded-full object-cover">
-                    <div><h4 class="font-semibold text-noir">Elif Sahin</h4><p class="text-xs text-warm-gray">Izmir - 2 hafta once</p></div>
-                </div>
-                <div class="mt-4 pt-4 border-t border-gray-100 flex items-center gap-2"><i class="fas fa-check-circle text-green-500 text-sm"></i><span class="text-xs text-warm-gray">Dogrulanmis Alisveris</span></div>
-            </div>
-            <div class="testimonial-card p-8 rounded-lg reveal">
-                <div class="flex items-center gap-1 mb-4 star-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                <p class="text-warm-gray leading-relaxed mb-6">"Kargo gercekten 24 saatte geldi! Wide leg pantolon cok rahat ve sik. Ofiste herkes nereden aldigimi soruyor. Artik favori butigim burasi."</p>
-                <div class="flex items-center gap-4">
-                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80" alt="Mehmet A." class="w-12 h-12 rounded-full object-cover">
-                    <div><h4 class="font-semibold text-noir">Mehmet Aydin</h4><p class="text-xs text-warm-gray">Bursa - 3 hafta once</p></div>
-                </div>
-                <div class="mt-4 pt-4 border-t border-gray-100 flex items-center gap-2"><i class="fas fa-check-circle text-green-500 text-sm"></i><span class="text-xs text-warm-gray">Dogrulanmis Alisveris</span></div>
-            </div>
-            <div class="testimonial-card p-8 rounded-lg reveal">
-                <div class="flex items-center gap-1 mb-4 star-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                <p class="text-warm-gray leading-relaxed mb-6">"Ilk defa online butikten alisveris yaptim ve cok memnun kaldim. Iade sureci de cok kolaydi. Deri canta harika kalitede, her gun kullaniyorum."</p>
-                <div class="flex items-center gap-4">
-                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&q=80" alt="Selin D." class="w-12 h-12 rounded-full object-cover">
-                    <div><h4 class="font-semibold text-noir">Selin Demir</h4><p class="text-xs text-warm-gray">Antalya - 1 ay once</p></div>
-                </div>
-                <div class="mt-4 pt-4 border-t border-gray-100 flex items-center gap-2"><i class="fas fa-check-circle text-green-500 text-sm"></i><span class="text-xs text-warm-gray">Dogrulanmis Alisveris</span></div>
-            </div>
-            <div class="testimonial-card p-8 rounded-lg reveal">
-                <div class="flex items-center gap-1 mb-4 star-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                <p class="text-warm-gray leading-relaxed mb-6">"Trenckot aldim, kalite muhtesem. Kumas kalinligi ve dikis detaylari cok iyi. Fiyati diger sitelere gore cok uygun. Kapida odeme secenegi de cok pratik."</p>
-                <div class="flex items-center gap-4">
-                    <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&q=80" alt="Can B." class="w-12 h-12 rounded-full object-cover">
-                    <div><h4 class="font-semibold text-noir">Can Bulut</h4><p class="text-xs text-warm-gray">Adana - 1 ay once</p></div>
-                </div>
-                <div class="mt-4 pt-4 border-t border-gray-100 flex items-center gap-2"><i class="fas fa-check-circle text-green-500 text-sm"></i><span class="text-xs text-warm-gray">Dogrulanmis Alisveris</span></div>
             </div>
         </div>
-        <div class="mt-16 bg-white rounded-lg p-8 shadow-sm border border-gray-100 text-center reveal">
-            <div class="flex items-center justify-center gap-2 mb-4">
-                <div class="star-rating text-2xl"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                <span class="font-serif text-3xl font-bold text-noir">4.9</span><span class="text-warm-gray">/ 5.0</span>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Review 1 -->
+            <div class="testimonial-card p-6 rounded-lg reveal">
+                <div class="flex items-center gap-1 mb-3 star-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                <p class="text-warm-gray text-sm leading-relaxed mb-4">"Saten elbise siparis ettim ve kalitesine hayran kaldim. Kumas cok yumusak, dikisler mukemmel. Kesinlikle tekrar alisveris yapacagim. Kargo da ertesi gun geldi, cok hizli!"</p>
+                <div class="flex gap-2 mb-4">
+                    <img src="https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=100&q=80" class="review-photo" alt="Urun fotografi">
+                    <img src="https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?w=100&q=80" class="review-photo" alt="Urun fotografi">
+                </div>
+                <div class="flex items-center gap-3">
+                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&q=80" alt="Ayse Y." class="w-10 h-10 rounded-full object-cover">
+                    <div><h4 class="font-semibold text-noir text-sm">Ayse Yilmaz</h4><p class="text-xs text-warm-gray">Istanbul - 2 gun once - Saten Midi Elbise</p></div>
+                </div>
+                <div class="mt-3 pt-3 border-t border-gray-100 flex items-center gap-2"><i class="fas fa-check-circle text-green-500 text-xs"></i><span class="text-xs text-warm-gray">Dogrulanmis Alisveris</span><span class="ml-auto text-xs text-green-600 font-medium">Tavsiye ederim</span></div>
             </div>
-            <p class="text-warm-gray">1.247+ Degerlendirme uzerinden hesaplanmistir</p>
-            <div class="flex items-center justify-center gap-6 mt-6 text-sm text-warm-gray">
-                <span class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Dogrulanmis Yorumlar</span>
-                <span class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Gercek Musteriler</span>
-                <span class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Tarafsiz Degerlendirme</span>
+
+            <!-- Review 2 -->
+            <div class="testimonial-card p-6 rounded-lg reveal">
+                <div class="flex items-center gap-1 mb-3 star-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                <p class="text-warm-gray text-sm leading-relaxed mb-4">"Triko kazak aldim, rengi fotograftakiyle birebir ayni. Beden kilavuzu cok dogru, tam oturdu. Musteri hizmetleri de cok ilgiliydi, tesekkurler NOIR & IVORY!"</p>
+                <div class="flex items-center gap-3">
+                    <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&q=80" alt="Zeynep K." class="w-10 h-10 rounded-full object-cover">
+                    <div><h4 class="font-semibold text-noir text-sm">Zeynep Kaya</h4><p class="text-xs text-warm-gray">Ankara - 5 gun once - Triko Kazak Krem</p></div>
+                </div>
+                <div class="mt-3 pt-3 border-t border-gray-100 flex items-center gap-2"><i class="fas fa-check-circle text-green-500 text-xs"></i><span class="text-xs text-warm-gray">Dogrulanmis Alisveris</span><span class="ml-auto text-xs text-green-600 font-medium">Tavsiye ederim</span></div>
             </div>
+
+            <!-- Review 3 -->
+            <div class="testimonial-card p-6 rounded-lg reveal">
+                <div class="flex items-center gap-1 mb-3 star-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div>
+                <p class="text-warm-gray text-sm leading-relaxed mb-4">"Abiye elbise icin cok arastirdim ve burada buldum. Fiyat/performans acisindan harika. Paketleme cok ozenliydi, hediye paketi gibi geldi. Kesinlikle tavsiye ederim!"</p>
+                <div class="flex gap-2 mb-4">
+                    <img src="https://images.unsplash.com/photo-1566174053879-31528523f8ae?w=100&q=80" class="review-photo" alt="Urun fotografi">
+                </div>
+                <div class="flex items-center gap-3">
+                    <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&q=80" alt="Elif S." class="w-10 h-10 rounded-full object-cover">
+                    <div><h4 class="font-semibold text-noir text-sm">Elif Sahin</h4><p class="text-xs text-warm-gray">Izmir - 1 hafta once - Tul Detayli Abiye</p></div>
+                </div>
+                <div class="mt-3 pt-3 border-t border-gray-100 flex items-center gap-2"><i class="fas fa-check-circle text-green-500 text-xs"></i><span class="text-xs text-warm-gray">Dogrulanmis Alisveris</span></div>
+            </div>
+
+            <!-- Review 4 -->
+            <div class="testimonial-card p-6 rounded-lg reveal">
+                <div class="flex items-center gap-1 mb-3 star-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                <p class="text-warm-gray text-sm leading-relaxed mb-4">"Kargo gercekten 24 saatte geldi! Wide leg pantolon cok rahat ve sik. Ofiste herkes nereden aldigimi soruyor. Artik favori butigim burasi."</p>
+                <div class="flex items-center gap-3">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80" alt="Mehmet A." class="w-10 h-10 rounded-full object-cover">
+                    <div><h4 class="font-semibold text-noir text-sm">Mehmet Aydin</h4><p class="text-xs text-warm-gray">Bursa - 1 hafta once - Wide Leg Pantolon</p></div>
+                </div>
+                <div class="mt-3 pt-3 border-t border-gray-100 flex items-center gap-2"><i class="fas fa-check-circle text-green-500 text-xs"></i><span class="text-xs text-warm-gray">Dogrulanmis Alisveris</span><span class="ml-auto text-xs text-green-600 font-medium">Tavsiye ederim</span></div>
+            </div>
+
+            <!-- Review 5 -->
+            <div class="testimonial-card p-6 rounded-lg reveal">
+                <div class="flex items-center gap-1 mb-3 star-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                <p class="text-warm-gray text-sm leading-relaxed mb-4">"Ilk defa online butikten alisveris yaptim ve cok memnun kaldim. Iade sureci de cok kolaydi. Deri canta harika kalitede, her gun kullaniyorum."</p>
+                <div class="flex gap-2 mb-4">
+                    <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=100&q=80" class="review-photo" alt="Urun fotografi">
+                    <img src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=100&q=80" class="review-photo" alt="Urun fotografi">
+                </div>
+                <div class="flex items-center gap-3">
+                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&q=80" alt="Selin D." class="w-10 h-10 rounded-full object-cover">
+                    <div><h4 class="font-semibold text-noir text-sm">Selin Demir</h4><p class="text-xs text-warm-gray">Antalya - 2 hafta once - Deri Canta</p></div>
+                </div>
+                <div class="mt-3 pt-3 border-t border-gray-100 flex items-center gap-2"><i class="fas fa-check-circle text-green-500 text-xs"></i><span class="text-xs text-warm-gray">Dogrulanmis Alisveris</span><span class="ml-auto text-xs text-green-600 font-medium">Tavsiye ederim</span></div>
+            </div>
+
+            <!-- Review 6 -->
+            <div class="testimonial-card p-6 rounded-lg reveal">
+                <div class="flex items-center gap-1 mb-3 star-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                <p class="text-warm-gray text-sm leading-relaxed mb-4">"Trenckot aldim, kalite muhtesem. Kumas kalinligi ve dikis detaylari cok iyi. Fiyati diger sitelere gore cok uygun. Kapida odeme secenegi de cok pratik."</p>
+                <div class="flex items-center gap-3">
+                    <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&q=80" alt="Can B." class="w-10 h-10 rounded-full object-cover">
+                    <div><h4 class="font-semibold text-noir text-sm">Can Bulut</h4><p class="text-xs text-warm-gray">Adana - 2 hafta once - Klasik Trenckot</p></div>
+                </div>
+                <div class="mt-3 pt-3 border-t border-gray-100 flex items-center gap-2"><i class="fas fa-check-circle text-green-500 text-xs"></i><span class="text-xs text-warm-gray">Dogrulanmis Alisveris</span></div>
+            </div>
+
+            <!-- Review 7 -->
+            <div class="testimonial-card p-6 rounded-lg reveal">
+                <div class="flex items-center gap-1 mb-3 star-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                <p class="text-warm-gray text-sm leading-relaxed mb-4">"Ipek gomlek tam istedigim gibi cikti. Kumas kalitesi cok yuksek, terletmiyor. Yazin ofiste cok rahat kullaniyorum. Renk secenekleri de cok guzel."</p>
+                <div class="flex items-center gap-3">
+                    <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=100&q=80" alt="Deniz T." class="w-10 h-10 rounded-full object-cover">
+                    <div><h4 class="font-semibold text-noir text-sm">Deniz Tuncer</h4><p class="text-xs text-warm-gray">Konya - 3 hafta once - Ipek Gomlek</p></div>
+                </div>
+                <div class="mt-3 pt-3 border-t border-gray-100 flex items-center gap-2"><i class="fas fa-check-circle text-green-500 text-xs"></i><span class="text-xs text-warm-gray">Dogrulanmis Alisveris</span><span class="ml-auto text-xs text-green-600 font-medium">Tavsiye ederim</span></div>
+            </div>
+
+            <!-- Review 8 -->
+            <div class="testimonial-card p-6 rounded-lg reveal">
+                <div class="flex items-center gap-1 mb-3 star-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div>
+                <p class="text-warm-gray text-sm leading-relaxed mb-4">"Keten blazer ceket cok sik duruyor. Yaz dugunlerinde uzerime aliyorum, hem rahat hem sik. Bedeni tam oldu, kilavuz cok basarili."</p>
+                <div class="flex gap-2 mb-4">
+                    <img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=100&q=80" class="review-photo" alt="Urun fotografi">
+                </div>
+                <div class="flex items-center gap-3">
+                    <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=100&q=80" alt="Burak K." class="w-10 h-10 rounded-full object-cover">
+                    <div><h4 class="font-semibold text-noir text-sm">Burak Koc</h4><p class="text-xs text-warm-gray">Mersin - 3 hafta once - Keten Blazer</p></div>
+                </div>
+                <div class="mt-3 pt-3 border-t border-gray-100 flex items-center gap-2"><i class="fas fa-check-circle text-green-500 text-xs"></i><span class="text-xs text-warm-gray">Dogrulanmis Alisveris</span></div>
+            </div>
+
+            <!-- Review 9 -->
+            <div class="testimonial-card p-6 rounded-lg reveal">
+                <div class="flex items-center gap-1 mb-3 star-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                <p class="text-warm-gray text-sm leading-relaxed mb-4">"3. siparisimi verdim ve hic hayal kirikligina ugramadim. Her seferinde ayni kalite, ayni ozen. Musteri hizmetleri canli destekten aninda yardim aldim."</p>
+                <div class="flex items-center gap-3">
+                    <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=100&q=80" alt="Ceren M." class="w-10 h-10 rounded-full object-cover">
+                    <div><h4 class="font-semibold text-noir text-sm">Ceren Mutlu</h4><p class="text-xs text-warm-gray">Eskisehir - 1 ay once - 3. Siparis</p></div>
+                </div>
+                <div class="mt-3 pt-3 border-t border-gray-100 flex items-center gap-2"><i class="fas fa-check-circle text-green-500 text-xs"></i><span class="text-xs text-warm-gray">Dogrulanmis Alisveris</span><span class="ml-auto text-xs text-green-600 font-medium">Sadik Musteri</span></div>
+            </div>
+        </div>
+
+        <div class="text-center mt-12 reveal">
+            <button onclick="showToast('Yakinda','Tum yorumlari goruntuleme ozelligi yakinda geliyor!')" class="inline-flex items-center gap-3 border-2 border-noir text-noir px-10 py-4 text-sm font-semibold tracking-[0.2em] uppercase hover:bg-noir hover:text-white transition-all duration-300">
+                Tum 2.847 Yorumu Gor <i class="fas fa-arrow-right"></i>
+            </button>
         </div>
     </div>
 </section>
-
 <!-- INSTAGRAM FEED -->
 <section class="py-20 bg-white">
     <div class="max-w-7xl mx-auto px-6">
@@ -685,6 +935,7 @@ html{scroll-behavior:smooth}
         <p class="text-gray-500 text-xs mt-6">Abone olarak gizlilik politikasini kabul etmissiniz. Istediğiniz zaman abonelikten cikabilirsiniz.</p>
     </div>
 </section>
+
 <!-- FOOTER -->
 <footer class="bg-noir border-t border-white/10 pt-16 pb-8">
     <div class="max-w-7xl mx-auto px-6">
@@ -793,37 +1044,144 @@ html{scroll-behavior:smooth}
 <button onclick="scrollToTop()" id="back-to-top" class="fixed bottom-8 right-8 w-12 h-12 bg-gold text-white rounded-full shadow-lg flex items-center justify-center opacity-0 pointer-events-none transition-all duration-300 hover:bg-gold-light z-50"><i class="fas fa-arrow-up"></i></button>
 
 <script>
+// ===== LOADER =====
 window.addEventListener('load',()=>{setTimeout(()=>{document.getElementById('loader').style.opacity='0';document.getElementById('loader').style.pointerEvents='none';setTimeout(()=>{document.getElementById('loader').style.display='none';initAnimations();},500);},2200);});
+
+// ===== AUTH SYSTEM =====
+let currentUser = null;
+
+function openAccountModal() {
+    document.getElementById('account-modal').classList.add('open');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeAccountModal() {
+    document.getElementById('account-modal').classList.remove('open');
+    document.body.style.overflow = '';
+}
+
+function switchAuthTab(tab) {
+    document.querySelectorAll('.auth-tab-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById('tab-' + tab).classList.add('active');
+    if (tab === 'login') {
+        document.getElementById('auth-login').classList.remove('hidden');
+        document.getElementById('auth-register').classList.add('hidden');
+        document.getElementById('auth-title').textContent = 'Giris Yap';
+    } else {
+        document.getElementById('auth-login').classList.add('hidden');
+        document.getElementById('auth-register').classList.remove('hidden');
+        document.getElementById('auth-title').textContent = 'Uye Ol';
+    }
+}
+
+function togglePassword(id) {
+    const input = document.getElementById(id);
+    const btn = input.nextElementSibling;
+    if (input.type === 'password') {
+        input.type = 'text';
+        btn.innerHTML = '<i class="fas fa-eye-slash"></i>';
+    } else {
+        input.type = 'password';
+        btn.innerHTML = '<i class="fas fa-eye"></i>';
+    }
+}
+
+function checkPasswordStrength(val) {
+    const bars = document.querySelectorAll('#password-strength div');
+    const text = document.getElementById('password-text');
+    let strength = 0;
+    if (val.length >= 8) strength++;
+    if (/[A-Z]/.test(val)) strength++;
+    if (/[0-9]/.test(val)) strength++;
+    if (/[^A-Za-z0-9]/.test(val)) strength++;
+
+    const colors = ['#eee', '#dc2626', '#f59e0b', '#22c55e', '#16a34a'];
+    const texts = ['Sifre guclulugu', 'Zayif', 'Orta', 'Guclu', 'Cok Guclu'];
+
+    bars.forEach((bar, i) => {
+        bar.style.background = i < strength ? colors[strength] : '#eee';
+    });
+    text.textContent = texts[strength];
+    text.style.color = strength > 0 ? colors[strength] : '#8a8a8a';
+}
+
+function handleLogin(e) {
+    e.preventDefault();
+    const email = document.getElementById('login-email').value;
+    currentUser = { email: email, name: email.split('@')[0] };
+    document.getElementById('user-badge').classList.remove('hidden');
+    closeAccountModal();
+    showToast('Hos Geldiniz!', email + ' olarak giris yaptiniz');
+    e.target.reset();
+}
+
+function handleRegister(e) {
+    e.preventDefault();
+    const name = document.getElementById('reg-name').value;
+    const email = document.getElementById('reg-email').value;
+    currentUser = { email: email, name: name };
+    document.getElementById('user-badge').classList.remove('hidden');
+    closeAccountModal();
+    showToast('Hos Geldiniz!', name + ', basariyla uye oldunuz!');
+    e.target.reset();
+}
+
+function socialLogin(provider) {
+    const names = {'google': 'Google', 'apple': 'Apple'};
+    currentUser = { email: 'kullanici@' + provider + '.com', name: provider + ' Kullanici' };
+    document.getElementById('user-badge').classList.remove('hidden');
+    closeAccountModal();
+    showToast('Hos Geldiniz!', names[provider] + ' ile giris yapildi');
+}
+
+// ===== CART =====
 let cart=[];
 const products={
-1:{name:'Saten Midi Elbise - Bej',price:1299,image:'https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?w=200&q=80'},
-2:{name:'Keten Blazer Ceket - Krem',price:1899,image:'https://images.unsplash.com/photo-1594938298603-c8148c4dae35?w=200&q=80'},
-3:{name:'Ipek Gomlek - Beyaz',price:899,image:'https://images.unsplash.com/photo-1551163943-3f6a29e39426?w=200&q=80'},
-4:{name:'Wide Leg Pantolon - Siyah',price:749,image:'https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?w=200&q=80'},
-5:{name:'Tul Detayli Abiye - Pudra',price:2499,image:'https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=200&q=80'},
-6:{name:'Triko Kazak - Krem',price:649,image:'https://images.unsplash.com/photo-1581044777550-4cfa60707c03?w=200&q=80'},
-7:{name:'Deri Omuz Cantasi - Siyah',price:1199,image:'https://images.unsplash.com/photo-1591561954557-26941169b49e?w=200&q=80'},
-8:{name:'Klasik Trenckot - Bej',price:1499,image:'https://images.unsplash.com/photo-1550614000-4b9519e02a48?w=200&q=80'},
-9:{name:'Premium Basic Tisort - Siyah',price:399,image:'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=200&q=80'},
-10:{name:'Slim Fit Kumas Pantolon - Gri',price:599,image:'https://images.unsplash.com/photo-1552374196-1ab2a1c593e8?w=200&q=80'},
-11:{name:'Pileli Midi Etek - Bej',price:549,image:'https://images.unsplash.com/photo-1539008835657-9e8f968a9c0f?w=200&q=80'},
-12:{name:'Keten Gomlek - Mavi',price:699,image:'https://images.unsplash.com/photo-1578587018452-892b6fd8d5d8?w=200&q=80'},
+1:{name:'Saten Midi Elbise - Bej',price:1299,image:'https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=200&q=80'},
+2:{name:'Keten Blazer Ceket - Krem',price:1599,image:'https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=200&q=80'},
+3:{name:'Ipek Gomlek - Beyaz',price:849,image:'https://images.unsplash.com/photo-1598532163257-ae3c6b2524b6?w=200&q=80'},
+4:{name:'Wide Leg Pantolon - Siyah',price:749,image:'https://images.unsplash.com/photo-1509631179647-0177331693ae?w=200&q=80'},
+5:{name:'Tul Detayli Abiye - Pudra',price:2199,image:'https://images.unsplash.com/photo-1566174053879-31528523f8ae?w=200&q=80'},
+6:{name:'Triko Kazak - Krem',price:649,image:'https://images.unsplash.com/photo-1576566588028-4147f3842f27?w=200&q=80'},
+7:{name:'Deri Omuz Cantasi - Siyah',price:1199,image:'https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=200&q=80'},
+8:{name:'Klasik Trenckot - Bej',price:1499,image:'https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=200&q=80'},
 };
+
 function addToCart(id){const p=products[id];if(!p)return;const e=cart.find(i=>i.id===id);if(e){e.qty++;}else{cart.push({id,qty:1,...p});}updateCartUI();showToast('Urun Sepete Eklendi',p.name+' sepetinize eklendi');}
 function removeFromCart(id){cart=cart.filter(i=>i.id!==id);updateCartUI();}
 function updateCartQty(id,d){const i=cart.find(x=>x.id===id);if(i){i.qty+=d;if(i.qty<=0){removeFromCart(id);return;}}updateCartUI();}
 function updateCartUI(){const c=cart.reduce((s,i)=>s+i.qty,0);document.getElementById('cart-count').textContent=c;const cn=document.getElementById('cart-items');if(cart.length===0){cn.innerHTML='<div class="text-center py-12 text-gray-400"><i class="fas fa-shopping-bag text-4xl mb-4 opacity-30"></i><p>Sepetiniz bos</p><p class="text-sm mt-2">Urun eklemek icin butonlari kullanin</p></div>';}else{cn.innerHTML=cart.map(i=>`<div class="flex gap-4 mb-4 pb-4 border-b border-gray-100"><img src="${i.image}" alt="${i.name}" class="w-20 h-20 object-cover rounded"><div class="flex-1"><h4 class="text-sm font-medium text-noir line-clamp-2">${i.name}</h4><p class="text-gold font-semibold mt-1">${i.price.toLocaleString()} TL</p><div class="flex items-center gap-3 mt-2"><button onclick="updateCartQty(${i.id},-1)" class="w-6 h-6 border border-gray-200 rounded flex items-center justify-center text-xs hover:bg-gray-100">-</button><span class="text-sm font-medium">${i.qty}</span><button onclick="updateCartQty(${i.id},1)" class="w-6 h-6 border border-gray-200 rounded flex items-center justify-center text-xs hover:bg-gray-100">+</button><button onclick="removeFromCart(${i.id})" class="ml-auto text-red-400 hover:text-red-600 text-xs"><i class="fas fa-trash"></i></button></div></div></div>`).join('');}const t=cart.reduce((s,i)=>s+(i.price*i.qty),0);document.getElementById('cart-subtotal').textContent=t.toLocaleString()+' TL';document.getElementById('cart-total').textContent=t.toLocaleString()+' TL';}
 function toggleCart(){document.getElementById('cart-sidebar').classList.toggle('open');document.getElementById('cart-overlay').classList.toggle('open');document.body.style.overflow=document.getElementById('cart-sidebar').classList.contains('open')?'hidden':'';}
 function toggleMobileMenu(){document.getElementById('mobile-menu').classList.toggle('open');document.body.style.overflow=document.getElementById('mobile-menu').classList.contains('open')?'hidden':'';}
+
+// ===== WISHLIST =====
+function toggleWishlist(btn, id) {
+    btn.classList.toggle('active');
+    const p = products[id];
+    if (btn.classList.contains('active')) {
+        showToast('Favorilere Eklendi', p.name + ' favorilerinize eklendi');
+    } else {
+        showToast('Favorilerden Cikarildi', p.name + ' favorilerden cikarildi');
+    }
+}
+
+// ===== QUICK VIEW =====
 function quickView(id){const p=products[id];if(!p)return;document.getElementById('modal-content').innerHTML=`<div class="grid md:grid-cols-2"><div class="relative"><img src="${p.image.replace('w=200','w=600')}" alt="${p.name}" class="w-full h-96 md:h-full object-cover"><button onclick="closeModal()" class="absolute top-4 right-4 w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-lg hover:bg-gray-100 md:hidden"><i class="fas fa-times"></i></button></div><div class="p-8"><button onclick="closeModal()" class="absolute top-4 right-4 w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center hover:bg-gray-200 hidden md:flex"><i class="fas fa-times"></i></button><p class="text-xs text-warm-gray uppercase tracking-wider mb-2">Urun Detayi</p><h2 class="font-serif text-2xl font-bold text-noir mb-4">${p.name}</h2><div class="flex items-center gap-2 mb-4"><div class="star-rating text-sm"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><span class="text-sm text-warm-gray">(48 degerlendirme)</span></div><div class="flex items-center gap-3 mb-6"><span class="font-serif text-3xl font-bold text-noir">${p.price.toLocaleString()} TL</span><span class="text-lg text-warm-gray line-through">${(p.price*1.3).toFixed(0)} TL</span><span class="bg-red-100 text-red-600 text-xs font-bold px-2 py-1 rounded">%30</span></div><p class="text-warm-gray text-sm leading-relaxed mb-6">Premium kalite kumas, ozenli dikis detaylari ve zamansiz tasarim. Her mevsim rahatlikla kullanabileceginiz, dolabinizin vazgecilmezi olacak bir parca.</p><div class="mb-6"><p class="text-sm font-medium text-noir mb-3">Beden Secin</p><div class="flex gap-2"><button class="size-btn active">XS</button><button class="size-btn">S</button><button class="size-btn">M</button><button class="size-btn">L</button><button class="size-btn">XL</button></div></div><div class="flex gap-3"><button onclick="addToCart(${id});closeModal();" class="flex-1 bg-gold text-white py-4 font-semibold tracking-wider uppercase hover:bg-gold-light transition-all">Sepete Ekle</button><button class="w-14 border border-gray-200 flex items-center justify-center hover:bg-gray-50 transition-colors"><i class="far fa-heart text-noir"></i></button></div><div class="mt-6 pt-6 border-t border-gray-100 flex items-center gap-4 text-xs text-warm-gray"><span class="flex items-center gap-1"><i class="fas fa-truck text-gold"></i> Ucretsiz Kargo</span><span class="flex items-center gap-1"><i class="fas fa-undo text-gold"></i> 30 Gun Iade</span></div></div></div>`;document.getElementById('product-modal').classList.add('open');document.body.style.overflow='hidden';}
 function closeModal(){document.getElementById('product-modal').classList.remove('open');document.body.style.overflow='';}
+
+// ===== TOAST =====
 function showToast(t,m){const x=document.getElementById('toast');document.getElementById('toast-title').textContent=t;document.getElementById('toast-message').textContent=m;x.classList.add('show');setTimeout(()=>x.classList.remove('show'),3000);}
+
+// ===== NEWSLETTER =====
 function subscribeNewsletter(e){e.preventDefault();showToast('Abone Olundu!','Bultenimize basariyla abone oldunuz. Ilk siparisinize %10 indirim kazandiniz!');e.target.reset();}
+
+// ===== COUNTDOWN =====
 function updateCountdown(){const n=new Date(),e=new Date();e.setHours(23,59,59,999);const d=e-n;document.getElementById('cd-hours').textContent=String(Math.floor(d/(1000*60*60))).padStart(2,'0');document.getElementById('cd-minutes').textContent=String(Math.floor((d%(1000*60*60))/(1000*60))).padStart(2,'0');document.getElementById('cd-seconds').textContent=String(Math.floor((d%(1000*60))/1000)).padStart(2,'0');}
 setInterval(updateCountdown,1000);updateCountdown();
-function updateOnlineUsers(){const b=240,v=Math.floor(Math.random()*40)-20;document.getElementById('online-users').textContent=b+v;}
-setInterval(updateOnlineUsers,5000);
+
+// ===== ANIMATIONS =====
 function initAnimations(){gsap.registerPlugin(ScrollTrigger);gsap.from('#hero-title',{opacity:0,y:50,duration:1.2,delay:0.3,ease:'power3.out'});gsap.from('#hero-subtitle',{opacity:0,y:30,duration:1,delay:0.6,ease:'power3.out'});gsap.from('#hero-buttons',{opacity:0,y:30,duration:1,delay:0.9,ease:'power3.out'});gsap.from('#hero-stats',{opacity:0,y:30,duration:1,delay:1.2,ease:'power3.out'});document.querySelectorAll('.counter-value').forEach(c=>{const t=parseInt(c.dataset.target);gsap.to(c,{innerHTML:t,duration:2,delay:1.5,snap:{innerHTML:1},ease:'power2.out',onUpdate:function(){c.innerHTML=Math.round(this.targets()[0].innerHTML).toLocaleString();}});});document.querySelectorAll('.reveal').forEach(el=>{gsap.fromTo(el,{opacity:0,y:40},{opacity:1,y:0,duration:0.8,ease:'power3.out',scrollTrigger:{trigger:el,start:'top 85%',toggleActions:'play none none none'}});});document.querySelectorAll('.stagger-children').forEach(c=>{ScrollTrigger.create({trigger:c,start:'top 80%',onEnter:()=>c.classList.add('active')});});gsap.to('.hero-bg',{yPercent:30,ease:'none',scrollTrigger:{trigger:'.hero-section',start:'top top',end:'bottom top',scrub:true}});}
+
 window.addEventListener('scroll',()=>{const b=document.getElementById('back-to-top');if(window.scrollY>500){b.style.opacity='1';b.style.pointerEvents='all';}else{b.style.opacity='0';b.style.pointerEvents='none';}});
 function scrollToTop(){window.scrollTo({top:0,behavior:'smooth'});}
 document.addEventListener('click',(e)=>{if(e.target.classList.contains('size-btn')){document.querySelectorAll('.size-btn').forEach(b=>b.classList.remove('active'));e.target.classList.add('active');}});
