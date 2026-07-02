@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MODAvera | Premium Butik </title>
+<title>MODAvera | Premium Butik Moda</title>
 <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/2331/2331966.png">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -306,7 +306,7 @@ html{scroll-behavior:smooth}
 <body>
 
 <!-- LOADER -->
-<div class="loader-overlay" id="loader">
+<div class="l<div class="loader-overlay" id="loader" style="display:flex;" onclick="this.style.display='none'">
     <div class="loader-logo">
         <div class="loader-logo-inner">
             <span style="font-family:'Playfair Display',serif;font-size:2.5rem;font-weight:900;color:white;">M</span>
@@ -1925,18 +1925,40 @@ let selectedSize = {};
 let selectedColor = {};
 
 // ===== LOADER =====
-window.addEventListener('load', () => {
-    setTimeout(() => {
-        document.getElementById('loader').style.opacity = '0';
-        document.getElementById('loader').style.pointerEvents = 'none';
-        setTimeout(() => {
-            document.getElementById('loader').style.display = 'none';
-            initAnimations();
-            showPromoPopup();
-            showFloatingCoupon();
+(function() {
+    function hideLoader() {
+        var loader = document.getElementById('loader');
+        if (!loader) return;
+        loader.style.transition = 'opacity 0.8s cubic-bezier(0.4,0,0.2,1)';
+        loader.style.opacity = '0';
+        loader.style.pointerEvents = 'none';
+        setTimeout(function() {
+            if (loader) loader.style.display = 'none';
+            try {
+                if (typeof initAnimations === 'function') initAnimations();
+            } catch(e) { console.log('Animations skipped'); }
+            try {
+                if (typeof showPromoPopup === 'function') showPromoPopup();
+            } catch(e) { console.log('Popup skipped'); }
+            try {
+                if (typeof showFloatingCoupon === 'function') showFloatingCoupon();
+            } catch(e) { console.log('Coupon skipped'); }
         }, 800);
-    }, 2500);
-});
+    }
+
+    // Hide on window load
+    window.addEventListener('load', function() {
+        setTimeout(hideLoader, 1500);
+    });
+
+    // Fallback: DOM ready
+    document.addEventListener('DOMContentLoaded', function() {
+        setTimeout(hideLoader, 3000);
+    });
+
+    // Ultimate fallback: always hide after 5 seconds
+    setTimeout(hideLoader, 5000);
+})();
 
 // ===== WHATSAPP FUNCTIONS =====
 function openWhatsAppGeneral() {
