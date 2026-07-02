@@ -1,319 +1,336 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MODAvera | Premium Butik Moda</title>
-<link rel="icon" href="https://cdn-icons-png.flaticon.com/512/2331/2331966.png">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-<script src="https://cdn.tailwindcss.com"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-<script>
-tailwind.config = {
-  theme: {
-    extend: {
-      fontFamily: { 'serif': ['Playfair Display', 'serif'], 'sans': ['Inter', 'sans-serif'], 'elegant': ['Cormorant Garamond', 'serif'] },
-      colors: { 'noir': '#0f0f0f', 'noir-light': '#1a1a1a', 'ivory': '#f5f0eb', 'gold': '#c9a96e', 'gold-light': '#e0c99a', 'warm-gray': '#8a8a8a', 'cream': '#faf7f2', 'rose-gold': '#b76e79', 'whatsapp': '#25D366' }
-    }
-  }
-}
-</script>
-<style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Inter',sans-serif;background:#faf7f2;overflow-x:hidden}
-::-webkit-scrollbar{width:6px}
-::-webkit-scrollbar-track{background:#f5f0eb}
-::-webkit-scrollbar-thumb{background:#c9a96e;border-radius:3px}
-html{scroll-behavior:smooth}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MODAvera | Premium Butik Moda</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👗</text></svg>">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { 'serif': ['Playfair Display', 'serif'], 'sans': ['Inter', 'sans-serif'], 'elegant': ['Cormorant Garamond', 'serif'] },
+                    colors: { 'noir': '#0f0f0f', 'noir-light': '#1a1a1a', 'ivory': '#f5f0eb', 'gold': '#c9a96e', 'gold-light': '#e0c99a', 'warm-gray': '#8a8a8a', 'cream': '#faf7f2', 'rose-gold': '#b76e79' }
+                }
+            }
+        }
+    </script>
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{font-family:'Inter',sans-serif;background:#faf7f2;overflow-x:hidden}
+        ::-webkit-scrollbar{width:6px}
+        ::-webkit-scrollbar-track{background:#f5f0eb}
+        ::-webkit-scrollbar-thumb{background:#c9a96e;border-radius:3px}
+        html{scroll-behavior:smooth}
 
-.loader-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:#0f0f0f;z-index:9999;display:flex;align-items:center;justify-content:center;flex-direction:column;transition:opacity .8s cubic-bezier(0.4,0,0.2,1)}
-.loader-logo{width:140px;height:140px;margin-bottom:24px;display:flex;align-items:center;justify-content:center;border-radius:50%;border:2px solid rgba(201,169,110,0.3);position:relative}
-.loader-logo-inner{width:120px;height:120px;border-radius:50%;background:linear-gradient(135deg,#c9a96e,#e0c99a);display:flex;align-items:center;justify-content:center;animation:logoPulse 2s ease-in-out infinite}
-@keyframes logoPulse{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.05);opacity:0.9}}
-.loader-text{font-family:'Playfair Display',serif;font-size:2.2rem;color:#c9a96e;letter-spacing:8px;font-weight:700}
-.loader-sub{font-size:0.7rem;letter-spacing:6px;color:#666;margin-top:12px;text-transform:uppercase}
-.loader-bar{width:200px;height:2px;background:#333;margin-top:24px;border-radius:2px;overflow:hidden}
-.loader-progress{width:0%;height:100%;background:linear-gradient(90deg,#c9a96e,#e0c99a);animation:loadProgress 2.5s cubic-bezier(0.4,0,0.2,1) forwards}
-@keyframes loadProgress{0%{width:0%}50%{width:70%}100%{width:100%}}
+        .loader-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:#0f0f0f;z-index:9999;display:flex;align-items:center;justify-content:center;flex-direction:column;transition:opacity .8s cubic-bezier(0.4,0,0.2,1)}
+        .loader-logo-text{font-family:'Playfair Display',serif;font-size:3.5rem;color:#c9a96e;letter-spacing:4px;font-weight:700;line-height:1}
+        .loader-logo-sub{font-family:'Inter',sans-serif;font-size:0.7rem;letter-spacing:6px;color:#888;margin-top:8px;text-transform:uppercase}
+        .loader-bar{width:180px;height:1px;background:#333;margin-top:24px;border-radius:2px;overflow:hidden}
+        .loader-progress{width:0%;height:100%;background:#c9a96e;animation:loadProgress 2.5s cubic-bezier(0.4,0,0.2,1) forwards}
+        @keyframes loadProgress{0%{width:0%}50%{width:70%}100%{width:100%}}
 
-.hero-section{height:100vh;position:relative;overflow:hidden;background:#0f0f0f}
-.hero-bg{position:absolute;top:0;left:0;width:100%;height:100%;background:url('https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=1920&q=80') center/cover;opacity:0.35;animation:heroZoom 20s ease-in-out infinite alternate}
-@keyframes heroZoom{0%{transform:scale(1)}100%{transform:scale(1.1)}}
-.hero-overlay{position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(to bottom,rgba(15,15,15,0.2) 0%,rgba(15,15,15,0.85) 100%)}
-.hero-quote{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.1rem;color:rgba(201,169,110,0.7);letter-spacing:3px}
+        .hero-section{height:100vh;position:relative;overflow:hidden;background:#0f0f0f}
+        .hero-bg{position:absolute;top:0;left:0;width:100%;height:100%;background:url('https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=1920&q=80') center/cover;opacity:0.35;animation:heroZoom 20s ease-in-out infinite alternate}
+        @keyframes heroZoom{0%{transform:scale(1)}100%{transform:scale(1.1)}}
+        .hero-overlay{position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(to bottom,rgba(15,15,15,0.2) 0%,rgba(15,15,15,0.85) 100%)}
+        .hero-quote{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.1rem;color:rgba(201,169,110,0.7);letter-spacing:3px}
 
-.product-card{transition:all 0.5s cubic-bezier(0.4,0,0.2,1);position:relative;overflow:hidden;background:white;border-radius:12px}
-.product-card:hover{transform:translateY(-12px);box-shadow:0 30px 60px rgba(0,0,0,0.12)}
-.product-card .product-img{transition:transform 0.8s cubic-bezier(0.4,0,0.2,1)}
-.product-card:hover .product-img{transform:scale(1.08)}
-.product-card .quick-view{position:absolute;bottom:-70px;left:0;right:0;background:rgba(15,15,15,0.95);padding:18px;transition:bottom 0.4s cubic-bezier(0.4,0,0.2,1);display:flex;justify-content:center;gap:16px;backdrop-filter:blur(10px)}
-.product-card:hover .quick-view{bottom:0}
+        .product-card{transition:all 0.5s cubic-bezier(0.4,0,0.2,1);position:relative;overflow:hidden;background:white;border-radius:12px}
+        .product-card:hover{transform:translateY(-12px);box-shadow:0 30px 60px rgba(0,0,0,0.12)}
+        .product-card .product-img{transition:transform 0.8s cubic-bezier(0.4,0,0.2,1)}
+        .product-card:hover .product-img{transform:scale(1.08)}
+        .product-card .quick-view{position:absolute;bottom:-70px;left:0;right:0;background:rgba(15,15,15,0.95);padding:18px;transition:bottom 0.4s cubic-bezier(0.4,0,0.2,1);display:flex;justify-content:center;gap:16px;backdrop-filter:blur(10px)}
+        .product-card:hover .quick-view{bottom:0}
 
-.badge-new{position:absolute;top:14px;left:14px;background:#c9a96e;color:white;padding:5px 12px;font-size:0.65rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;z-index:2;border-radius:4px}
-.badge-sale{position:absolute;top:14px;right:14px;background:#dc2626;color:white;padding:5px 12px;font-size:0.65rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;z-index:2;border-radius:4px}
-.badge-bestseller{position:absolute;top:14px;left:14px;background:#dc2626;color:white;padding:5px 12px;font-size:0.65rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;z-index:2;border-radius:4px}
-.badge-limited{position:absolute;top:14px;right:14px;background:#7c3aed;color:white;padding:5px 12px;font-size:0.65rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;z-index:2;border-radius:4px}
+        .badge-new{position:absolute;top:14px;left:14px;background:#c9a96e;color:white;padding:5px 12px;font-size:0.65rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;z-index:2;border-radius:4px}
+        .badge-sale{position:absolute;top:14px;right:14px;background:#dc2626;color:white;padding:5px 12px;font-size:0.65rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;z-index:2;border-radius:4px}
+        .badge-bestseller{position:absolute;top:14px;left:14px;background:#dc2626;color:white;padding:5px 12px;font-size:0.65rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;z-index:2;border-radius:4px}
+        .badge-limited{position:absolute;top:14px;right:14px;background:#7c3aed;color:white;padding:5px 12px;font-size:0.65rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;z-index:2;border-radius:4px}
 
-.countdown-box{background:rgba(15,15,15,0.9);backdrop-filter:blur(10px);border:1px solid rgba(201,169,110,0.2);border-radius:12px}
-.countdown-digit{font-variant-numeric:tabular-nums}
+        .countdown-box{background:rgba(15,15,15,0.9);backdrop-filter:blur(10px);border:1px solid rgba(201,169,110,0.2);border-radius:12px}
+        .countdown-digit{font-variant-numeric:tabular-nums}
 
-.testimonial-card{background:white;border:1px solid rgba(201,169,110,0.15);transition:all 0.4s ease;border-radius:16px}
-.testimonial-card:hover{border-color:rgba(201,169,110,0.4);box-shadow:0 20px 50px rgba(0,0,0,0.08);transform:translateY(-4px)}
+        .testimonial-card{background:white;border:1px solid rgba(201,169,110,0.15);transition:all 0.4s ease;border-radius:16px}
+        .testimonial-card:hover{border-color:rgba(201,169,110,0.4);box-shadow:0 20px 50px rgba(0,0,0,0.08);transform:translateY(-4px)}
 
-.trust-badge{transition:all 0.3s ease}
-.trust-badge:hover{transform:translateY(-8px)}
+        .trust-badge{transition:all 0.3s ease}
+        .trust-badge:hover{transform:translateY(-8px)}
 
-.newsletter-input{background:rgba(255,255,255,0.08);border:1px solid rgba(201,169,110,0.25);transition:all 0.3s ease;color:white}
-.newsletter-input:focus{border-color:#c9a96e;outline:none;box-shadow:0 0 30px rgba(201,169,110,0.15);background:rgba(255,255,255,0.12)}
-.newsletter-input::placeholder{color:#888}
+        .newsletter-input{background:rgba(255,255,255,0.08);border:1px solid rgba(201,169,110,0.25);transition:all 0.3s ease;color:white}
+        .newsletter-input:focus{border-color:#c9a96e;outline:none;box-shadow:0 0 30px rgba(201,169,110,0.15);background:rgba(255,255,255,0.12)}
+        .newsletter-input::placeholder{color:#888}
 
-.cart-sidebar{position:fixed;top:0;right:-480px;width:480px;height:100%;background:white;z-index:200;box-shadow:-15px 0 50px rgba(0,0,0,0.2);transition:right 0.5s cubic-bezier(0.4,0,0.2,1);overflow-y:auto}
-.cart-sidebar.open{right:0}
-.cart-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.6);z-index:199;opacity:0;pointer-events:none;transition:opacity 0.3s ease;backdrop-filter:blur(4px)}
-.cart-overlay.open{opacity:1;pointer-events:all}
+        .cart-sidebar{position:fixed;top:0;right:-480px;width:480px;height:100%;background:white;z-index:200;box-shadow:-15px 0 50px rgba(0,0,0,0.2);transition:right 0.5s cubic-bezier(0.4,0,0.2,1);overflow-y:auto}
+        .cart-sidebar.open{right:0}
+        .cart-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.6);z-index:199;opacity:0;pointer-events:none;transition:opacity 0.3s ease;backdrop-filter:blur(4px)}
+        .cart-overlay.open{opacity:1;pointer-events:all}
 
-.toast{position:fixed;bottom:30px;right:30px;background:#0f0f0f;color:white;padding:18px 28px;border-radius:12px;box-shadow:0 15px 40px rgba(0,0,0,0.3);z-index:300;transform:translateX(450px) scale(0.9);opacity:0;transition:all 0.5s cubic-bezier(0.4,0,0.2,1);display:flex;align-items:center;gap:14px;border:1px solid rgba(201,169,110,0.2)}
-.toast.show{transform:translateX(0) scale(1);opacity:1}
+        .toast{position:fixed;bottom:30px;right:30px;background:#0f0f0f;color:white;padding:18px 28px;border-radius:12px;box-shadow:0 15px 40px rgba(0,0,0,0.3);z-index:300;transform:translateX(450px) scale(0.9);opacity:0;transition:all 0.5s cubic-bezier(0.4,0,0.2,1);display:flex;align-items:center;gap:14px;border:1px solid rgba(201,169,110,0.2)}
+        .toast.show{transform:translateX(0) scale(1);opacity:1}
 
-.insta-item{position:relative;overflow:hidden;border-radius:8px}
-.insta-item .insta-overlay{position:absolute;inset:0;background:rgba(15,15,15,0.75);display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity 0.4s ease}
-.insta-item:hover .insta-overlay{opacity:1}
-.insta-item img{transition:transform 0.6s ease}
-.insta-item:hover img{transform:scale(1.12)}
+        .insta-item{position:relative;overflow:hidden;border-radius:8px}
+        .insta-item .insta-overlay{position:absolute;inset:0;background:rgba(15,15,15,0.75);display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity 0.4s ease}
+        .insta-item:hover .insta-overlay{opacity:1}
+        .insta-item img{transition:transform 0.6s ease}
+        .insta-item:hover img{transform:scale(1.12)}
 
-.animated-underline{position:relative;display:inline-block}
-.animated-underline::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:1.5px;background:#c9a96e;transition:width 0.4s cubic-bezier(0.4,0,0.2,1)}
-.animated-underline:hover::after{width:100%}
+        .animated-underline{position:relative;display:inline-block}
+        .animated-underline::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:1.5px;background:#c9a96e;transition:width 0.4s cubic-bezier(0.4,0,0.2,1)}
+        .animated-underline:hover::after{width:100%}
 
-.reveal{opacity:0;transform:translateY(50px)}
-.reveal.active{opacity:1;transform:translateY(0);transition:all 0.9s cubic-bezier(0.4,0,0.2,1)}
+        .reveal{opacity:0;transform:translateY(50px)}
+        .reveal.active{opacity:1;transform:translateY(0);transition:all 0.9s cubic-bezier(0.4,0,0.2,1)}
 
-.img-zoom{overflow:hidden;border-radius:16px}
-.img-zoom img{transition:transform 0.8s cubic-bezier(0.4,0,0.2,1)}
-.img-zoom:hover img{transform:scale(1.1)}
+        .img-zoom{overflow:hidden;border-radius:16px}
+        .img-zoom img{transition:transform 0.8s cubic-bezier(0.4,0,0.2,1)}
+        .img-zoom:hover img{transform:scale(1.1)}
 
-.size-btn{width:44px;height:44px;border:1.5px solid #e5e5e5;display:flex;align-items:center;justify-content:center;font-size:0.8rem;font-weight:600;cursor:pointer;transition:all 0.3s ease;border-radius:8px;background:white}
-.size-btn:hover,.size-btn.active{background:#0f0f0f;color:white;border-color:#0f0f0f}
+        .size-btn{width:44px;height:44px;border:1.5px solid #e5e5e5;display:flex;align-items:center;justify-content:center;font-size:0.8rem;font-weight:600;cursor:pointer;transition:all 0.3s ease;border-radius:8px;background:white}
+        .size-btn:hover,.size-btn.active{background:#0f0f0f;color:white;border-color:#0f0f0f}
 
-.mobile-menu{position:fixed;top:0;left:-100%;width:85%;max-width:380px;height:100%;background:white;z-index:200;transition:left 0.5s cubic-bezier(0.4,0,0.2,1);overflow-y:auto;box-shadow:10px 0 40px rgba(0,0,0,0.15)}
-.mobile-menu.open{left:0}
+        .mobile-menu{position:fixed;top:0;left:-100%;width:85%;max-width:380px;height:100%;background:white;z-index:200;transition:left 0.5s cubic-bezier(0.4,0,0.2,1);overflow-y:auto;box-shadow:10px 0 40px rgba(0,0,0,0.15)}
+        .mobile-menu.open{left:0}
 
-.stagger-children>*{opacity:0;transform:translateY(25px)}
-.stagger-children.active>*{animation:staggerIn 0.7s ease forwards}
-.stagger-children.active>*:nth-child(1){animation-delay:0.08s}
-.stagger-children.active>*:nth-child(2){animation-delay:0.16s}
-.stagger-children.active>*:nth-child(3){animation-delay:0.24s}
-.stagger-children.active>*:nth-child(4){animation-delay:0.32s}
-.stagger-children.active>*:nth-child(5){animation-delay:0.40s}
-.stagger-children.active>*:nth-child(6){animation-delay:0.48s}
-.stagger-children.active>*:nth-child(7){animation-delay:0.56s}
-.stagger-children.active>*:nth-child(8){animation-delay:0.64s}
-@keyframes staggerIn{to{opacity:1;transform:translateY(0)}}
+        .stagger-children>*{opacity:0;transform:translateY(25px)}
+        .stagger-children.active>*{animation:staggerIn 0.7s ease forwards}
+        .stagger-children.active>*:nth-child(1){animation-delay:0.08s}
+        .stagger-children.active>*:nth-child(2){animation-delay:0.16s}
+        .stagger-children.active>*:nth-child(3){animation-delay:0.24s}
+        .stagger-children.active>*:nth-child(4){animation-delay:0.32s}
+        .stagger-children.active>*:nth-child(5){animation-delay:0.40s}
+        .stagger-children.active>*:nth-child(6){animation-delay:0.48s}
+        .stagger-children.active>*:nth-child(7){animation-delay:0.56s}
+        .stagger-children.active>*:nth-child(8){animation-delay:0.64s}
+        @keyframes staggerIn{to{opacity:1;transform:translateY(0)}}
 
-.tooltip{position:relative}
-.tooltip::before{content:attr(data-tooltip);position:absolute;bottom:100%;left:50%;transform:translateX(-50%) translateY(-10px);background:#0f0f0f;color:white;padding:7px 14px;font-size:0.72rem;white-space:nowrap;border-radius:6px;opacity:0;pointer-events:none;transition:all 0.3s ease;box-shadow:0 4px 12px rgba(0,0,0,0.2)}
-.tooltip:hover::before{opacity:1;transform:translateX(-50%) translateY(-4px)}
+        .tooltip{position:relative}
+        .tooltip::before{content:attr(data-tooltip);position:absolute;bottom:100%;left:50%;transform:translateX(-50%) translateY(-10px);background:#0f0f0f;color:white;padding:7px 14px;font-size:0.72rem;white-space:nowrap;border-radius:6px;opacity:0;pointer-events:none;transition:all 0.3s ease;box-shadow:0 4px 12px rgba(0,0,0,0.2)}
+        .tooltip:hover::before{opacity:1;transform:translateX(-50%) translateY(-4px)}
 
-.live-dot{width:8px;height:8px;background:#22c55e;border-radius:50%;animation:pulse 2s infinite}
-@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.5;transform:scale(0.8)}}
+        .live-dot{width:8px;height:8px;background:#22c55e;border-radius:50%;animation:pulse 2s infinite}
+        @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.5;transform:scale(0.8)}}
 
-.marquee-container{overflow:hidden;white-space:nowrap}
-.marquee-content{display:inline-block;animation:marquee 35s linear infinite}
-@keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+        .marquee-container{overflow:hidden;white-space:nowrap}
+        .marquee-content{display:inline-block;animation:marquee 35s linear infinite}
+        @keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 
-.product-modal{position:fixed;inset:0;z-index:250;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity 0.3s ease}
-.product-modal.open{opacity:1;pointer-events:all}
-.product-modal .modal-overlay{position:absolute;inset:0;background:rgba(0,0,0,0.65);backdrop-filter:blur(5px)}
-.product-modal .modal-content{position:relative;background:white;max-width:1000px;width:92%;max-height:92vh;overflow-y:auto;border-radius:20px;transform:scale(0.85) translateY(30px);transition:transform 0.5s cubic-bezier(0.4,0,0.2,1);box-shadow:0 40px 80px rgba(0,0,0,0.3)}
-.product-modal.open .modal-content{transform:scale(1) translateY(0)}
+        .product-modal{position:fixed;inset:0;z-index:250;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity 0.3s ease}
+        .product-modal.open{opacity:1;pointer-events:all}
+        .product-modal .modal-overlay{position:absolute;inset:0;background:rgba(0,0,0,0.65);backdrop-filter:blur(5px)}
+        .product-modal .modal-content{position:relative;background:white;max-width:1000px;width:92%;max-height:92vh;overflow-y:auto;border-radius:20px;transform:scale(0.85) translateY(30px);transition:transform 0.5s cubic-bezier(0.4,0,0.2,1);box-shadow:0 40px 80px rgba(0,0,0,0.3)}
+        .product-modal.open .modal-content{transform:scale(1) translateY(0)}
 
-.account-modal{position:fixed;inset:0;z-index:260;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity 0.3s ease}
-.account-modal.open{opacity:1;pointer-events:all}
-.account-modal .modal-overlay{position:absolute;inset:0;background:rgba(0,0,0,0.65);backdrop-filter:blur(5px)}
-.account-modal .modal-content{position:relative;background:white;max-width:460px;width:92%;border-radius:20px;transform:scale(0.85) translateY(30px);transition:transform 0.5s cubic-bezier(0.4,0,0.2,1);overflow:hidden;box-shadow:0 40px 80px rgba(0,0,0,0.3)}
-.account-modal.open .modal-content{transform:scale(1) translateY(0)}
+        .account-modal{position:fixed;inset:0;z-index:260;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity 0.3s ease}
+        .account-modal.open{opacity:1;pointer-events:all}
+        .account-modal .modal-overlay{position:absolute;inset:0;background:rgba(0,0,0,0.65);backdrop-filter:blur(5px)}
+        .account-modal .modal-content{position:relative;background:white;max-width:460px;width:92%;border-radius:20px;transform:scale(0.85) translateY(30px);transition:transform 0.5s cubic-bezier(0.4,0,0.2,1);overflow:hidden;box-shadow:0 40px 80px rgba(0,0,0,0.3)}
+        .account-modal.open .modal-content{transform:scale(1) translateY(0)}
 
-.auth-tab-btn{flex:1;padding:18px;text-align:center;font-size:0.9rem;font-weight:600;cursor:pointer;transition:all 0.3s ease;border-bottom:2.5px solid transparent;color:#aaa;background:none;border:none}
-.auth-tab-btn.active{color:#0f0f0f;border-bottom-color:#c9a96e}
-.auth-input{width:100%;padding:15px 18px;border:1.5px solid #eee;border-radius:10px;font-size:0.9rem;transition:all 0.3s ease;background:#fafafa;font-family:'Inter',sans-serif}
-.auth-input:focus{outline:none;border-color:#c9a96e;box-shadow:0 0 0 4px rgba(201,169,110,0.08);background:white}
-.auth-btn{width:100%;padding:16px;background:#c9a96e;color:white;font-weight:700;font-size:0.95rem;border:none;border-radius:10px;cursor:pointer;transition:all 0.3s ease;letter-spacing:0.5px}
-.auth-btn:hover{background:#b8985d;transform:translateY(-2px);box-shadow:0 8px 25px rgba(201,169,110,0.3)}
-.auth-social-btn{width:100%;padding:14px;border:1.5px solid #eee;border-radius:10px;background:white;display:flex;align-items:center;justify-content:center;gap:10px;font-size:0.85rem;cursor:pointer;transition:all 0.3s ease;font-weight:500}
-.auth-social-btn:hover{background:#fafafa;border-color:#c9a96e;transform:translateY(-1px)}
+        .auth-tab-btn{flex:1;padding:18px;text-align:center;font-size:0.9rem;font-weight:600;cursor:pointer;transition:all 0.3s ease;border-bottom:2.5px solid transparent;color:#aaa;background:none;border:none}
+        .auth-tab-btn.active{color:#0f0f0f;border-bottom-color:#c9a96e}
+        .auth-input{width:100%;padding:15px 18px;border:1.5px solid #eee;border-radius:10px;font-size:0.9rem;transition:all 0.3s ease;background:#fafafa;font-family:'Inter',sans-serif}
+        .auth-input:focus{outline:none;border-color:#c9a96e;box-shadow:0 0 0 4px rgba(201,169,110,0.08);background:white}
+        .auth-btn{width:100%;padding:16px;background:#c9a96e;color:white;font-weight:700;font-size:0.95rem;border:none;border-radius:10px;cursor:pointer;transition:all 0.3s ease;letter-spacing:0.5px}
+        .auth-btn:hover{background:#b8985d;transform:translateY(-2px);box-shadow:0 8px 25px rgba(201,169,110,0.3)}
+        .auth-social-btn{width:100%;padding:14px;border:1.5px solid #eee;border-radius:10px;background:white;display:flex;align-items:center;justify-content:center;gap:10px;font-size:0.85rem;cursor:pointer;transition:all 0.3s ease;font-weight:500}
+        .auth-social-btn:hover{background:#fafafa;border-color:#c9a96e;transform:translateY(-1px)}
 
-.wishlist-btn{position:absolute;top:14px;right:14px;width:38px;height:38px;background:rgba(255,255,255,0.95);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all 0.3s ease;z-index:3;border:none;box-shadow:0 2px 10px rgba(0,0,0,0.1)}
-.wishlist-btn:hover{background:white;transform:scale(1.15);box-shadow:0 4px 15px rgba(0,0,0,0.15)}
-.wishlist-btn i{color:#ddd;transition:all 0.3s ease;font-size:0.9rem}
-.wishlist-btn.active i{color:#dc2626;transform:scale(1.2)}
-.wishlist-btn.active{animation:heartBeat 0.4s ease}
-@keyframes heartBeat{0%,100%{transform:scale(1)}25%{transform:scale(1.3)}50%{transform:scale(1.1)}75%{transform:scale(1.25)}}
+        .wishlist-btn{position:absolute;top:14px;right:14px;width:38px;height:38px;background:rgba(255,255,255,0.95);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all 0.3s ease;z-index:3;border:none;box-shadow:0 2px 10px rgba(0,0,0,0.1)}
+        .wishlist-btn:hover{background:white;transform:scale(1.15);box-shadow:0 4px 15px rgba(0,0,0,0.15)}
+        .wishlist-btn i{color:#ddd;transition:all 0.3s ease;font-size:0.9rem}
+        .wishlist-btn.active i{color:#dc2626;transform:scale(1.2)}
+        .wishlist-btn.active{animation:heartBeat 0.4s ease}
+        @keyframes heartBeat{0%,100%{transform:scale(1)}25%{transform:scale(1.3)}50%{transform:scale(1.1)}75%{transform:scale(1.25)}}
 
-.review-photo{width:64px;height:64px;border-radius:8px;object-fit:cover;cursor:pointer;transition:all 0.3s ease;border:2px solid transparent}
-.review-photo:hover{border-color:#c9a96e;transform:scale(1.08)}
+        .review-photo{width:64px;height:64px;border-radius:8px;object-fit:cover;cursor:pointer;transition:all 0.3s ease;border:2px solid transparent}
+        .review-photo:hover{border-color:#c9a96e;transform:scale(1.08)}
 
-.review-bar-bg{width:100%;height:7px;background:#f0f0f0;border-radius:4px;overflow:hidden}
-.review-bar-fill{height:100%;background:#c9a96e;border-radius:4px;transition:width 1.2s cubic-bezier(0.4,0,0.2,1)}
+        .review-bar-bg{width:100%;height:7px;background:#f0f0f0;border-radius:4px;overflow:hidden}
+        .review-bar-fill{height:100%;background:#c9a96e;border-radius:4px;transition:width 1.2s cubic-bezier(0.4,0,0.2,1)}
 
-.search-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(15,15,15,0.95);z-index:210;opacity:0;pointer-events:none;transition:opacity 0.4s ease;backdrop-filter:blur(10px);display:flex;align-items:flex-start;justify-content:center;padding-top:15vh}
-.search-overlay.open{opacity:1;pointer-events:all}
-.search-input{width:100%;max-width:700px;padding:24px 0;font-size:2.5rem;font-family:'Playfair Display',serif;color:white;background:transparent;border:none;border-bottom:2px solid rgba(201,169,110,0.3);outline:none;transition:border-color 0.3s}
-.search-input:focus{border-bottom-color:#c9a96e}
-.search-input::placeholder{color:#555}
-.search-close{position:absolute;top:40px;right:40px;color:white;font-size:1.5rem;cursor:pointer;transition:color 0.3s}
-.search-close:hover{color:#c9a96e}
-.search-results{display:none;max-width:700px;width:100%;margin-top:40px}
-.search-results.show{display:block}
-.search-result-item{display:flex;align-items:center;gap:16px;padding:16px;border-radius:12px;transition:all 0.3s;cursor:pointer}
-.search-result-item:hover{background:rgba(255,255,255,0.05)}
+        .search-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(15,15,15,0.95);z-index:210;opacity:0;pointer-events:none;transition:opacity 0.4s ease;backdrop-filter:blur(10px);display:flex;align-items:flex-start;justify-content:center;padding-top:15vh}
+        .search-overlay.open{opacity:1;pointer-events:all}
+        .search-input{width:100%;max-width:700px;padding:24px 0;font-size:2.5rem;font-family:'Playfair Display',serif;color:white;background:transparent;border:none;border-bottom:2px solid rgba(201,169,110,0.3);outline:none;transition:border-color 0.3s}
+        .search-input:focus{border-bottom-color:#c9a96e}
+        .search-input::placeholder{color:#555}
+        .search-close{position:absolute;top:40px;right:40px;color:white;font-size:1.5rem;cursor:pointer;transition:color 0.3s}
+        .search-close:hover{color:#c9a96e}
+        .search-results{display:none;max-width:700px;width:100%;margin-top:40px}
+        .search-results.show{display:block}
+        .search-result-item{display:flex;align-items:center;gap:16px;padding:16px;border-radius:12px;transition:all 0.3s;cursor:pointer}
+        .search-result-item:hover{background:rgba(255,255,255,0.05)}
 
-.coupon-banner{position:fixed;bottom:0;left:0;right:0;background:#0f0f0f;border-top:1px solid rgba(201,169,110,0.2);z-index:100;padding:14px 24px;transform:translateY(100%);transition:transform 0.5s cubic-bezier(0.4,0,0.2,1)}
-.coupon-banner.show{transform:translateY(0)}
-.coupon-code{background:#c9a96e;color:#0f0f0f;padding:6px 14px;border-radius:6px;font-weight:700;font-size:0.85rem;letter-spacing:2px;cursor:pointer;transition:all 0.3s;display:inline-block}
-.coupon-code:hover{background:#e0c99a;transform:scale(1.05)}
-.coupon-close{position:absolute;top:50%;right:20px;transform:translateY(-50%);color:#666;cursor:pointer;transition:color 0.3s}
-.coupon-close:hover{color:#c9a96e}
+        .coupon-banner{position:fixed;bottom:0;left:0;right:0;background:#0f0f0f;border-top:1px solid rgba(201,169,110,0.2);z-index:100;padding:14px 24px;transform:translateY(100%);transition:transform 0.5s cubic-bezier(0.4,0,0.2,1)}
+        .coupon-banner.show{transform:translateY(0)}
+        .coupon-code{background:#c9a96e;color:#0f0f0f;padding:6px 14px;border-radius:6px;font-weight:700;font-size:0.85rem;letter-spacing:2px;cursor:pointer;transition:all 0.3s;display:inline-block}
+        .coupon-code:hover{background:#e0c99a;transform:scale(1.05)}
+        .coupon-close{position:absolute;top:50%;right:20px;transform:translateY(-50%);color:#666;cursor:pointer;transition:color 0.3s}
+        .coupon-close:hover{color:#c9a96e}
 
-.floating-coupon{position:fixed;right:30px;z-index:90;background:white;border-radius:16px;padding:20px;box-shadow:0 10px 40px rgba(0,0,0,0.15);width:280px;transform:translateX(350px);transition:transform 0.6s cubic-bezier(0.4,0,0.2,1);border:1px solid rgba(201,169,110,0.15)}
-.floating-coupon.show{transform:translateX(0)}
-.floating-coupon::before{content:'';position:absolute;top:0;left:20px;right:20px;height:3px;background:#c9a96e;border-radius:0 0 4px 4px}
-.coupon-scissors{position:absolute;top:-12px;right:20px;width:24px;height:24px;background:#c9a96e;border-radius:50%;display:flex;align-items:center;justify-content:center;color:white;font-size:0.7rem}
+        .floating-coupon{position:fixed;right:30px;z-index:90;background:white;border-radius:16px;padding:20px;box-shadow:0 10px 40px rgba(0,0,0,0.15);width:280px;transform:translateX(350px);transition:transform 0.6s cubic-bezier(0.4,0,0.2,1);border:1px solid rgba(201,169,110,0.15)}
+        .floating-coupon.show{transform:translateX(0)}
+        .floating-coupon::before{content:'';position:absolute;top:0;left:20px;right:20px;height:3px;background:#c9a96e;border-radius:0 0 4px 4px}
+        .coupon-scissors{position:absolute;top:-12px;right:20px;width:24px;height:24px;background:#c9a96e;border-radius:50%;display:flex;align-items:center;justify-content:center;color:white;font-size:0.7rem}
 
-.user-dropdown{position:absolute;top:calc(100% + 10px);right:0;background:white;border-radius:16px;box-shadow:0 15px 50px rgba(0,0,0,0.15);padding:8px;width:240px;opacity:0;pointer-events:none;transform:translateY(-10px);transition:all 0.3s cubic-bezier(0.4,0,0.2,1);z-index:60;border:1px solid rgba(0,0,0,0.05)}
-.user-dropdown.show{opacity:1;pointer-events:all;transform:translateY(0)}
-.user-dropdown-item{padding:12px 16px;border-radius:10px;cursor:pointer;transition:all 0.2s;display:flex;align-items:center;gap:12px;font-size:0.9rem;color:#333}
-.user-dropdown-item:hover{background:#faf7f2;color:#c9a96e}
+        .user-dropdown{position:absolute;top:calc(100% + 10px);right:0;background:white;border-radius:16px;box-shadow:0 15px 50px rgba(0,0,0,0.15);padding:8px;width:240px;opacity:0;pointer-events:none;transform:translateY(-10px);transition:all 0.3s cubic-bezier(0.4,0,0.2,1);z-index:60;border:1px solid rgba(0,0,0,0.05)}
+        .user-dropdown.show{opacity:1;pointer-events:all;transform:translateY(0)}
+        .user-dropdown-item{padding:12px 16px;border-radius:10px;cursor:pointer;transition:all 0.2s;display:flex;align-items:center;gap:12px;font-size:0.9rem;color:#333}
+        .user-dropdown-item:hover{background:#faf7f2;color:#c9a96e}
 
-.category-tab{padding:12px 28px;border-radius:30px;border:1.5px solid #e5e5e5;background:white;cursor:pointer;transition:all 0.3s ease;font-size:0.85rem;font-weight:600;color:#666;white-space:nowrap}
-.category-tab:hover{border-color:#c9a96e;color:#c9a96e}
-.category-tab.active{background:#0f0f0f;color:white;border-color:#0f0f0f}
+        .category-tab{padding:12px 28px;border-radius:30px;border:1.5px solid #e5e5e5;background:white;cursor:pointer;transition:all 0.3s ease;font-size:0.85rem;font-weight:600;color:#666;white-space:nowrap}
+        .category-tab:hover{border-color:#c9a96e;color:#c9a96e}
+        .category-tab.active{background:#0f0f0f;color:white;border-color:#0f0f0f}
 
-.price-tag{display:inline-flex;align-items:center;gap:6px;background:#fef3c7;color:#92400e;padding:4px 10px;border-radius:6px;font-size:0.7rem;font-weight:700}
+        .price-tag{display:inline-flex;align-items:center;gap:6px;background:#fef3c7;color:#92400e;padding:4px 10px;border-radius:6px;font-size:0.7rem;font-weight:700}
 
-.scroll-indicator{position:absolute;bottom:40px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;animation:bounce 2s infinite}
-@keyframes bounce{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(10px)}}
-.scroll-line{width:1px;height:40px;background:rgba(201,169,110,0.4);position:relative;overflow:hidden}
-.scroll-line::after{content:'';position:absolute;top:0;left:0;width:100%;height:100%;background:#c9a96e;animation:scrollLine 2s ease-in-out infinite}
-@keyframes scrollLine{0%{transform:translateY(-100%)}100%{transform:translateY(100%)}}
+        .scroll-indicator{position:absolute;bottom:40px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;animation:bounce 2s infinite}
+        @keyframes bounce{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(10px)}}
+        .scroll-line{width:1px;height:40px;background:rgba(201,169,110,0.4);position:relative;overflow:hidden}
+        .scroll-line::after{content:'';position:absolute;top:0;left:0;width:100%;height:100%;background:#c9a96e;animation:scrollLine 2s ease-in-out infinite}
+        @keyframes scrollLine{0%{transform:translateY(-100%)}100%{transform:translateY(100%)}}
 
-.confetti{position:fixed;pointer-events:none;z-index:400;width:10px;height:10px;animation:confettiFall 3s ease-out forwards}
-@keyframes confettiFall{0%{transform:translateY(-100vh) rotate(0deg);opacity:1}100%{transform:translateY(100vh) rotate(720deg);opacity:0}}
+        .confetti{position:fixed;pointer-events:none;z-index:400;width:10px;height:10px;animation:confettiFall 3s ease-out forwards}
+        @keyframes confettiFall{0%{transform:translateY(-100vh) rotate(0deg);opacity:1}100%{transform:translateY(100vh) rotate(720deg);opacity:0}}
 
-.notification-dot{position:absolute;top:-2px;right:-2px;width:8px;height:8px;background:#dc2626;border-radius:50%;border:2px solid white;animation:dotPulse 2s infinite}
-@keyframes dotPulse{0%,100%{transform:scale(1)}50%{transform:scale(1.3)}}
+        .notification-dot{position:absolute;top:-2px;right:-2px;width:8px;height:8px;background:#dc2626;border-radius:50%;border:2px solid white;animation:dotPulse 2s infinite}
+        @keyframes dotPulse{0%,100%{transform:scale(1)}50%{transform:scale(1.3)}}
 
-.compare-bar{position:fixed;bottom:80px;left:50%;transform:translateX(-50%) translateY(100px);background:white;border-radius:16px;padding:16px 24px;box-shadow:0 10px 40px rgba(0,0,0,0.15);z-index:95;display:flex;align-items:center;gap:16px;transition:transform 0.4s cubic-bezier(0.4,0,0.2,1);border:1px solid rgba(201,169,110,0.15)}
-.compare-bar.show{transform:translateX(-50%) translateY(0)}
+        .compare-bar{position:fixed;bottom:80px;left:50%;transform:translateX(-50%) translateY(100px);background:white;border-radius:16px;padding:16px 24px;box-shadow:0 10px 40px rgba(0,0,0,0.15);z-index:95;display:flex;align-items:center;gap:16px;transition:transform 0.4s cubic-bezier(0.4,0,0.2,1);border:1px solid rgba(201,169,110,0.15)}
+        .compare-bar.show{transform:translateX(-50%) translateY(0)}
 
-.recently-viewed{position:fixed;bottom:20px;left:20px;z-index:90;background:white;border-radius:16px;padding:16px;box-shadow:0 10px 40px rgba(0,0,0,0.12);width:200px;border:1px solid rgba(201,169,110,0.1);transform:translateX(-250px);transition:transform 0.5s cubic-bezier(0.4,0,0.2,1)}
-.recently-viewed.show{transform:translateX(0)}
+        .recently-viewed{position:fixed;bottom:20px;left:20px;z-index:90;background:white;border-radius:16px;padding:16px;box-shadow:0 10px 40px rgba(0,0,0,0.12);width:200px;border:1px solid rgba(201,169,110,0.1);transform:translateX(-250px);transition:transform 0.5s cubic-bezier(0.4,0,0.2,1)}
+        .recently-viewed.show{transform:translateX(0)}
 
-.size-guide-modal{position:fixed;inset:0;z-index:270;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity 0.3s}
-.size-guide-modal.open{opacity:1;pointer-events:all}
-.size-guide-modal .modal-overlay{position:absolute;inset:0;background:rgba(0,0,0,0.6);backdrop-filter:blur(5px)}
-.size-guide-modal .modal-content{position:relative;background:white;max-width:600px;width:92%;border-radius:20px;padding:40px;max-height:85vh;overflow-y:auto;transform:scale(0.9);transition:transform 0.4s}
-.size-guide-modal.open .modal-content{transform:scale(1)}
+        .size-guide-modal{position:fixed;inset:0;z-index:270;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity 0.3s}
+        .size-guide-modal.open{opacity:1;pointer-events:all}
+        .size-guide-modal .modal-overlay{position:absolute;inset:0;background:rgba(0,0,0,0.6);backdrop-filter:blur(5px)}
+        .size-guide-modal .modal-content{position:relative;background:white;max-width:600px;width:92%;border-radius:20px;padding:40px;max-height:85vh;overflow-y:auto;transform:scale(0.9);transition:transform 0.4s}
+        .size-guide-modal.open .modal-content{transform:scale(1)}
 
-.wishlist-sidebar{position:fixed;top:0;right:-400px;width:400px;height:100%;background:white;z-index:200;box-shadow:-10px 0 40px rgba(0,0,0,0.15);transition:right 0.5s cubic-bezier(0.4,0,0.2,1);overflow-y:auto}
-.wishlist-sidebar.open{right:0}
+        .wishlist-sidebar{position:fixed;top:0;right:-400px;width:400px;height:100%;background:white;z-index:200;box-shadow:-10px 0 40px rgba(0,0,0,0.15);transition:right 0.5s cubic-bezier(0.4,0,0.2,1);overflow-y:auto}
+        .wishlist-sidebar.open{right:0}
 
-.tracking-step{display:flex;gap:16px;position:relative}
-.tracking-step::before{content:'';position:absolute;left:15px;top:40px;width:2px;height:calc(100% - 20px);background:#eee}
-.tracking-step.completed::before{background:#c9a96e}
-.tracking-dot{width:32px;height:32px;border-radius:50%;border:2px solid #eee;display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:700;flex-shrink:0;background:white;z-index:2;transition:all 0.3s}
-.tracking-step.completed .tracking-dot{border-color:#c9a96e;background:#c9a96e;color:white}
-.tracking-step.active .tracking-dot{border-color:#c9a96e;color:#c9a96e;animation:dotGlow 2s infinite}
-@keyframes dotGlow{0%,100%{box-shadow:0 0 0 0 rgba(201,169,110,0.4)}50%{box-shadow:0 0 0 8px rgba(201,169,110,0)}}
+        .tracking-step{display:flex;gap:16px;position:relative}
+        .tracking-step::before{content:'';position:absolute;left:15px;top:40px;width:2px;height:calc(100% - 20px);background:#eee}
+        .tracking-step.completed::before{background:#c9a96e}
+        .tracking-dot{width:32px;height:32px;border-radius:50%;border:2px solid #eee;display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:700;flex-shrink:0;background:white;z-index:2;transition:all 0.3s}
+        .tracking-step.completed .tracking-dot{border-color:#c9a96e;background:#c9a96e;color:white}
+        .tracking-step.active .tracking-dot{border-color:#c9a96e;color:#c9a96e;animation:dotGlow 2s infinite}
+        @keyframes dotGlow{0%,100%{box-shadow:0 0 0 0 rgba(201,169,110,0.4)}50%{box-shadow:0 0 0 8px rgba(201,169,110,0)}}
 
-.promo-popup{position:fixed;top:50%;left:50%;transform:translate(-50%,-50%) scale(0.9);background:white;border-radius:24px;padding:0;z-index:300;opacity:0;pointer-events:none;transition:all 0.5s cubic-bezier(0.4,0,0.2,1);box-shadow:0 30px 80px rgba(0,0,0,0.3);overflow:hidden;max-width:500px;width:92%}
-.promo-popup.open{opacity:1;pointer-events:all;transform:translate(-50%,-50%) scale(1)}
-.promo-popup-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.6);z-index:299;opacity:0;pointer-events:none;transition:opacity 0.3s;backdrop-filter:blur(5px)}
-.promo-popup-overlay.open{opacity:1;pointer-events:all}
+        .promo-popup{position:fixed;top:50%;left:50%;transform:translate(-50%,-50%) scale(0.9);background:white;border-radius:24px;padding:0;z-index:300;opacity:0;pointer-events:none;transition:all 0.5s cubic-bezier(0.4,0,0.2,1);box-shadow:0 30px 80px rgba(0,0,0,0.3);overflow:hidden;max-width:500px;width:92%}
+        .promo-popup.open{opacity:1;pointer-events:all;transform:translate(-50%,-50%) scale(1)}
+        .promo-popup-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.6);z-index:299;opacity:0;pointer-events:none;transition:opacity 0.3s;backdrop-filter:blur(5px)}
+        .promo-popup-overlay.open{opacity:1;pointer-events:all}
 
-.quick-actions{position:fixed;bottom:100px;right:30px;z-index:90;display:flex;flex-direction:column;gap:12px}
-.quick-action-btn{width:50px;height:50px;border-radius:50%;background:white;border:1px solid rgba(201,169,110,0.2);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all 0.3s;box-shadow:0 4px 15px rgba(0,0,0,0.1);color:#666}
-.quick-action-btn:hover{background:#c9a96e;color:white;transform:scale(1.1);box-shadow:0 6px 20px rgba(201,169,110,0.3)}
+        .quick-actions{position:fixed;bottom:100px;right:30px;z-index:90;display:flex;flex-direction:column;gap:12px}
+        .quick-action-btn{width:50px;height:50px;border-radius:50%;background:white;border:1px solid rgba(201,169,110,0.2);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all 0.3s;box-shadow:0 4px 15px rgba(0,0,0,0.1);color:#666}
+        .quick-action-btn:hover{background:#c9a96e;color:white;transform:scale(1.1);box-shadow:0 6px 20px rgba(201,169,110,0.3)}
 
-.filter-sidebar{position:fixed;top:0;left:-350px;width:350px;height:100%;background:white;z-index:200;box-shadow:10px 0 40px rgba(0,0,0,0.1);transition:left 0.5s cubic-bezier(0.4,0,0.2,1);overflow-y:auto}
-.filter-sidebar.open{left:0}
-.filter-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.4);z-index:199;opacity:0;pointer-events:none;transition:opacity 0.3s}
-.filter-overlay.open{opacity:1;pointer-events:all}
+        .filter-sidebar{position:fixed;top:0;left:-350px;width:350px;height:100%;background:white;z-index:200;box-shadow:10px 0 40px rgba(0,0,0,0.1);transition:left 0.5s cubic-bezier(0.4,0,0.2,1);overflow-y:auto}
+        .filter-sidebar.open{left:0}
+        .filter-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.4);z-index:199;opacity:0;pointer-events:none;transition:opacity 0.3s}
+        .filter-overlay.open{opacity:1;pointer-events:all}
 
-.range-slider{position:relative;height:6px;background:#eee;border-radius:3px;margin:20px 0}
-.range-slider-fill{position:absolute;height:100%;background:#c9a96e;border-radius:3px}
-.range-slider-thumb{position:absolute;width:20px;height:20px;background:#c9a96e;border:3px solid white;border-radius:50%;top:50%;transform:translate(-50%,-50%);cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,0.15)}
+        .range-slider{position:relative;height:6px;background:#eee;border-radius:3px;margin:20px 0}
+        .range-slider-fill{position:absolute;height:100%;background:#c9a96e;border-radius:3px}
+        .range-slider-thumb{position:absolute;width:20px;height:20px;background:#c9a96e;border:3px solid white;border-radius:50%;top:50%;transform:translate(-50%,-50%);cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,0.15)}
 
-.color-swatch{width:28px;height:28px;border-radius:50%;cursor:pointer;border:2px solid transparent;transition:all 0.3s;position:relative}
-.color-swatch:hover{transform:scale(1.15)}
-.color-swatch.active{border-color:#0f0f0f;box-shadow:0 0 0 3px rgba(201,169,110,0.3)}
-.color-swatch.active::after{content:'\f00c';font-family:'Font Awesome 6 Free';font-weight:900;position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:white;font-size:0.65rem;text-shadow:0 1px 3px rgba(0,0,0,0.5)}
+        .color-swatch{width:28px;height:28px;border-radius:50%;cursor:pointer;border:2px solid transparent;transition:all 0.3s;position:relative}
+        .color-swatch:hover{transform:scale(1.15)}
+        .color-swatch.active{border-color:#0f0f0f;box-shadow:0 0 0 3px rgba(201,169,110,0.3)}
+        .color-swatch.active::after{content:'\f00c';font-family:'Font Awesome 6 Free';font-weight:900;position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:white;font-size:0.65rem;text-shadow:0 1px 3px rgba(0,0,0,0.5)}
 
-.badge-pulse{animation:badgePulse 2s infinite}
-@keyframes badgePulse{0%,100%{box-shadow:0 0 0 0 rgba(220,38,38,0.4)}50%{box-shadow:0 0 0 8px rgba(220,38,38,0)}}
+        .badge-pulse{animation:badgePulse 2s infinite}
+        @keyframes badgePulse{0%,100%{box-shadow:0 0 0 0 rgba(220,38,38,0.4)}50%{box-shadow:0 0 0 8px rgba(220,38,38,0)}}
 
-.nav-scrolled{background:rgba(245,240,235,0.98)!important;box-shadow:0 2px 20px rgba(0,0,0,0.06)!important}
+        .nav-scrolled{background:rgba(245,240,235,0.98)!important;box-shadow:0 2px 20px rgba(0,0,0,0.06)!important}
 
-.parallax-bg{will-change:transform}
+        .parallax-bg{will-change:transform}
 
-.text-reveal{overflow:hidden}
-.text-reveal span{display:inline-block;transform:translateY(100%);transition:transform 0.8s cubic-bezier(0.4,0,0.2,1)}
-.text-reveal.active span{transform:translateY(0)}
+        .text-reveal{overflow:hidden}
+        .text-reveal span{display:inline-block;transform:translateY(100%);transition:transform 0.8s cubic-bezier(0.4,0,0.2,1)}
+        .text-reveal.active span{transform:translateY(0)}
 
-.magnetic-btn{transition:transform 0.3s cubic-bezier(0.4,0,0.2,1)}
+        .magnetic-btn{transition:transform 0.3s cubic-bezier(0.4,0,0.2,1)}
 
-.glass{background:rgba(255,255,255,0.1);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.1)}
+        .glass{background:rgba(255,255,255,0.1);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.1)}
 
-.hover-lift{transition:all 0.4s cubic-bezier(0.4,0,0.2,1)}
-.hover-lift:hover{transform:translateY(-8px);box-shadow:0 20px 40px rgba(0,0,0,0.1)}
+        .hover-lift{transition:all 0.4s cubic-bezier(0.4,0,0.2,1)}
+        .hover-lift:hover{transform:translateY(-8px);box-shadow:0 20px 40px rgba(0,0,0,0.1)}
 
-.gradient-text{background:linear-gradient(135deg,#c9a96e,#e0c99a);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+        .gradient-text{background:linear-gradient(135deg,#c9a96e,#e0c99a);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 
-.story-img{position:relative;overflow:hidden;border-radius:20px}
-.story-img::after{content:'';position:absolute;inset:0;border:1px solid rgba(201,169,110,0.2);border-radius:20px;pointer-events:none}
+        .story-img{position:relative;overflow:hidden;border-radius:20px}
+        .story-img::after{content:'';position:absolute;inset:0;border:1px solid rgba(201,169,110,0.2);border-radius:20px;pointer-events:none}
 
-.sticky-add-cart{position:fixed;bottom:0;left:0;right:0;background:white;padding:16px 24px;box-shadow:0 -4px 20px rgba(0,0,0,0.08);z-index:90;transform:translateY(100%);transition:transform 0.4s cubic-bezier(0.4,0,0.2,1)}
-.sticky-add-cart.show{transform:translateY(0)}
+        .sticky-add-cart{position:fixed;bottom:0;left:0;right:0;background:white;padding:16px 24px;box-shadow:0 -4px 20px rgba(0,0,0,0.08);z-index:90;transform:translateY(100%);transition:transform 0.4s cubic-bezier(0.4,0,0.2,1)}
+        .sticky-add-cart.show{transform:translateY(0)}
 
-.whatsapp-btn{background:linear-gradient(135deg,#25D366,#128C7E);color:white}
-.whatsapp-btn:hover{background:linear-gradient(135deg,#128C7E,#075E54);transform:translateY(-2px);box-shadow:0 8px 25px rgba(37,211,102,0.3)}
-.whatsapp-float{position:fixed;bottom:30px;right:30px;z-index:100;width:60px;height:60px;background:linear-gradient(135deg,#25D366,#128C7E);border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 20px rgba(37,211,102,0.4);cursor:pointer;transition:all 0.3s;animation:whatsappPulse 2s infinite}
-.whatsapp-float:hover{transform:scale(1.1);box-shadow:0 8px 30px rgba(37,211,102,0.5)}
-@keyframes whatsappPulse{0%,100%{box-shadow:0 0 0 0 rgba(37,211,102,0.4)}50%{box-shadow:0 0 0 12px rgba(37,211,102,0)}}
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 150;
+            width: 60px;
+            height: 60px;
+            background: #25d366;
+            border-radius: 50%;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+            color: white;
+            font-size: 2rem;
+        }
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 30px rgba(37, 211, 102, 0.6);
+        }
+        .whatsapp-float .badge {
+            position: absolute;
+            top: -4px;
+            right: -4px;
+            background: #dc2626;
+            color: white;
+            font-size: 0.6rem;
+            font-weight: 700;
+            padding: 2px 6px;
+            border-radius: 12px;
+            border: 2px solid white;
+        }
 
-.logo-text{font-family:'Playfair Display',serif;font-weight:800;letter-spacing:1px;background:linear-gradient(135deg,#c9a96e,#e0c99a);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.logo-icon{width:44px;height:44px;background:linear-gradient(135deg,#c9a96e,#e0c99a);border-radius:12px;display:flex;align-items:center;justify-content:center;color:white;font-family:'Playfair Display',serif;font-weight:900;font-size:1.3rem;box-shadow:0 4px 15px rgba(201,169,110,0.3)}
-
-@media(max-width:768px){
-.hero-section{height:90vh}
-.loader-text{font-size:1.6rem;letter-spacing:4px}
-.cart-sidebar{width:100%;right:-100%}
-.wishlist-sidebar{width:100%;right:-100%}
-.account-modal .modal-content{width:95%;border-radius:16px}
-.search-input{font-size:1.5rem}
-.filter-sidebar{width:85%;left:-85%}
-.mobile-menu{width:85%}
-.floating-coupon{width:calc(100% - 40px);right:20px}
-.quick-actions{bottom:80px;right:15px}
-.recently-viewed{display:none}
-.whatsapp-float{bottom:20px;right:20px;width:55px;height:55px}
-}
-</style>
-<base target="_blank">
-<base target="_blank">
+        @media(max-width:768px){
+            .hero-section{height:90vh}
+            .cart-sidebar{width:100%;right:-100%}
+            .wishlist-sidebar{width:100%;right:-100%}
+            .account-modal .modal-content{width:95%;border-radius:16px}
+            .search-input{font-size:1.5rem}
+            .filter-sidebar{width:85%;left:-85%}
+            .mobile-menu{width:85%}
+            .floating-coupon{width:calc(100% - 40px);right:20px}
+            .quick-actions{bottom:80px;right:15px}
+            .recently-viewed{display:none}
+            .whatsapp-float{width:54px;height:54px;font-size:1.6rem;bottom:20px;right:20px}
+        }
+    </style>
+    <base target="_blank">
 </head>
 <body>
 
 <!-- LOADER -->
-<div class="l<div class="loader-overlay" id="loader" style="display:flex;" onclick="this.style.display='none'">
-    <div class="loader-logo">
-        <div class="loader-logo-inner">
-            <span style="font-family:'Playfair Display',serif;font-size:2.5rem;font-weight:900;color:white;">M</span>
-        </div>
-    </div>
-    <div class="loader-text">MODAvera</div>
-    <div class="loader-sub">Premium Butik Moda</div>
+<div class="loader-overlay" id="loader">
+    <div class="loader-logo-text">MODAvera</div>
+    <div class="loader-logo-sub">Premium Butik Moda</div>
     <div class="loader-bar"><div class="loader-progress"></div></div>
 </div>
 
@@ -321,16 +338,16 @@ html{scroll-behavior:smooth}
 <div class="bg-noir text-white py-2.5 px-4 text-center text-xs tracking-wider relative overflow-hidden">
     <div class="marquee-container">
         <div class="marquee-content">
-            <span class="inline-block px-8"><i class="fab fa-whatsapp mr-2 text-whatsapp"></i>WHATSAPP SİPARİŞ: +90 551 509 98 15</span>
             <span class="inline-block px-8"><i class="fas fa-truck mr-2 text-gold"></i>150 TL ÜZERİ KARGO ÜCRETSİZ</span>
             <span class="inline-block px-8"><i class="fas fa-undo mr-2 text-gold"></i>30 GÜN İÇİNDE KOLAY İADE</span>
             <span class="inline-block px-8"><i class="fas fa-shield-alt mr-2 text-gold"></i>%100 GÜVENLİ ALIŞVERİŞ</span>
             <span class="inline-block px-8"><i class="fas fa-gift mr-2 text-gold"></i>İLK SİPARİŞE ÖZEL %10 İNDİRİM: <span class="coupon-code" style="background:rgba(201,169,110,0.2);color:#c9a96e;padding:2px 8px;border-radius:4px;font-size:0.6rem;cursor:pointer;" onclick="copyCoupon('WELCOME10')">WELCOME10</span></span>
             <span class="inline-block px-8"><i class="fas fa-crown mr-2 text-gold"></i>VIP ÜYELERE EKSTRA %5 İNDİRİM</span>
-            <span class="inline-block px-8"><i class="fab fa-whatsapp mr-2 text-whatsapp"></i>WHATSAPP SİPARİŞ: +90 551 509 98 15</span>
             <span class="inline-block px-8"><i class="fas fa-truck mr-2 text-gold"></i>150 TL ÜZERİ KARGO ÜCRETSİZ</span>
             <span class="inline-block px-8"><i class="fas fa-undo mr-2 text-gold"></i>30 GÜN İÇİNDE KOLAY İADE</span>
             <span class="inline-block px-8"><i class="fas fa-shield-alt mr-2 text-gold"></i>%100 GÜVENLİ ALIŞVERİŞ</span>
+            <span class="inline-block px-8"><i class="fas fa-gift mr-2 text-gold"></i>İLK SİPARİŞE ÖZEL %10 İNDİRİM: <span class="coupon-code" style="background:rgba(201,169,110,0.2);color:#c9a96e;padding:2px 8px;border-radius:4px;font-size:0.6rem;cursor:pointer;" onclick="copyCoupon('WELCOME10')">WELCOME10</span></span>
+            <span class="inline-block px-8"><i class="fas fa-crown mr-2 text-gold"></i>VIP ÜYELERE EKSTRA %5 İNDİRİM</span>
         </div>
     </div>
 </div>
@@ -344,11 +361,11 @@ html{scroll-behavior:smooth}
                     <i class="fas fa-bars text-xl"></i>
                 </button>
                 <a href="#" class="flex items-center gap-3 group">
-                    <div class="logo-icon group-hover:shadow-lg group-hover:shadow-gold/30 transition-all">
-                        M
+                    <div class="w-11 h-11 bg-noir flex items-center justify-center rounded-xl overflow-hidden group-hover:shadow-lg group-hover:shadow-gold/20 transition-all">
+                        <span class="text-white font-serif text-2xl font-bold tracking-wide">M</span>
                     </div>
                     <div class="hidden sm:block">
-                        <h1 class="logo-text text-xl leading-none tracking-wide">MODAvera</h1>
+                        <h1 class="font-serif text-xl font-bold text-noir leading-none tracking-wide">MODAvera</h1>
                         <p class="text-[0.6rem] text-warm-gray tracking-[0.35em] uppercase font-medium">Premium Butik Moda</p>
                     </div>
                 </a>
@@ -417,7 +434,9 @@ html{scroll-behavior:smooth}
 <div class="mobile-menu" id="mobile-menu">
     <div class="p-6 border-b border-gray-100 flex justify-between items-center">
         <div class="flex items-center gap-3">
-            <div class="logo-icon" style="width:40px;height:40px;font-size:1.1rem;border-radius:10px;">M</div>
+            <div class="w-10 h-10 bg-noir flex items-center justify-center rounded-xl overflow-hidden">
+                <span class="text-white font-serif text-2xl font-bold tracking-wide">M</span>
+            </div>
             <span class="font-serif text-xl font-bold text-noir">MENÜ</span>
         </div>
         <button onclick="toggleMobileMenu()" class="text-noir hover:text-red-500 w-10 h-10 flex items-center justify-center rounded-lg hover:bg-gray-100 transition-colors"><i class="fas fa-times text-xl"></i></button>
@@ -432,10 +451,11 @@ html{scroll-behavior:smooth}
         <a href="#musteri-yorumlari" onclick="toggleMobileMenu()" class="block text-lg font-medium text-noir hover:text-gold transition-colors py-3 px-4 rounded-xl hover:bg-gray-50">YORUMLAR</a>
         <hr class="border-gray-100 my-4">
         <button onclick="toggleMobileMenu();openAccountModal();" class="block text-lg font-medium text-noir hover:text-gold transition-colors py-3 px-4 rounded-xl hover:bg-gray-50 text-left w-full"><i class="fas fa-user mr-3"></i> Hesabım</button>
-        <a href="https://wa.me/905515099815?text=Merhaba%20MODAvera%2C%20sipari%C5%9F%20vermek%20istiyorum." class="block text-lg font-medium text-whatsapp hover:text-green-700 transition-colors py-3 px-4 rounded-xl hover:bg-green-50 text-left w-full"><i class="fab fa-whatsapp mr-3"></i> WhatsApp Sipariş</a>
+        <a href="#" onclick="toggleMobileMenu();whatsappContact()" class="block text-lg font-medium text-noir hover:text-gold transition-colors py-3 px-4 rounded-xl hover:bg-gray-50 text-left w-full"><i class="fab fa-whatsapp mr-3 text-green-500"></i> WhatsApp ile İletişim</a>
         <a href="#" class="block text-sm text-warm-gray hover:text-gold py-2 px-4">Sipariş Takibi</a>
         <a href="#" class="block text-sm text-warm-gray hover:text-gold py-2 px-4">İade ve Değişim</a>
         <a href="#" class="block text-sm text-warm-gray hover:text-gold py-2 px-4">Beden Rehberi</a>
+        <a href="#" class="block text-sm text-warm-gray hover:text-gold py-2 px-4">Müşteri Hizmetleri</a>
     </div>
 </div>
 
@@ -464,7 +484,9 @@ html{scroll-behavior:smooth}
     <div class="modal-content">
         <div class="p-6 pb-4 flex justify-between items-center">
             <div class="flex items-center gap-3">
-                <div class="logo-icon" style="width:40px;height:40px;font-size:1.1rem;border-radius:10px;">M</div>
+                <div class="w-10 h-10 bg-noir flex items-center justify-center rounded-xl overflow-hidden">
+                    <span class="text-white font-serif text-2xl font-bold tracking-wide">M</span>
+                </div>
                 <h3 class="font-serif text-xl font-bold text-noir" id="auth-title">Giriş Yap</h3>
             </div>
             <button onclick="closeAccountModal()" class="text-noir hover:text-red-500 transition-colors w-10 h-10 flex items-center justify-center rounded-lg hover:bg-gray-100"><i class="fas fa-times text-xl"></i></button>
@@ -583,7 +605,7 @@ html{scroll-behavior:smooth}
         </div>
         <div class="p-6 bg-white">
             <div class="flex items-center justify-center gap-6 text-sm">
-                <span class="flex items-center gap-2 text-warm-gray"><i class="fab fa-whatsapp text-whatsapp text-lg"></i> WhatsApp Sipariş</span>
+                <span class="flex items-center gap-2 text-warm-gray"><i class="fas fa-truck text-gold"></i> Ücretsiz Kargo</span>
                 <span class="flex items-center gap-2 text-warm-gray"><i class="fas fa-undo text-gold"></i> Kolay İade</span>
                 <span class="flex items-center gap-2 text-warm-gray"><i class="fas fa-shield-alt text-gold"></i> Güvenli</span>
             </div>
@@ -604,8 +626,8 @@ html{scroll-behavior:smooth}
             <a href="#koleksiyon" class="bg-gold text-white px-10 py-4 text-sm font-semibold tracking-[0.2em] uppercase hover:bg-gold-light transition-all duration-300 rounded-full shadow-lg shadow-gold/20">
                 Koleksiyonu Keşfet <i class="fas fa-arrow-right ml-2"></i>
             </a>
-            <a href="https://wa.me/905515099815?text=Merhaba%20MODAvera%2C%20koleksiyonunuzu%20incelemek%20istiyorum." class="whatsapp-btn px-10 py-4 text-sm font-semibold tracking-[0.2em] uppercase transition-all duration-300 rounded-full flex items-center justify-center gap-2">
-                <i class="fab fa-whatsapp text-lg"></i> WhatsApp Sipariş
+            <a href="#cok-satanlar" class="border border-white/30 text-white px-10 py-4 text-sm font-semibold tracking-[0.2em] uppercase hover:bg-white hover:text-noir transition-all duration-300 rounded-full backdrop-blur-sm">
+                Çok Satanlar
             </a>
         </div>
         <div id="hero-stats" class="mt-16 grid grid-cols-3 gap-8 max-w-xl mx-auto">
@@ -635,17 +657,17 @@ html{scroll-behavior:smooth}
         <div class="grid grid-cols-2 md:grid-cols-4 gap-6 stagger-children">
             <div class="trust-badge flex flex-col items-center text-center p-5 rounded-2xl hover:bg-cream transition-colors">
                 <div class="w-14 h-14 bg-cream rounded-2xl flex items-center justify-center mb-4">
-                    <i class="fab fa-whatsapp text-whatsapp text-xl"></i>
-                </div>
-                <h3 class="font-semibold text-noir text-sm mb-1">WHATSAPP SİPARİŞ</h3>
-                <p class="text-xs text-warm-gray">+90 551 509 98 15</p>
-            </div>
-            <div class="trust-badge flex flex-col items-center text-center p-5 rounded-2xl hover:bg-cream transition-colors">
-                <div class="w-14 h-14 bg-cream rounded-2xl flex items-center justify-center mb-4">
                     <i class="fas fa-truck text-gold text-xl"></i>
                 </div>
                 <h3 class="font-semibold text-noir text-sm mb-1">HIZLI KARGO</h3>
                 <p class="text-xs text-warm-gray">24 Saatte Teslimat</p>
+            </div>
+            <div class="trust-badge flex flex-col items-center text-center p-5 rounded-2xl hover:bg-cream transition-colors">
+                <div class="w-14 h-14 bg-cream rounded-2xl flex items-center justify-center mb-4">
+                    <i class="fas fa-shield-alt text-gold text-xl"></i>
+                </div>
+                <h3 class="font-semibold text-noir text-sm mb-1">GÜVENLİ ÖDEME</h3>
+                <p class="text-xs text-warm-gray">256-bit SSL Şifreleme</p>
             </div>
             <div class="trust-badge flex flex-col items-center text-center p-5 rounded-2xl hover:bg-cream transition-colors">
                 <div class="w-14 h-14 bg-cream rounded-2xl flex items-center justify-center mb-4">
@@ -709,7 +731,6 @@ html{scroll-behavior:smooth}
             <button class="category-tab" onclick="filterCategory('saat', this)">Saat</button>
             <button class="category-tab" onclick="filterCategory('taki', this)">Takı</button>
             <button class="category-tab" onclick="filterCategory('aksesuar', this)">Aksesuar</button>
-            <button class="category-tab" onclick="filterCategory('ayakkabi', this)">Ayakkabı</button>
         </div>
     </div>
 </section>
@@ -733,7 +754,7 @@ html{scroll-behavior:smooth}
                     <img src="https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=400&q=80" alt="Saten Midi Elbise" class="product-img w-full h-80 object-cover">
                     <div class="quick-view">
                         <button onclick="quickView(1)" class="text-white text-sm hover:text-gold transition-colors flex items-center gap-2"><i class="fas fa-eye"></i> Hızlı Bakış</button>
-                        <button onclick="addToCart(1)" class="text-white text-sm hover:text-gold transition-colors flex items-center gap-2"><i class="fas fa-shopping-bag"></i> Sepete Ekle</button>
+                        <button onclick="orderViaWhatsApp(1)" class="text-white text-sm hover:text-gold transition-colors flex items-center gap-2"><i class="fab fa-whatsapp"></i> WhatsApp ile Sipariş</button>
                     </div>
                 </div>
                 <div class="p-5">
@@ -743,11 +764,11 @@ html{scroll-behavior:smooth}
                         <div class="star-rating text-xs text-gold"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
                         <span class="text-xs text-warm-gray">(324)</span>
                     </div>
-                    <div class="flex items-center gap-2 mb-3">
+                    <div class="flex items-center gap-2">
                         <span class="font-serif text-lg font-bold text-noir">1.299 TL</span>
                         <span class="text-sm text-warm-gray line-through">1.849 TL</span>
                     </div>
-                    <button onclick="quickView(1)" class="w-full whatsapp-btn py-2.5 rounded-lg text-sm font-semibold tracking-wide flex items-center justify-center gap-2"><i class="fab fa-whatsapp"></i> WhatsApp Sipariş</button>
+                    <button onclick="orderViaWhatsApp(1)" class="mt-3 w-full bg-green-500 text-white py-2 rounded-lg text-sm font-semibold hover:bg-green-600 transition-colors flex items-center justify-center gap-2"><i class="fab fa-whatsapp"></i> WhatsApp ile Sipariş</button>
                 </div>
             </div>
             <!-- Product 2: Blazer Ceket -->
@@ -755,10 +776,10 @@ html{scroll-behavior:smooth}
                 <div class="relative overflow-hidden rounded-t-xl">
                     <span class="badge-new">YENİ</span>
                     <button class="wishlist-btn" onclick="toggleWishlist(this,2)"><i class="fas fa-heart"></i></button>
-                    <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=400&q=80" alt="Keten Blazer" class="product-img w-full h-80 object-cover">
+                    <img src="https://kimi-web-img.moonshot.cn/img/www.frankyfashion.com/8bcad63c4ca2521a799000949d161324158b93ec.jpg" alt="Keten Blazer" class="product-img w-full h-80 object-cover">
                     <div class="quick-view">
                         <button onclick="quickView(2)" class="text-white text-sm hover:text-gold transition-colors flex items-center gap-2"><i class="fas fa-eye"></i> Hızlı Bakış</button>
-                        <button onclick="addToCart(2)" class="text-white text-sm hover:text-gold transition-colors flex items-center gap-2"><i class="fas fa-shopping-bag"></i> Sepete Ekle</button>
+                        <button onclick="orderViaWhatsApp(2)" class="text-white text-sm hover:text-gold transition-colors flex items-center gap-2"><i class="fab fa-whatsapp"></i> WhatsApp ile Sipariş</button>
                     </div>
                 </div>
                 <div class="p-5">
@@ -768,10 +789,10 @@ html{scroll-behavior:smooth}
                         <div class="star-rating text-xs text-gold"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div>
                         <span class="text-xs text-warm-gray">(189)</span>
                     </div>
-                    <div class="flex items-center gap-2 mb-3">
+                    <div class="flex items-center gap-2">
                         <span class="font-serif text-lg font-bold text-noir">1.599 TL</span>
                     </div>
-                    <button onclick="quickView(2)" class="w-full whatsapp-btn py-2.5 rounded-lg text-sm font-semibold tracking-wide flex items-center justify-center gap-2"><i class="fab fa-whatsapp"></i> WhatsApp Sipariş</button>
+                    <button onclick="orderViaWhatsApp(2)" class="mt-3 w-full bg-green-500 text-white py-2 rounded-lg text-sm font-semibold hover:bg-green-600 transition-colors flex items-center justify-center gap-2"><i class="fab fa-whatsapp"></i> WhatsApp ile Sipariş</button>
                 </div>
             </div>
             <!-- Product 3: İpek Gömlek -->
@@ -780,10 +801,10 @@ html{scroll-behavior:smooth}
                     <span class="badge-new">YENİ</span>
                     <span class="badge-sale">-%25</span>
                     <button class="wishlist-btn" onclick="toggleWishlist(this,3)"><i class="fas fa-heart"></i></button>
-                    <img src="https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?w=400&q=80" alt="Pamuklu Gömlek" class="product-img w-full h-80 object-cover">
+                    <img src="https://kimi-web-img.moonshot.cn/img/thomsweeney.com/07dee68db2b43e41d82e745af9d179e6123a03f0.jpg" alt="İpek Gömlek" class="product-img w-full h-80 object-cover">
                     <div class="quick-view">
                         <button onclick="quickView(3)" class="text-white text-sm hover:text-gold transition-colors flex items-center gap-2"><i class="fas fa-eye"></i> Hızlı Bakış</button>
-                        <button onclick="addToCart(3)" class="text-white text-sm hover:text-gold transition-colors flex items-center gap-2"><i class="fas fa-shopping-bag"></i> Sepete Ekle</button>
+                        <button onclick="orderViaWhatsApp(3)" class="text-white text-sm hover:text-gold transition-colors flex items-center gap-2"><i class="fab fa-whatsapp"></i> WhatsApp ile Sipariş</button>
                     </div>
                 </div>
                 <div class="p-5">
@@ -793,11 +814,11 @@ html{scroll-behavior:smooth}
                         <div class="star-rating text-xs text-gold"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
                         <span class="text-xs text-warm-gray">(256)</span>
                     </div>
-                    <div class="flex items-center gap-2 mb-3">
+                    <div class="flex items-center gap-2">
                         <span class="font-serif text-lg font-bold text-noir">849 TL</span>
                         <span class="text-sm text-warm-gray line-through">1.129 TL</span>
                     </div>
-                    <button onclick="quickView(3)" class="w-full whatsapp-btn py-2.5 rounded-lg text-sm font-semibold tracking-wide flex items-center justify-center gap-2"><i class="fab fa-whatsapp"></i> WhatsApp Sipariş</button>
+                    <button onclick="orderViaWhatsApp(3)" class="mt-3 w-full bg-green-500 text-white py-2 rounded-lg text-sm font-semibold hover:bg-green-600 transition-colors flex items-center justify-center gap-2"><i class="fab fa-whatsapp"></i> WhatsApp ile Sipariş</button>
                 </div>
             </div>
             <!-- Product 4: Wide Leg Pantolon -->
@@ -808,7 +829,7 @@ html{scroll-behavior:smooth}
                     <img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?w=400&q=80" alt="Wide Leg Pantolon" class="product-img w-full h-80 object-cover">
                     <div class="quick-view">
                         <button onclick="quickView(4)" class="text-white text-sm hover:text-gold transition-colors flex items-center gap-2"><i class="fas fa-eye"></i> Hızlı Bakış</button>
-                        <button onclick="addToCart(4)" class="text-white text-sm hover:text-gold transition-colors flex items-center gap-2"><i class="fas fa-shopping-bag"></i> Sepete Ekle</button>
+                        <button onclick="orderViaWhatsApp(4)" class="text-white text-sm hover:text-gold transition-colors flex items-center gap-2"><i class="fab fa-whatsapp"></i> WhatsApp ile Sipariş</button>
                     </div>
                 </div>
                 <div class="p-5">
@@ -818,10 +839,10 @@ html{scroll-behavior:smooth}
                         <div class="star-rating text-xs text-gold"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
                         <span class="text-xs text-warm-gray">(403)</span>
                     </div>
-                    <div class="flex items-center gap-2 mb-3">
+                    <div class="flex items-center gap-2">
                         <span class="font-serif text-lg font-bold text-noir">749 TL</span>
                     </div>
-                    <button onclick="quickView(4)" class="w-full whatsapp-btn py-2.5 rounded-lg text-sm font-semibold tracking-wide flex items-center justify-center gap-2"><i class="fab fa-whatsapp"></i> WhatsApp Sipariş</button>
+                    <button onclick="orderViaWhatsApp(4)" class="mt-3 w-full bg-green-500 text-white py-2 rounded-lg text-sm font-semibold hover:bg-green-600 transition-colors flex items-center justify-center gap-2"><i class="fab fa-whatsapp"></i> WhatsApp ile Sipariş</button>
                 </div>
             </div>
             <!-- Product 5: Deri Ceket -->
@@ -830,10 +851,10 @@ html{scroll-behavior:smooth}
                     <span class="badge-new">YENİ</span>
                     <span class="badge-limited">SON 3</span>
                     <button class="wishlist-btn" onclick="toggleWishlist(this,9)"><i class="fas fa-heart"></i></button>
-                    <img src="https://images.unsplash.com/photo-1551028719-00167b16eac5?w=400&q=80" alt="Deri Ceket" class="product-img w-full h-80 object-cover">
+                    <img src="https://kimi-web-img.moonshot.cn/img/cdn.shopify.com/74546d4c635e08c1dc638f3a82010dd10d9a22c9.jpg" alt="Deri Ceket" class="product-img w-full h-80 object-cover">
                     <div class="quick-view">
                         <button onclick="quickView(9)" class="text-white text-sm hover:text-gold transition-colors flex items-center gap-2"><i class="fas fa-eye"></i> Hızlı Bakış</button>
-                        <button onclick="addToCart(9)" class="text-white text-sm hover:text-gold transition-colors flex items-center gap-2"><i class="fas fa-shopping-bag"></i> Sepete Ekle</button>
+                        <button onclick="orderViaWhatsApp(9)" class="text-white text-sm hover:text-gold transition-colors flex items-center gap-2"><i class="fab fa-whatsapp"></i> WhatsApp ile Sipariş</button>
                     </div>
                 </div>
                 <div class="p-5">
@@ -843,11 +864,11 @@ html{scroll-behavior:smooth}
                         <div class="star-rating text-xs text-gold"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
                         <span class="text-xs text-warm-gray">(156)</span>
                     </div>
-                    <div class="flex items-center gap-2 mb-3">
+                    <div class="flex items-center gap-2">
                         <span class="font-serif text-lg font-bold text-noir">2.499 TL</span>
                         <span class="text-sm text-warm-gray line-through">3.299 TL</span>
                     </div>
-                    <button onclick="quickView(9)" class="w-full whatsapp-btn py-2.5 rounded-lg text-sm font-semibold tracking-wide flex items-center justify-center gap-2"><i class="fab fa-whatsapp"></i> WhatsApp Sipariş</button>
+                    <button onclick="orderViaWhatsApp(9)" class="mt-3 w-full bg-green-500 text-white py-2 rounded-lg text-sm font-semibold hover:bg-green-600 transition-colors flex items-center justify-center gap-2"><i class="fab fa-whatsapp"></i> WhatsApp ile Sipariş</button>
                 </div>
             </div>
             <!-- Product 6: Kol Saati -->
@@ -856,10 +877,10 @@ html{scroll-behavior:smooth}
                     <span class="badge-new">YENİ</span>
                     <span class="badge-sale">-%20</span>
                     <button class="wishlist-btn" onclick="toggleWishlist(this,10)"><i class="fas fa-heart"></i></button>
-                    <img src="https://images.unsplash.com/photo-1524592094714-0f0654e20314?w=400&q=80" alt="Kol Saati" class="product-img w-full h-80 object-cover">
+                    <img src="https://kimi-web-img.moonshot.cn/img/thumbs.dreamstime.com/dfdbcf02c987ed5b115bcab0e15c0700214f1371.jpg" alt="Kol Saati" class="product-img w-full h-80 object-cover">
                     <div class="quick-view">
                         <button onclick="quickView(10)" class="text-white text-sm hover:text-gold transition-colors flex items-center gap-2"><i class="fas fa-eye"></i> Hızlı Bakış</button>
-                        <button onclick="addToCart(10)" class="text-white text-sm hover:text-gold transition-colors flex items-center gap-2"><i class="fas fa-shopping-bag"></i> Sepete Ekle</button>
+                        <button onclick="orderViaWhatsApp(10)" class="text-white text-sm hover:text-gold transition-colors flex items-center gap-2"><i class="fab fa-whatsapp"></i> WhatsApp ile Sipariş</button>
                     </div>
                 </div>
                 <div class="p-5">
@@ -869,11 +890,11 @@ html{scroll-behavior:smooth}
                         <div class="star-rating text-xs text-gold"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div>
                         <span class="text-xs text-warm-gray">(89)</span>
                     </div>
-                    <div class="flex items-center gap-2 mb-3">
+                    <div class="flex items-center gap-2">
                         <span class="font-serif text-lg font-bold text-noir">1.899 TL</span>
                         <span class="text-sm text-warm-gray line-through">2.399 TL</span>
                     </div>
-                    <button onclick="quickView(10)" class="w-full whatsapp-btn py-2.5 rounded-lg text-sm font-semibold tracking-wide flex items-center justify-center gap-2"><i class="fab fa-whatsapp"></i> WhatsApp Sipariş</button>
+                    <button onclick="orderViaWhatsApp(10)" class="mt-3 w-full bg-green-500 text-white py-2 rounded-lg text-sm font-semibold hover:bg-green-600 transition-colors flex items-center justify-center gap-2"><i class="fab fa-whatsapp"></i> WhatsApp ile Sipariş</button>
                 </div>
             </div>
             <!-- Product 7: Altın Kolye -->
@@ -881,10 +902,10 @@ html{scroll-behavior:smooth}
                 <div class="relative overflow-hidden rounded-t-xl">
                     <span class="badge-new">YENİ</span>
                     <button class="wishlist-btn" onclick="toggleWishlist(this,11)"><i class="fas fa-heart"></i></button>
-                    <img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=400&q=80" alt="Altın Kolye" class="product-img w-full h-80 object-cover">
+                    <img src="https://kimi-web-img.moonshot.cn/img/cdn.eternz.com/be56c97bb1febf29b90f731746f0a10314414ebd.png" alt="Altın Kolye" class="product-img w-full h-80 object-cover">
                     <div class="quick-view">
                         <button onclick="quickView(11)" class="text-white text-sm hover:text-gold transition-colors flex items-center gap-2"><i class="fas fa-eye"></i> Hızlı Bakış</button>
-                        <button onclick="addToCart(11)" class="text-white text-sm hover:text-gold transition-colors flex items-center gap-2"><i class="fas fa-shopping-bag"></i> Sepete Ekle</button>
+                        <button onclick="orderViaWhatsApp(11)" class="text-white text-sm hover:text-gold transition-colors flex items-center gap-2"><i class="fab fa-whatsapp"></i> WhatsApp ile Sipariş</button>
                     </div>
                 </div>
                 <div class="p-5">
@@ -894,10 +915,10 @@ html{scroll-behavior:smooth}
                         <div class="star-rating text-xs text-gold"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
                         <span class="text-xs text-warm-gray">(212)</span>
                     </div>
-                    <div class="flex items-center gap-2 mb-3">
+                    <div class="flex items-center gap-2">
                         <span class="font-serif text-lg font-bold text-noir">649 TL</span>
                     </div>
-                    <button onclick="quickView(11)" class="w-full whatsapp-btn py-2.5 rounded-lg text-sm font-semibold tracking-wide flex items-center justify-center gap-2"><i class="fab fa-whatsapp"></i> WhatsApp Sipariş</button>
+                    <button onclick="orderViaWhatsApp(11)" class="mt-3 w-full bg-green-500 text-white py-2 rounded-lg text-sm font-semibold hover:bg-green-600 transition-colors flex items-center justify-center gap-2"><i class="fab fa-whatsapp"></i> WhatsApp ile Sipariş</button>
                 </div>
             </div>
             <!-- Product 8: İpek Fular -->
@@ -906,10 +927,10 @@ html{scroll-behavior:smooth}
                     <span class="badge-new">YENİ</span>
                     <span class="badge-sale">-%35</span>
                     <button class="wishlist-btn" onclick="toggleWishlist(this,12)"><i class="fas fa-heart"></i></button>
-                    <img src="https://images.unsplash.com/photo-1584030373081-f37b7bb4fa33?w=400&q=80" alt="İpek Fular" class="product-img w-full h-80 object-cover">
+                    <img src="https://kimi-web-img.moonshot.cn/img/image.made-in-china.com/600b16c643e149901e4bd0780476776417b8823c.webp" alt="İpek Fular" class="product-img w-full h-80 object-cover">
                     <div class="quick-view">
                         <button onclick="quickView(12)" class="text-white text-sm hover:text-gold transition-colors flex items-center gap-2"><i class="fas fa-eye"></i> Hızlı Bakış</button>
-                        <button onclick="addToCart(12)" class="text-white text-sm hover:text-gold transition-colors flex items-center gap-2"><i class="fas fa-shopping-bag"></i> Sepete Ekle</button>
+                        <button onclick="orderViaWhatsApp(12)" class="text-white text-sm hover:text-gold transition-colors flex items-center gap-2"><i class="fab fa-whatsapp"></i> WhatsApp ile Sipariş</button>
                     </div>
                 </div>
                 <div class="p-5">
@@ -919,11 +940,11 @@ html{scroll-behavior:smooth}
                         <div class="star-rating text-xs text-gold"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
                         <span class="text-xs text-warm-gray">(178)</span>
                     </div>
-                    <div class="flex items-center gap-2 mb-3">
+                    <div class="flex items-center gap-2">
                         <span class="font-serif text-lg font-bold text-noir">399 TL</span>
                         <span class="text-sm text-warm-gray line-through">599 TL</span>
                     </div>
-                    <button onclick="quickView(12)" class="w-full whatsapp-btn py-2.5 rounded-lg text-sm font-semibold tracking-wide flex items-center justify-center gap-2"><i class="fab fa-whatsapp"></i> WhatsApp Sipariş</button>
+                    <button onclick="orderViaWhatsApp(12)" class="mt-3 w-full bg-green-500 text-white py-2 rounded-lg text-sm font-semibold hover:bg-green-600 transition-colors flex items-center justify-center gap-2"><i class="fab fa-whatsapp"></i> WhatsApp ile Sipariş</button>
                 </div>
             </div>
         </div>
@@ -950,10 +971,10 @@ html{scroll-behavior:smooth}
                 <div class="relative overflow-hidden rounded-t-xl">
                     <span class="badge-new">YENİ</span>
                     <button class="wishlist-btn" onclick="toggleWishlist(this,13)"><i class="fas fa-heart"></i></button>
-                    <img src="https://images.unsplash.com/photo-1625910513413-5fc4e5e6727e?w=400&q=80" alt="Polo Yaka" class="product-img w-full h-80 object-cover">
+                    <img src="https://kimi-web-img.moonshot.cn/img/cdn.shopify.com/0bd1f3b2ce2943a9a6c17a0c798792a7ad82949f.jpg" alt="Polo Yaka" class="product-img w-full h-80 object-cover">
                     <div class="quick-view">
                         <button onclick="quickView(13)" class="text-white text-sm hover:text-gold transition-colors flex items-center gap-2"><i class="fas fa-eye"></i> Hızlı Bakış</button>
-                        <button onclick="addToCart(13)" class="text-white text-sm hover:text-gold transition-colors flex items-center gap-2"><i class="fas fa-shopping-bag"></i> Sepete Ekle</button>
+                        <button onclick="orderViaWhatsApp(13)" class="text-white text-sm hover:text-gold transition-colors flex items-center gap-2"><i class="fab fa-whatsapp"></i> WhatsApp ile Sipariş</button>
                     </div>
                 </div>
                 <div class="p-5">
@@ -963,10 +984,10 @@ html{scroll-behavior:smooth}
                         <div class="star-rating text-xs text-gold"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
                         <span class="text-xs text-warm-gray">(267)</span>
                     </div>
-                    <div class="flex items-center gap-2 mb-3">
+                    <div class="flex items-center gap-2">
                         <span class="font-serif text-lg font-bold text-noir">549 TL</span>
                     </div>
-                    <button onclick="quickView(13)" class="w-full whatsapp-btn py-2.5 rounded-lg text-sm font-semibold tracking-wide flex items-center justify-center gap-2"><i class="fab fa-whatsapp"></i> WhatsApp Sipariş</button>
+                    <button onclick="orderViaWhatsApp(13)" class="mt-3 w-full bg-green-500 text-white py-2 rounded-lg text-sm font-semibold hover:bg-green-600 transition-colors flex items-center justify-center gap-2"><i class="fab fa-whatsapp"></i> WhatsApp ile Sipariş</button>
                 </div>
             </div>
             <!-- Men's Product 2: Chino -->
@@ -975,10 +996,10 @@ html{scroll-behavior:smooth}
                     <span class="badge-new">YENİ</span>
                     <span class="badge-sale">-%15</span>
                     <button class="wishlist-btn" onclick="toggleWishlist(this,14)"><i class="fas fa-heart"></i></button>
-                    <img src="https://images.unsplash.com/photo-1473966968600-fa801b869a1a?w=400&q=80" alt="Chino Pantolon" class="product-img w-full h-80 object-cover">
+                    <img src="https://kimi-web-img.moonshot.cn/img/www.lepantalon.com/3729b2f59460e31fd223d3ddf6a3c043dc9a4726.jpg" alt="Chino Pantolon" class="product-img w-full h-80 object-cover">
                     <div class="quick-view">
                         <button onclick="quickView(14)" class="text-white text-sm hover:text-gold transition-colors flex items-center gap-2"><i class="fas fa-eye"></i> Hızlı Bakış</button>
-                        <button onclick="addToCart(14)" class="text-white text-sm hover:text-gold transition-colors flex items-center gap-2"><i class="fas fa-shopping-bag"></i> Sepete Ekle</button>
+                        <button onclick="orderViaWhatsApp(14)" class="text-white text-sm hover:text-gold transition-colors flex items-center gap-2"><i class="fab fa-whatsapp"></i> WhatsApp ile Sipariş</button>
                     </div>
                 </div>
                 <div class="p-5">
@@ -988,11 +1009,11 @@ html{scroll-behavior:smooth}
                         <div class="star-rating text-xs text-gold"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div>
                         <span class="text-xs text-warm-gray">(198)</span>
                     </div>
-                    <div class="flex items-center gap-2 mb-3">
+                    <div class="flex items-center gap-2">
                         <span class="font-serif text-lg font-bold text-noir">699 TL</span>
                         <span class="text-sm text-warm-gray line-through">799 TL</span>
                     </div>
-                    <button onclick="quickView(14)" class="w-full whatsapp-btn py-2.5 rounded-lg text-sm font-semibold tracking-wide flex items-center justify-center gap-2"><i class="fab fa-whatsapp"></i> WhatsApp Sipariş</button>
+                    <button onclick="orderViaWhatsApp(14)" class="mt-3 w-full bg-green-500 text-white py-2 rounded-lg text-sm font-semibold hover:bg-green-600 transition-colors flex items-center justify-center gap-2"><i class="fab fa-whatsapp"></i> WhatsApp ile Sipariş</button>
                 </div>
             </div>
             <!-- Men's Product 3: Cashmere -->
@@ -1000,10 +1021,10 @@ html{scroll-behavior:smooth}
                 <div class="relative overflow-hidden rounded-t-xl">
                     <span class="badge-bestseller">ÇOK SATAN</span>
                     <button class="wishlist-btn" onclick="toggleWishlist(this,15)"><i class="fas fa-heart"></i></button>
-                    <img src="https://images.unsplash.com/photo-1631541909061-71e349d1f203?w=400&q=80" alt="Kaşmir Kazak" class="product-img w-full h-80 object-cover">
+                    <img src="https://kimi-web-img.moonshot.cn/img/www.kashmina.com/d1cde9d1e8df8aef5cb8836bd519320abc21f569.jpg" alt="Kaşmir Kazak" class="product-img w-full h-80 object-cover">
                     <div class="quick-view">
                         <button onclick="quickView(15)" class="text-white text-sm hover:text-gold transition-colors flex items-center gap-2"><i class="fas fa-eye"></i> Hızlı Bakış</button>
-                        <button onclick="addToCart(15)" class="text-white text-sm hover:text-gold transition-colors flex items-center gap-2"><i class="fas fa-shopping-bag"></i> Sepete Ekle</button>
+                        <button onclick="orderViaWhatsApp(15)" class="text-white text-sm hover:text-gold transition-colors flex items-center gap-2"><i class="fab fa-whatsapp"></i> WhatsApp ile Sipariş</button>
                     </div>
                 </div>
                 <div class="p-5">
@@ -1013,10 +1034,10 @@ html{scroll-behavior:smooth}
                         <div class="star-rating text-xs text-gold"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
                         <span class="text-xs text-warm-gray">(445)</span>
                     </div>
-                    <div class="flex items-center gap-2 mb-3">
+                    <div class="flex items-center gap-2">
                         <span class="font-serif text-lg font-bold text-noir">1.299 TL</span>
                     </div>
-                    <button onclick="quickView(15)" class="w-full whatsapp-btn py-2.5 rounded-lg text-sm font-semibold tracking-wide flex items-center justify-center gap-2"><i class="fab fa-whatsapp"></i> WhatsApp Sipariş</button>
+                    <button onclick="orderViaWhatsApp(15)" class="mt-3 w-full bg-green-500 text-white py-2 rounded-lg text-sm font-semibold hover:bg-green-600 transition-colors flex items-center justify-center gap-2"><i class="fab fa-whatsapp"></i> WhatsApp ile Sipariş</button>
                 </div>
             </div>
             <!-- Men's Product 4: Denim Jacket -->
@@ -1024,10 +1045,10 @@ html{scroll-behavior:smooth}
                 <div class="relative overflow-hidden rounded-t-xl">
                     <span class="badge-new">YENİ</span>
                     <button class="wishlist-btn" onclick="toggleWishlist(this,16)"><i class="fas fa-heart"></i></button>
-                    <img src="https://images.unsplash.com/photo-1576871337632-b9aef4c17ab9?w=400&q=80" alt="Denim Ceket" class="product-img w-full h-80 object-cover">
+                    <img src="https://kimi-web-img.moonshot.cn/img/www.urbanofashion.com/c7d5ff94521d2789f33e10fdb9a1a7a3665f8d41.jpg" alt="Denim Ceket" class="product-img w-full h-80 object-cover">
                     <div class="quick-view">
                         <button onclick="quickView(16)" class="text-white text-sm hover:text-gold transition-colors flex items-center gap-2"><i class="fas fa-eye"></i> Hızlı Bakış</button>
-                        <button onclick="addToCart(16)" class="text-white text-sm hover:text-gold transition-colors flex items-center gap-2"><i class="fas fa-shopping-bag"></i> Sepete Ekle</button>
+                        <button onclick="orderViaWhatsApp(16)" class="text-white text-sm hover:text-gold transition-colors flex items-center gap-2"><i class="fab fa-whatsapp"></i> WhatsApp ile Sipariş</button>
                     </div>
                 </div>
                 <div class="p-5">
@@ -1037,10 +1058,10 @@ html{scroll-behavior:smooth}
                         <div class="star-rating text-xs text-gold"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div>
                         <span class="text-xs text-warm-gray">(312)</span>
                     </div>
-                    <div class="flex items-center gap-2 mb-3">
+                    <div class="flex items-center gap-2">
                         <span class="font-serif text-lg font-bold text-noir">999 TL</span>
                     </div>
-                    <button onclick="quickView(16)" class="w-full whatsapp-btn py-2.5 rounded-lg text-sm font-semibold tracking-wide flex items-center justify-center gap-2"><i class="fab fa-whatsapp"></i> WhatsApp Sipariş</button>
+                    <button onclick="orderViaWhatsApp(16)" class="mt-3 w-full bg-green-500 text-white py-2 rounded-lg text-sm font-semibold hover:bg-green-600 transition-colors flex items-center justify-center gap-2"><i class="fab fa-whatsapp"></i> WhatsApp ile Sipariş</button>
                 </div>
             </div>
         </div>
@@ -1063,10 +1084,10 @@ html{scroll-behavior:smooth}
                     <span class="badge-new">YENİ</span>
                     <span class="badge-sale">-%25</span>
                     <button class="wishlist-btn" onclick="toggleWishlist(this,17)"><i class="fas fa-heart"></i></button>
-                    <img src="https://images.unsplash.com/photo-1566174053879-31528523f8ae?w=400&q=80" alt="Kokteyl Elbise" class="product-img w-full h-80 object-cover">
+                    <img src="https://kimi-web-img.moonshot.cn/img/32ab338ef8d26dbd1291-8aa6ff30dda6ecf614adfd24686123cd.ssl.cf2.rackcdn.com/295fc7f7e1e3a353d2a1074a4e5fa6f0bbf47923.717958455_type_hugerect_nid_3393105_uid_523275_0" alt="Kokteyl Elbise" class="product-img w-full h-80 object-cover">
                     <div class="quick-view">
                         <button onclick="quickView(17)" class="text-white text-sm hover:text-gold transition-colors flex items-center gap-2"><i class="fas fa-eye"></i> Hızlı Bakış</button>
-                        <button onclick="addToCart(17)" class="text-white text-sm hover:text-gold transition-colors flex items-center gap-2"><i class="fas fa-shopping-bag"></i> Sepete Ekle</button>
+                        <button onclick="orderViaWhatsApp(17)" class="text-white text-sm hover:text-gold transition-colors flex items-center gap-2"><i class="fab fa-whatsapp"></i> WhatsApp ile Sipariş</button>
                     </div>
                 </div>
                 <div class="p-5">
@@ -1076,22 +1097,22 @@ html{scroll-behavior:smooth}
                         <div class="star-rating text-xs text-gold"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
                         <span class="text-xs text-warm-gray">(189)</span>
                     </div>
-                    <div class="flex items-center gap-2 mb-3">
+                    <div class="flex items-center gap-2">
                         <span class="font-serif text-lg font-bold text-noir">1.599 TL</span>
                         <span class="text-sm text-warm-gray line-through">2.099 TL</span>
                     </div>
-                    <button onclick="quickView(17)" class="w-full whatsapp-btn py-2.5 rounded-lg text-sm font-semibold tracking-wide flex items-center justify-center gap-2"><i class="fab fa-whatsapp"></i> WhatsApp Sipariş</button>
+                    <button onclick="orderViaWhatsApp(17)" class="mt-3 w-full bg-green-500 text-white py-2 rounded-lg text-sm font-semibold hover:bg-green-600 transition-colors flex items-center justify-center gap-2"><i class="fab fa-whatsapp"></i> WhatsApp ile Sipariş</button>
                 </div>
             </div>
             <!-- Women's Product 2: High Heels -->
-            <div class="product-card shadow-sm border border-gray-100" data-product-id="18" data-category="ayakkabi">
+            <div class="product-card shadow-sm border border-gray-100" data-product-id="18" data-category="kadin">
                 <div class="relative overflow-hidden rounded-t-xl">
                     <span class="badge-new">YENİ</span>
                     <button class="wishlist-btn" onclick="toggleWishlist(this,18)"><i class="fas fa-heart"></i></button>
-                    <img src="https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=400&q=80" alt="Stiletto" class="product-img w-full h-80 object-cover">
+                    <img src="https://kimi-web-img.moonshot.cn/img/www.wittner.com.au/64c88ac91df45576ff2738f0ce4a42723ad081ee.jpg" alt="Stiletto" class="product-img w-full h-80 object-cover">
                     <div class="quick-view">
                         <button onclick="quickView(18)" class="text-white text-sm hover:text-gold transition-colors flex items-center gap-2"><i class="fas fa-eye"></i> Hızlı Bakış</button>
-                        <button onclick="addToCart(18)" class="text-white text-sm hover:text-gold transition-colors flex items-center gap-2"><i class="fas fa-shopping-bag"></i> Sepete Ekle</button>
+                        <button onclick="orderViaWhatsApp(18)" class="text-white text-sm hover:text-gold transition-colors flex items-center gap-2"><i class="fab fa-whatsapp"></i> WhatsApp ile Sipariş</button>
                     </div>
                 </div>
                 <div class="p-5">
@@ -1101,10 +1122,10 @@ html{scroll-behavior:smooth}
                         <div class="star-rating text-xs text-gold"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div>
                         <span class="text-xs text-warm-gray">(234)</span>
                     </div>
-                    <div class="flex items-center gap-2 mb-3">
+                    <div class="flex items-center gap-2">
                         <span class="font-serif text-lg font-bold text-noir">1.199 TL</span>
                     </div>
-                    <button onclick="quickView(18)" class="w-full whatsapp-btn py-2.5 rounded-lg text-sm font-semibold tracking-wide flex items-center justify-center gap-2"><i class="fab fa-whatsapp"></i> WhatsApp Sipariş</button>
+                    <button onclick="orderViaWhatsApp(18)" class="mt-3 w-full bg-green-500 text-white py-2 rounded-lg text-sm font-semibold hover:bg-green-600 transition-colors flex items-center justify-center gap-2"><i class="fab fa-whatsapp"></i> WhatsApp ile Sipariş</button>
                 </div>
             </div>
             <!-- Women's Product 3: Leather Belt -->
@@ -1112,10 +1133,10 @@ html{scroll-behavior:smooth}
                 <div class="relative overflow-hidden rounded-t-xl">
                     <span class="badge-new">YENİ</span>
                     <button class="wishlist-btn" onclick="toggleWishlist(this,19)"><i class="fas fa-heart"></i></button>
-                    <img src="https://images.unsplash.com/photo-1624222247344-550fb60583dc?w=400&q=80" alt="Deri Kemer" class="product-img w-full h-80 object-cover">
+                    <img src="https://kimi-web-img.moonshot.cn/img/azbelt.com/35d7d759188d170d6005d38620b8f12737b6c96e.jpg" alt="Deri Kemer" class="product-img w-full h-80 object-cover">
                     <div class="quick-view">
                         <button onclick="quickView(19)" class="text-white text-sm hover:text-gold transition-colors flex items-center gap-2"><i class="fas fa-eye"></i> Hızlı Bakış</button>
-                        <button onclick="addToCart(19)" class="text-white text-sm hover:text-gold transition-colors flex items-center gap-2"><i class="fas fa-shopping-bag"></i> Sepete Ekle</button>
+                        <button onclick="orderViaWhatsApp(19)" class="text-white text-sm hover:text-gold transition-colors flex items-center gap-2"><i class="fab fa-whatsapp"></i> WhatsApp ile Sipariş</button>
                     </div>
                 </div>
                 <div class="p-5">
@@ -1125,10 +1146,10 @@ html{scroll-behavior:smooth}
                         <div class="star-rating text-xs text-gold"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
                         <span class="text-xs text-warm-gray">(156)</span>
                     </div>
-                    <div class="flex items-center gap-2 mb-3">
+                    <div class="flex items-center gap-2">
                         <span class="font-serif text-lg font-bold text-noir">349 TL</span>
                     </div>
-                    <button onclick="quickView(19)" class="w-full whatsapp-btn py-2.5 rounded-lg text-sm font-semibold tracking-wide flex items-center justify-center gap-2"><i class="fab fa-whatsapp"></i> WhatsApp Sipariş</button>
+                    <button onclick="orderViaWhatsApp(19)" class="mt-3 w-full bg-green-500 text-white py-2 rounded-lg text-sm font-semibold hover:bg-green-600 transition-colors flex items-center justify-center gap-2"><i class="fab fa-whatsapp"></i> WhatsApp ile Sipariş</button>
                 </div>
             </div>
             <!-- Women's Product 4: Leather Wallet -->
@@ -1137,10 +1158,10 @@ html{scroll-behavior:smooth}
                     <span class="badge-bestseller">ÇOK SATAN</span>
                     <span class="badge-sale">-%20</span>
                     <button class="wishlist-btn" onclick="toggleWishlist(this,20)"><i class="fas fa-heart"></i></button>
-                    <img src="https://images.unsplash.com/photo-1627123424574-724758594e93?w=400&q=80" alt="Deri Cüzdan" class="product-img w-full h-80 object-cover">
+                    <img src="https://kimi-web-img.moonshot.cn/img/gusti-leather.com/01004d22d24bdc2dcc5603c8227fd31be1b76b12.jpg" alt="Deri Cüzdan" class="product-img w-full h-80 object-cover">
                     <div class="quick-view">
                         <button onclick="quickView(20)" class="text-white text-sm hover:text-gold transition-colors flex items-center gap-2"><i class="fas fa-eye"></i> Hızlı Bakış</button>
-                        <button onclick="addToCart(20)" class="text-white text-sm hover:text-gold transition-colors flex items-center gap-2"><i class="fas fa-shopping-bag"></i> Sepete Ekle</button>
+                        <button onclick="orderViaWhatsApp(20)" class="text-white text-sm hover:text-gold transition-colors flex items-center gap-2"><i class="fab fa-whatsapp"></i> WhatsApp ile Sipariş</button>
                     </div>
                 </div>
                 <div class="p-5">
@@ -1150,11 +1171,11 @@ html{scroll-behavior:smooth}
                         <div class="star-rating text-xs text-gold"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
                         <span class="text-xs text-warm-gray">(298)</span>
                     </div>
-                    <div class="flex items-center gap-2 mb-3">
+                    <div class="flex items-center gap-2">
                         <span class="font-serif text-lg font-bold text-noir">499 TL</span>
                         <span class="text-sm text-warm-gray line-through">599 TL</span>
                     </div>
-                    <button onclick="quickView(20)" class="w-full whatsapp-btn py-2.5 rounded-lg text-sm font-semibold tracking-wide flex items-center justify-center gap-2"><i class="fab fa-whatsapp"></i> WhatsApp Sipariş</button>
+                    <button onclick="orderViaWhatsApp(20)" class="mt-3 w-full bg-green-500 text-white py-2 rounded-lg text-sm font-semibold hover:bg-green-600 transition-colors flex items-center justify-center gap-2"><i class="fab fa-whatsapp"></i> WhatsApp ile Sipariş</button>
                 </div>
             </div>
         </div>
@@ -1177,10 +1198,10 @@ html{scroll-behavior:smooth}
                     <span class="badge-new">YENİ</span>
                     <span class="badge-limited">SON 5</span>
                     <button class="wishlist-btn" onclick="toggleWishlist(this,21)"><i class="fas fa-heart"></i></button>
-                    <img src="https://images.unsplash.com/photo-1522312346375-d1a52e2b99b3?w=400&q=80" alt="Kronograf Saat" class="product-img w-full h-80 object-cover">
+                    <img src="https://kimi-web-img.moonshot.cn/img/m.media-amazon.com/8b4914c7d33293ae3386e21b8838537670aa636d.jpg" alt="Kronograf Saat" class="product-img w-full h-80 object-cover">
                     <div class="quick-view">
                         <button onclick="quickView(21)" class="text-white text-sm hover:text-gold transition-colors flex items-center gap-2"><i class="fas fa-eye"></i> Hızlı Bakış</button>
-                        <button onclick="addToCart(21)" class="text-white text-sm hover:text-gold transition-colors flex items-center gap-2"><i class="fas fa-shopping-bag"></i> Sepete Ekle</button>
+                        <button onclick="orderViaWhatsApp(21)" class="text-white text-sm hover:text-gold transition-colors flex items-center gap-2"><i class="fab fa-whatsapp"></i> WhatsApp ile Sipariş</button>
                     </div>
                 </div>
                 <div class="p-5">
@@ -1190,10 +1211,10 @@ html{scroll-behavior:smooth}
                         <div class="star-rating text-xs text-gold"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
                         <span class="text-xs text-warm-gray">(312)</span>
                     </div>
-                    <div class="flex items-center gap-2 mb-3">
+                    <div class="flex items-center gap-2">
                         <span class="font-serif text-lg font-bold text-noir">2.299 TL</span>
                     </div>
-                    <button onclick="quickView(21)" class="w-full whatsapp-btn py-2.5 rounded-lg text-sm font-semibold tracking-wide flex items-center justify-center gap-2"><i class="fab fa-whatsapp"></i> WhatsApp Sipariş</button>
+                    <button onclick="orderViaWhatsApp(21)" class="mt-3 w-full bg-green-500 text-white py-2 rounded-lg text-sm font-semibold hover:bg-green-600 transition-colors flex items-center justify-center gap-2"><i class="fab fa-whatsapp"></i> WhatsApp ile Sipariş</button>
                 </div>
             </div>
             <!-- Jewelry 1: Gold Earrings -->
@@ -1201,10 +1222,10 @@ html{scroll-behavior:smooth}
                 <div class="relative overflow-hidden rounded-t-xl">
                     <span class="badge-new">YENİ</span>
                     <button class="wishlist-btn" onclick="toggleWishlist(this,22)"><i class="fas fa-heart"></i></button>
-                    <img src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=400&q=80" alt="Küpe" class="product-img w-full h-80 object-cover">
+                    <img src="https://kimi-web-img.moonshot.cn/img/trendia.co/3f113a9a5fe2587170d27f5f6e6133877c3646ad.jpg" alt="Küpe" class="product-img w-full h-80 object-cover">
                     <div class="quick-view">
                         <button onclick="quickView(22)" class="text-white text-sm hover:text-gold transition-colors flex items-center gap-2"><i class="fas fa-eye"></i> Hızlı Bakış</button>
-                        <button onclick="addToCart(22)" class="text-white text-sm hover:text-gold transition-colors flex items-center gap-2"><i class="fas fa-shopping-bag"></i> Sepete Ekle</button>
+                        <button onclick="orderViaWhatsApp(22)" class="text-white text-sm hover:text-gold transition-colors flex items-center gap-2"><i class="fab fa-whatsapp"></i> WhatsApp ile Sipariş</button>
                     </div>
                 </div>
                 <div class="p-5">
@@ -1214,10 +1235,10 @@ html{scroll-behavior:smooth}
                         <div class="star-rating text-xs text-gold"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div>
                         <span class="text-xs text-warm-gray">(178)</span>
                     </div>
-                    <div class="flex items-center gap-2 mb-3">
+                    <div class="flex items-center gap-2">
                         <span class="font-serif text-lg font-bold text-noir">449 TL</span>
                     </div>
-                    <button onclick="quickView(22)" class="w-full whatsapp-btn py-2.5 rounded-lg text-sm font-semibold tracking-wide flex items-center justify-center gap-2"><i class="fab fa-whatsapp"></i> WhatsApp Sipariş</button>
+                    <button onclick="orderViaWhatsApp(22)" class="mt-3 w-full bg-green-500 text-white py-2 rounded-lg text-sm font-semibold hover:bg-green-600 transition-colors flex items-center justify-center gap-2"><i class="fab fa-whatsapp"></i> WhatsApp ile Sipariş</button>
                 </div>
             </div>
             <!-- Watch 2: Luxury Set -->
@@ -1226,10 +1247,10 @@ html{scroll-behavior:smooth}
                     <span class="badge-bestseller">ÇOK SATAN</span>
                     <span class="badge-sale">-%30</span>
                     <button class="wishlist-btn" onclick="toggleWishlist(this,23)"><i class="fas fa-heart"></i></button>
-                    <img src="https://images.unsplash.com/photo-1614164185128-e4ec99c436d7?w=400&q=80" alt="Saat Seti" class="product-img w-full h-80 object-cover">
+                    <img src="https://kimi-web-img.moonshot.cn/img/www.shutterstock.com/171ad8b234b965182a7fc95d3efca5283a5e2e40.jpg" alt="Saat Seti" class="product-img w-full h-80 object-cover">
                     <div class="quick-view">
                         <button onclick="quickView(23)" class="text-white text-sm hover:text-gold transition-colors flex items-center gap-2"><i class="fas fa-eye"></i> Hızlı Bakış</button>
-                        <button onclick="addToCart(23)" class="text-white text-sm hover:text-gold transition-colors flex items-center gap-2"><i class="fas fa-shopping-bag"></i> Sepete Ekle</button>
+                        <button onclick="orderViaWhatsApp(23)" class="text-white text-sm hover:text-gold transition-colors flex items-center gap-2"><i class="fab fa-whatsapp"></i> WhatsApp ile Sipariş</button>
                     </div>
                 </div>
                 <div class="p-5">
@@ -1239,22 +1260,22 @@ html{scroll-behavior:smooth}
                         <div class="star-rating text-xs text-gold"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
                         <span class="text-xs text-warm-gray">(89)</span>
                     </div>
-                    <div class="flex items-center gap-2 mb-3">
+                    <div class="flex items-center gap-2">
                         <span class="font-serif text-lg font-bold text-noir">4.999 TL</span>
                         <span class="text-sm text-warm-gray line-through">6.999 TL</span>
                     </div>
-                    <button onclick="quickView(23)" class="w-full whatsapp-btn py-2.5 rounded-lg text-sm font-semibold tracking-wide flex items-center justify-center gap-2"><i class="fab fa-whatsapp"></i> WhatsApp Sipariş</button>
+                    <button onclick="orderViaWhatsApp(23)" class="mt-3 w-full bg-green-500 text-white py-2 rounded-lg text-sm font-semibold hover:bg-green-600 transition-colors flex items-center justify-center gap-2"><i class="fab fa-whatsapp"></i> WhatsApp ile Sipariş</button>
                 </div>
             </div>
             <!-- Men's Shoes: Oxford -->
-            <div class="product-card shadow-sm border border-gray-100" data-product-id="24" data-category="ayakkabi">
+            <div class="product-card shadow-sm border border-gray-100" data-product-id="24" data-category="erkek">
                 <div class="relative overflow-hidden rounded-t-xl">
                     <span class="badge-new">YENİ</span>
                     <button class="wishlist-btn" onclick="toggleWishlist(this,24)"><i class="fas fa-heart"></i></button>
-                    <img src="https://images.unsplash.com/photo-1614252235316-8c857d38b5f4?w=400&q=80" alt="Oxford Ayakkabı" class="product-img w-full h-80 object-cover">
+                    <img src="https://kimi-web-img.moonshot.cn/img/teakwoodleathers.com/8a740fceb59c1f2e85a051b39a58c2d005c04710.jpg" alt="Oxford Ayakkabı" class="product-img w-full h-80 object-cover">
                     <div class="quick-view">
                         <button onclick="quickView(24)" class="text-white text-sm hover:text-gold transition-colors flex items-center gap-2"><i class="fas fa-eye"></i> Hızlı Bakış</button>
-                        <button onclick="addToCart(24)" class="text-white text-sm hover:text-gold transition-colors flex items-center gap-2"><i class="fas fa-shopping-bag"></i> Sepete Ekle</button>
+                        <button onclick="orderViaWhatsApp(24)" class="text-white text-sm hover:text-gold transition-colors flex items-center gap-2"><i class="fab fa-whatsapp"></i> WhatsApp ile Sipariş</button>
                     </div>
                 </div>
                 <div class="p-5">
@@ -1264,10 +1285,10 @@ html{scroll-behavior:smooth}
                         <div class="star-rating text-xs text-gold"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
                         <span class="text-xs text-warm-gray">(267)</span>
                     </div>
-                    <div class="flex items-center gap-2 mb-3">
+                    <div class="flex items-center gap-2">
                         <span class="font-serif text-lg font-bold text-noir">1.499 TL</span>
                     </div>
-                    <button onclick="quickView(24)" class="w-full whatsapp-btn py-2.5 rounded-lg text-sm font-semibold tracking-wide flex items-center justify-center gap-2"><i class="fab fa-whatsapp"></i> WhatsApp Sipariş</button>
+                    <button onclick="orderViaWhatsApp(24)" class="mt-3 w-full bg-green-500 text-white py-2 rounded-lg text-sm font-semibold hover:bg-green-600 transition-colors flex items-center justify-center gap-2"><i class="fab fa-whatsapp"></i> WhatsApp ile Sipariş</button>
                 </div>
             </div>
         </div>
@@ -1336,7 +1357,7 @@ html{scroll-behavior:smooth}
                     <img src="https://images.unsplash.com/photo-1566174053879-31528523f8ae?w=400&q=80" alt="Abiye Elbise" class="product-img w-full h-80 object-cover">
                     <div class="quick-view">
                         <button onclick="quickView(5)" class="text-white text-sm hover:text-gold transition-colors flex items-center gap-2"><i class="fas fa-eye"></i> Hızlı Bakış</button>
-                        <button onclick="addToCart(5)" class="text-white text-sm hover:text-gold transition-colors flex items-center gap-2"><i class="fas fa-shopping-bag"></i> Sepete Ekle</button>
+                        <button onclick="orderViaWhatsApp(5)" class="text-white text-sm hover:text-gold transition-colors flex items-center gap-2"><i class="fab fa-whatsapp"></i> WhatsApp ile Sipariş</button>
                     </div>
                 </div>
                 <div class="p-5">
@@ -1346,11 +1367,11 @@ html{scroll-behavior:smooth}
                         <div class="star-rating text-xs text-gold"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
                         <span class="text-xs text-warm-gray">(512)</span>
                     </div>
-                    <div class="flex items-center gap-2 mb-3">
+                    <div class="flex items-center gap-2">
                         <span class="font-serif text-lg font-bold text-noir">2.199 TL</span>
                         <span class="text-sm text-warm-gray line-through">3.299 TL</span>
                     </div>
-                    <button onclick="quickView(5)" class="w-full whatsapp-btn py-2.5 rounded-lg text-sm font-semibold tracking-wide flex items-center justify-center gap-2"><i class="fab fa-whatsapp"></i> WhatsApp Sipariş</button>
+                    <button onclick="orderViaWhatsApp(5)" class="mt-3 w-full bg-green-500 text-white py-2 rounded-lg text-sm font-semibold hover:bg-green-600 transition-colors flex items-center justify-center gap-2"><i class="fab fa-whatsapp"></i> WhatsApp ile Sipariş</button>
                 </div>
             </div>
             <!-- Best Seller 2: Triko -->
@@ -1361,7 +1382,7 @@ html{scroll-behavior:smooth}
                     <img src="https://images.unsplash.com/photo-1576566588028-4147f3842f27?w=400&q=80" alt="Triko Kazak" class="product-img w-full h-80 object-cover">
                     <div class="quick-view">
                         <button onclick="quickView(6)" class="text-white text-sm hover:text-gold transition-colors flex items-center gap-2"><i class="fas fa-eye"></i> Hızlı Bakış</button>
-                        <button onclick="addToCart(6)" class="text-white text-sm hover:text-gold transition-colors flex items-center gap-2"><i class="fas fa-shopping-bag"></i> Sepete Ekle</button>
+                        <button onclick="orderViaWhatsApp(6)" class="text-white text-sm hover:text-gold transition-colors flex items-center gap-2"><i class="fab fa-whatsapp"></i> WhatsApp ile Sipariş</button>
                     </div>
                 </div>
                 <div class="p-5">
@@ -1371,11 +1392,11 @@ html{scroll-behavior:smooth}
                         <div class="star-rating text-xs text-gold"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div>
                         <span class="text-xs text-warm-gray">(378)</span>
                     </div>
-                    <div class="flex items-center gap-2 mb-3">
+                    <div class="flex items-center gap-2">
                         <span class="font-serif text-lg font-bold text-noir">649 TL</span>
                         <span class="text-sm text-warm-gray line-through">899 TL</span>
                     </div>
-                    <button onclick="quickView(6)" class="w-full whatsapp-btn py-2.5 rounded-lg text-sm font-semibold tracking-wide flex items-center justify-center gap-2"><i class="fab fa-whatsapp"></i> WhatsApp Sipariş</button>
+                    <button onclick="orderViaWhatsApp(6)" class="mt-3 w-full bg-green-500 text-white py-2 rounded-lg text-sm font-semibold hover:bg-green-600 transition-colors flex items-center justify-center gap-2"><i class="fab fa-whatsapp"></i> WhatsApp ile Sipariş</button>
                 </div>
             </div>
             <!-- Best Seller 3: Canta -->
@@ -1386,7 +1407,7 @@ html{scroll-behavior:smooth}
                     <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=400&q=80" alt="Deri Çanta" class="product-img w-full h-80 object-cover">
                     <div class="quick-view">
                         <button onclick="quickView(7)" class="text-white text-sm hover:text-gold transition-colors flex items-center gap-2"><i class="fas fa-eye"></i> Hızlı Bakış</button>
-                        <button onclick="addToCart(7)" class="text-white text-sm hover:text-gold transition-colors flex items-center gap-2"><i class="fas fa-shopping-bag"></i> Sepete Ekle</button>
+                        <button onclick="orderViaWhatsApp(7)" class="text-white text-sm hover:text-gold transition-colors flex items-center gap-2"><i class="fab fa-whatsapp"></i> WhatsApp ile Sipariş</button>
                     </div>
                 </div>
                 <div class="p-5">
@@ -1396,10 +1417,10 @@ html{scroll-behavior:smooth}
                         <div class="star-rating text-xs text-gold"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
                         <span class="text-xs text-warm-gray">(195)</span>
                     </div>
-                    <div class="flex items-center gap-2 mb-3">
+                    <div class="flex items-center gap-2">
                         <span class="font-serif text-lg font-bold text-noir">1.199 TL</span>
                     </div>
-                    <button onclick="quickView(7)" class="w-full whatsapp-btn py-2.5 rounded-lg text-sm font-semibold tracking-wide flex items-center justify-center gap-2"><i class="fab fa-whatsapp"></i> WhatsApp Sipariş</button>
+                    <button onclick="orderViaWhatsApp(7)" class="mt-3 w-full bg-green-500 text-white py-2 rounded-lg text-sm font-semibold hover:bg-green-600 transition-colors flex items-center justify-center gap-2"><i class="fab fa-whatsapp"></i> WhatsApp ile Sipariş</button>
                 </div>
             </div>
             <!-- Best Seller 4: Trenckot -->
@@ -1407,24 +1428,24 @@ html{scroll-behavior:smooth}
                 <div class="relative overflow-hidden rounded-t-xl">
                     <span class="badge-bestseller">ÇOK SATAN</span>
                     <button class="wishlist-btn" onclick="toggleWishlist(this,8)"><i class="fas fa-heart"></i></button>
-                    <img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=400&q=80" alt="Trençkot" class="product-img w-full h-80 object-cover">
+                    <img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=400&q=80" alt="Trenckot" class="product-img w-full h-80 object-cover">
                     <div class="quick-view">
                         <button onclick="quickView(8)" class="text-white text-sm hover:text-gold transition-colors flex items-center gap-2"><i class="fas fa-eye"></i> Hızlı Bakış</button>
-                        <button onclick="addToCart(8)" class="text-white text-sm hover:text-gold transition-colors flex items-center gap-2"><i class="fas fa-shopping-bag"></i> Sepete Ekle</button>
+                        <button onclick="orderViaWhatsApp(8)" class="text-white text-sm hover:text-gold transition-colors flex items-center gap-2"><i class="fab fa-whatsapp"></i> WhatsApp ile Sipariş</button>
                     </div>
                 </div>
                 <div class="p-5">
                     <p class="text-xs text-warm-gray uppercase tracking-wider mb-1">Dış Giyim</p>
-                    <h3 class="font-medium text-noir mb-2 line-clamp-2 text-sm">Klasik Trençkot - Bej</h3>
+                    <h3 class="font-medium text-noir mb-2 line-clamp-2 text-sm">Klasik Trenckot - Bej</h3>
                     <div class="flex items-center gap-1 mb-2">
                         <div class="star-rating text-xs text-gold"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div>
                         <span class="text-xs text-warm-gray">(467)</span>
                     </div>
-                    <div class="flex items-center gap-2 mb-3">
+                    <div class="flex items-center gap-2">
                         <span class="font-serif text-lg font-bold text-noir">1.499 TL</span>
                         <span class="text-sm text-warm-gray line-through">1.999 TL</span>
                     </div>
-                    <button onclick="quickView(8)" class="w-full whatsapp-btn py-2.5 rounded-lg text-sm font-semibold tracking-wide flex items-center justify-center gap-2"><i class="fab fa-whatsapp"></i> WhatsApp Sipariş</button>
+                    <button onclick="orderViaWhatsApp(8)" class="mt-3 w-full bg-green-500 text-white py-2 rounded-lg text-sm font-semibold hover:bg-green-600 transition-colors flex items-center justify-center gap-2"><i class="fab fa-whatsapp"></i> WhatsApp ile Sipariş</button>
                 </div>
             </div>
         </div>
@@ -1450,7 +1471,7 @@ html{scroll-behavior:smooth}
                 <span class="text-gold text-sm tracking-[0.3em] uppercase font-medium">Hikayemiz</span>
                 <h2 class="font-serif text-4xl md:text-5xl text-noir font-bold mt-3 mb-6 leading-tight">Zarafeti Yeniden Tanımlıyoruz</h2>
                 <p class="text-warm-gray leading-relaxed mb-6">2018 yılında İstanbul'un kalbinde kurulan MODAvera, zamansız şıklığı ve modern tasarımı bir araya getiren bir butik moda markasıdır. Her parçamız, özenle seçilmiş kaliteli kumaşlar ve titiz işçiliği ile hazırlanır.</p>
-                <p class="text-warm-gray leading-relaxed mb-8">Müşterilerimize sadece kıyafet değil, bir yaşam tarzı sunuyoruz. Her sezon yenilenen koleksiyonlarımızda, hem günlük şıklık hem de özel günler için zarif seçenekler bulabilirsiniz. Türkiye'nin dört bir yanına hızlı ve güvenilir kargo hizmeti sunuyoruz. WhatsApp üzerinden 7/24 sipariş alıyoruz.</p>
+                <p class="text-warm-gray leading-relaxed mb-8">Müşterilerimize sadece kıyafet değil, bir yaşam tarzı sunuyoruz. Her sezon yenilenen koleksiyonlarımızda, hem günlük şıklık hem de özel günler için zarif seçenekler bulabilirsiniz. Türkiye'nin dört bir yanına hızlı ve güvenilir kargo hizmeti sunuyoruz.</p>
                 <div class="grid grid-cols-3 gap-6 mb-8">
                     <div class="text-center p-4 bg-white rounded-2xl hover-lift">
                         <div class="font-serif text-3xl text-gold font-bold">15K+</div>
@@ -1465,7 +1486,9 @@ html{scroll-behavior:smooth}
                         <div class="text-sm text-warm-gray mt-1">Memnuniyet</div>
                     </div>
                 </div>
-                <a href="https://wa.me/905515099815?text=Merhaba%20MODAvera%2C%20hakkınızda%20daha%20fazla%20bilgi%20almak%20istiyorum." class="inline-flex items-center gap-3 whatsapp-btn px-8 py-4 text-sm font-semibold tracking-wider uppercase transition-all rounded-full"><i class="fab fa-whatsapp text-lg"></i> WhatsApp'tan Ulaşın</a>
+                <a href="#" onclick="whatsappContact()" class="inline-flex items-center gap-3 bg-green-500 text-white px-8 py-4 text-sm font-semibold tracking-wider uppercase hover:bg-green-600 transition-all rounded-full">
+                    <i class="fab fa-whatsapp"></i> WhatsApp ile İletişim
+                </a>
             </div>
         </div>
     </div>
@@ -1507,7 +1530,7 @@ html{scroll-behavior:smooth}
             <!-- Review 1 -->
             <div class="testimonial-card p-6 reveal">
                 <div class="flex items-center gap-1 mb-3 text-gold"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                <p class="text-warm-gray text-sm leading-relaxed mb-4">"Saten elbise sipariş ettim ve kalitesine hayran kaldım. Kumaş çok yumuşak, dikişler mükemmel. Kesinlikle tekrar alışveriş yapacağım. WhatsApp'tan sipariş vermek çok pratikti!"</p>
+                <p class="text-warm-gray text-sm leading-relaxed mb-4">"Saten elbise sipariş ettim ve kalitesine hayran kaldım. Kumaş çok yumuşak, dikişler mükemmel. Kesinlikle tekrar alışveriş yapacağım. Kargo da ertesi gün geldi, çok hızlı!"</p>
                 <div class="flex gap-2 mb-4">
                     <img src="https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=100&q=80" class="review-photo" alt="Ürün fotoğrafı">
                     <img src="https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?w=100&q=80" class="review-photo" alt="Ürün fotoğrafı">
@@ -1522,7 +1545,7 @@ html{scroll-behavior:smooth}
             <!-- Review 2 -->
             <div class="testimonial-card p-6 reveal">
                 <div class="flex items-center gap-1 mb-3 text-gold"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                <p class="text-warm-gray text-sm leading-relaxed mb-4">"Triko kazak aldım, rengi fotoğraftakiyle birebir aynı. Beden kılavuzu çok doğru, tam oturdu. WhatsApp'tan sipariş verdim, ertesi gün kargoya verildi. Harika!"</p>
+                <p class="text-warm-gray text-sm leading-relaxed mb-4">"Triko kazak aldım, rengi fotoğraftakiyle birebir aynı. Beden kılavuzu çok doğru, tam oturdu. Müşteri hizmetleri de çok ilgiliydi, teşekkürler MODAvera!"</p>
                 <div class="flex items-center gap-3">
                     <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&q=80" alt="Zeynep K." class="w-10 h-10 rounded-full object-cover">
                     <div><h4 class="font-semibold text-noir text-sm">Zeynep Kaya</h4><p class="text-xs text-warm-gray">Ankara - 5 gün önce - Triko Kazak Krem</p></div>
@@ -1533,7 +1556,7 @@ html{scroll-behavior:smooth}
             <!-- Review 3 -->
             <div class="testimonial-card p-6 reveal">
                 <div class="flex items-center gap-1 mb-3 text-gold"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div>
-                <p class="text-warm-gray text-sm leading-relaxed mb-4">"Abiye elbise için çok araştırdım ve MODAvera'da buldum. Fiyat/performans açısından harika. Paketleme çok özenliydi, hediye paketi gibi geldi. WhatsApp siparişi çok kolay!"</p>
+                <p class="text-warm-gray text-sm leading-relaxed mb-4">"Abiye elbise için çok araştırdım ve burada buldum. Fiyat/performans açısından harika. Paketleme çok özenliydi, hediye paketi gibi geldi. Kesinlikle tavsiye ederim!"</p>
                 <div class="flex gap-2 mb-4">
                     <img src="https://images.unsplash.com/photo-1566174053879-31528523f8ae?w=100&q=80" class="review-photo" alt="Ürün fotoğrafı">
                 </div>
@@ -1547,7 +1570,7 @@ html{scroll-behavior:smooth}
             <!-- Review 4 -->
             <div class="testimonial-card p-6 reveal">
                 <div class="flex items-center gap-1 mb-3 text-gold"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                <p class="text-warm-gray text-sm leading-relaxed mb-4">"Kargo gerçekten 24 saatte geldi! Wide leg pantolon çok rahat ve şık. Ofiste herkes nereden aldığımı soruyor. WhatsApp'tan sipariş vermek çok pratik, artık favori butiğim burası."</p>
+                <p class="text-warm-gray text-sm leading-relaxed mb-4">"Kargo gerçekten 24 saatte geldi! Wide leg pantolon çok rahat ve şık. Ofiste herkes nereden aldığımı soruyor. Artık favori butiğim burası."</p>
                 <div class="flex items-center gap-3">
                     <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80" alt="Mehmet A." class="w-10 h-10 rounded-full object-cover">
                     <div><h4 class="font-semibold text-noir text-sm">Mehmet Aydın</h4><p class="text-xs text-warm-gray">Bursa - 1 hafta önce - Wide Leg Pantolon</p></div>
@@ -1558,7 +1581,7 @@ html{scroll-behavior:smooth}
             <!-- Review 5 -->
             <div class="testimonial-card p-6 reveal">
                 <div class="flex items-center gap-1 mb-3 text-gold"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                <p class="text-warm-gray text-sm leading-relaxed mb-4">"İlk defa online butikten alışveriş yaptım ve çok memnun kaldım. İade süreci de çok kolaydı. Deri çanta harika kalitede, her gün kullanıyorum. WhatsApp destek harika!"</p>
+                <p class="text-warm-gray text-sm leading-relaxed mb-4">"İlk defa online butikten alışveriş yaptım ve çok memnun kaldım. İade süreci de çok kolaydı. Deri çanta harika kalitede, her gün kullanıyorum."</p>
                 <div class="flex gap-2 mb-4">
                     <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=100&q=80" class="review-photo" alt="Ürün fotoğrafı">
                     <img src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=100&q=80" class="review-photo" alt="Ürün fotoğrafı">
@@ -1573,10 +1596,10 @@ html{scroll-behavior:smooth}
             <!-- Review 6 -->
             <div class="testimonial-card p-6 reveal">
                 <div class="flex items-center gap-1 mb-3 text-gold"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                <p class="text-warm-gray text-sm leading-relaxed mb-4">"Trençkot aldım, kalite muhteşem. Kumaş kalınlığı ve dikiş detayları çok iyi. Fiyatı diğer sitelere göre çok uygun. WhatsApp'tan sipariş vermek çok pratik, teşekkürler MODAvera!"</p>
+                <p class="text-warm-gray text-sm leading-relaxed mb-4">"Trenckot aldım, kalite müthiş. Kumaş kalınlığı ve dikiş detayları çok iyi. Fiyatı diğer sitelere göre çok uygun. Kapıda ödeme seçeneği de çok pratik."</p>
                 <div class="flex items-center gap-3">
                     <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&q=80" alt="Can B." class="w-10 h-10 rounded-full object-cover">
-                    <div><h4 class="font-semibold text-noir text-sm">Can Bulut</h4><p class="text-xs text-warm-gray">Adana - 2 hafta önce - Klasik Trençkot</p></div>
+                    <div><h4 class="font-semibold text-noir text-sm">Can Bulut</h4><p class="text-xs text-warm-gray">Adana - 2 hafta önce - Klasik Trenckot</p></div>
                 </div>
                 <div class="mt-3 pt-3 border-t border-gray-100 flex items-center gap-2"><i class="fas fa-check-circle text-green-500 text-xs"></i><span class="text-xs text-warm-gray">Doğrulanmış Alışveriş</span></div>
             </div>
@@ -1584,7 +1607,7 @@ html{scroll-behavior:smooth}
             <!-- Review 7 -->
             <div class="testimonial-card p-6 reveal">
                 <div class="flex items-center gap-1 mb-3 text-gold"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                <p class="text-warm-gray text-sm leading-relaxed mb-4">"İpek gömlek tam istediğim gibi çıktı. Kumaş kalitesi çok yüksek, terletmiyor. Yazın ofiste çok rahat kullanıyorum. WhatsApp'tan sipariş verdim, çok hızlı dönüş yaptılar."</p>
+                <p class="text-warm-gray text-sm leading-relaxed mb-4">"İpek gömlek tam istediğim gibi çıktı. Kumaş kalitesi çok yüksek, terletmiyor. Yazın ofiste çok rahat kullanıyorum. Renk seçenekleri de çok güzel."</p>
                 <div class="flex items-center gap-3">
                     <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=100&q=80" alt="Deniz T." class="w-10 h-10 rounded-full object-cover">
                     <div><h4 class="font-semibold text-noir text-sm">Deniz Tuncer</h4><p class="text-xs text-warm-gray">Konya - 3 hafta önce - İpek Gömlek</p></div>
@@ -1595,7 +1618,7 @@ html{scroll-behavior:smooth}
             <!-- Review 8 -->
             <div class="testimonial-card p-6 reveal">
                 <div class="flex items-center gap-1 mb-3 text-gold"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div>
-                <p class="text-warm-gray text-sm leading-relaxed mb-4">"Keten blazer ceket çok şık duruyor. Yaz düğünlerinde üzerime alıyorum, hem rahat hem şık. Bedeni tam oldu, kılavuz çok başarılı. WhatsApp siparişi çok kolay!"</p>
+                <p class="text-warm-gray text-sm leading-relaxed mb-4">"Keten blazer ceket çok şık duruyor. Yaz düğünlerinde üzerime alıyorum, hem rahat hem şık. Bedeni tam oldu, kılavuz çok başarılı."</p>
                 <div class="flex gap-2 mb-4">
                     <img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=100&q=80" class="review-photo" alt="Ürün fotoğrafı">
                 </div>
@@ -1609,7 +1632,7 @@ html{scroll-behavior:smooth}
             <!-- Review 9 -->
             <div class="testimonial-card p-6 reveal">
                 <div class="flex items-center gap-1 mb-3 text-gold"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                <p class="text-warm-gray text-sm leading-relaxed mb-4">"3. siparişimi verdim ve hiç hayal kırıklığına uğramadım. Her seferinde aynı kalite, aynı özen. WhatsApp'tan sipariş vermek çok pratik, anında dönüş alıyorum."</p>
+                <p class="text-warm-gray text-sm leading-relaxed mb-4">"3. siparişimi verdim ve hiç hayal kırıklığına uğramadım. Her seferinde aynı kalite, aynı özen. Müşteri hizmetleri canlı destekten anında yardım aldım."</p>
                 <div class="flex items-center gap-3">
                     <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=100&q=80" alt="Ceren M." class="w-10 h-10 rounded-full object-cover">
                     <div><h4 class="font-semibold text-noir text-sm">Ceren Mutlu</h4><p class="text-xs text-warm-gray">Eskişehir - 1 ay önce - 3. Sipariş</p></div>
@@ -1658,7 +1681,7 @@ html{scroll-behavior:smooth}
             <input type="email" placeholder="E-posta adresiniz" required class="newsletter-input flex-1 px-6 py-4 rounded-xl">
             <button type="submit" class="bg-gold text-white px-8 py-4 font-semibold tracking-wider uppercase hover:bg-gold-light transition-all rounded-xl">Abone Ol</button>
         </form>
-        <p class="text-gray-500 text-xs mt-6">Abone olarak gizlilik politikasını kabul etmişsiniz. İstediğiniz zaman abonelikten çıkabilirsiniz.</p>
+        <p class="text-gray-500 text-xs mt-6">Abone olarak gizlilik politikasını kabul etmiş olursunuz. İstediğiniz zaman abonelikten çıkabilirsiniz.</p>
     </div>
 </section>
 
@@ -1668,10 +1691,12 @@ html{scroll-behavior:smooth}
         <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
             <div>
                 <div class="flex items-center gap-3 mb-6">
-                    <div class="logo-icon" style="width:44px;height:44px;font-size:1.2rem;border-radius:12px;">M</div>
-                    <div><h3 class="logo-text text-xl">MODAvera</h3><p class="text-[0.6rem] text-gray-500 tracking-[0.3em] uppercase">Premium Butik Moda</p></div>
+                    <div class="w-11 h-11 bg-white/10 flex items-center justify-center rounded-xl overflow-hidden">
+                        <span class="text-white font-serif text-2xl font-bold tracking-wide">M</span>
+                    </div>
+                    <div><h3 class="font-serif text-xl font-bold text-white">MODAvera</h3><p class="text-[0.6rem] text-gray-500 tracking-[0.3em] uppercase">Premium Butik Moda</p></div>
                 </div>
-                <p class="text-gray-400 text-sm leading-relaxed mb-6">Zamansız şıklığı ve modern tasarımı bir araya getiren butik moda markası. Kaliteli kumaşlar, özenli işçiliği ve müşteri memnuniyeti bizim önceliğimizdir. WhatsApp üzerinden 7/24 sipariş alıyoruz.</p>
+                <p class="text-gray-400 text-sm leading-relaxed mb-6">Zamansız şıklığı ve modern tasarımı bir araya getiren butik moda markası. Kaliteli kumaşlar, özenli işçiliği ve müşteri memnuniyeti bizim önceliğimizdir.</p>
                 <div class="flex gap-4">
                     <a href="#" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center text-white hover:bg-gold transition-colors"><i class="fab fa-instagram"></i></a>
                     <a href="#" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center text-white hover:bg-gold transition-colors"><i class="fab fa-facebook-f"></i></a>
@@ -1705,7 +1730,7 @@ html{scroll-behavior:smooth}
                 <h4 class="text-white font-semibold mb-6 tracking-wider uppercase text-sm">İletişim</h4>
                 <ul class="space-y-4">
                     <li class="flex items-start gap-3"><i class="fas fa-map-marker-alt text-gold mt-1"></i><span class="text-gray-400 text-sm">Nişantaşı, Şişli / İstanbul</span></li>
-                    <li class="flex items-start gap-3"><a href="https://wa.me/905515099815" class="flex items-start gap-3 hover:text-whatsapp transition-colors"><i class="fab fa-whatsapp text-whatsapp mt-1 text-lg"></i><span class="text-gray-400 text-sm">+90 551 509 98 15</span></a></li>
+                    <li class="flex items-start gap-3"><i class="fab fa-whatsapp text-gold mt-1"></i><a href="https://wa.me/905515099815" class="text-gray-400 text-sm hover:text-gold transition-colors">0 (551) 509 98 15</a></li>
                     <li class="flex items-start gap-3"><i class="fas fa-envelope text-gold mt-1"></i><span class="text-gray-400 text-sm">info@modavera.com</span></li>
                     <li class="flex items-start gap-3"><i class="fas fa-clock text-gold mt-1"></i><span class="text-gray-400 text-sm">Pzt-Cmt: 09:00 - 19:00</span></li>
                 </ul>
@@ -1736,7 +1761,9 @@ html{scroll-behavior:smooth}
 <div class="cart-sidebar" id="cart-sidebar">
     <div class="p-6 border-b border-gray-100 flex justify-between items-center">
         <div class="flex items-center gap-3">
-            <div class="logo-icon" style="width:40px;height:40px;font-size:1rem;border-radius:10px;">M</div>
+            <div class="w-10 h-10 bg-noir flex items-center justify-center rounded-xl overflow-hidden">
+                <span class="text-white font-serif text-2xl font-bold tracking-wide">M</span>
+            </div>
             <h3 class="font-serif text-xl font-bold text-noir">Alışveriş Sepeti</h3>
         </div>
         <button onclick="toggleCart()" class="text-noir hover:text-red-500 transition-colors w-10 h-10 flex items-center justify-center rounded-lg hover:bg-gray-100"><i class="fas fa-times text-xl"></i></button>
@@ -1752,7 +1779,9 @@ html{scroll-behavior:smooth}
         <div class="flex justify-between mb-2 text-sm"><span class="text-warm-gray">Ara Toplam</span><span class="font-medium" id="cart-subtotal">0 TL</span></div>
         <div class="flex justify-between mb-4 text-sm"><span class="text-warm-gray">Kargo</span><span class="text-green-600 font-medium">Ücretsiz</span></div>
         <div class="flex justify-between mb-6 text-lg font-bold"><span>Toplam</span><span id="cart-total">0 TL</span></div>
-        <button onclick="orderCartViaWhatsApp()" class="w-full whatsapp-btn py-4 font-semibold tracking-wider uppercase transition-all rounded-xl flex items-center justify-center gap-2"><i class="fab fa-whatsapp text-lg"></i> WhatsApp ile Sipariş Ver</button>
+        <button onclick="checkoutViaWhatsApp()" class="w-full bg-green-500 text-white py-4 font-semibold tracking-wider uppercase hover:bg-green-600 transition-all rounded-xl flex items-center justify-center gap-2">
+            <i class="fab fa-whatsapp"></i> WhatsApp ile Siparişi Tamamla
+        </button>
         <p class="text-center text-xs text-warm-gray mt-4">150 TL üzeri kargo ücretsiz</p>
     </div>
 </div>
@@ -1842,20 +1871,24 @@ html{scroll-behavior:smooth}
     </div>
 </div>
 
+<!-- WHATSAPP FLOAT BUTTON -->
+<button class="whatsapp-float" onclick="whatsappContact()" aria-label="WhatsApp ile iletişime geç">
+    <i class="fab fa-whatsapp"></i>
+    <span class="badge">1</span>
+</button>
+
 <!-- QUICK ACTIONS -->
 <div class="quick-actions">
-    <button class="quick-action-btn tooltip" data-tooltip="WhatsApp Sipariş" onclick="openWhatsAppGeneral()">
-        <i class="fab fa-whatsapp text-xl text-whatsapp"></i>
+    <button class="quick-action-btn tooltip" data-tooltip="WhatsApp Destek" onclick="whatsappContact()">
+        <i class="fab fa-whatsapp text-xl"></i>
+    </button>
+    <button class="quick-action-btn tooltip" data-tooltip="Canlı Destek" onclick="whatsappContact()">
+        <i class="fas fa-comments"></i>
     </button>
     <button class="quick-action-btn tooltip" data-tooltip="Yukarı Git" onclick="scrollToTop()">
         <i class="fas fa-arrow-up"></i>
     </button>
 </div>
-
-<!-- WHATSAPP FLOAT BUTTON -->
-<a href="https://wa.me/905515099815?text=Merhaba%20MODAvera%2C%20sipari%C5%9F%20vermek%20istiyorum." class="whatsapp-float" id="whatsapp-float" target="_blank">
-    <i class="fab fa-whatsapp text-white text-2xl"></i>
-</a>
 
 <!-- BACK TO TOP -->
 <button onclick="scrollToTop()" id="back-to-top" class="fixed bottom-8 right-8 w-12 h-12 bg-gold text-white rounded-full shadow-lg flex items-center justify-center opacity-0 pointer-events-none transition-all duration-300 hover:bg-gold-light z-50"><i class="fas fa-arrow-up"></i></button>
@@ -1870,7 +1903,7 @@ html{scroll-behavior:smooth}
                 <p class="text-gold font-bold" id="sticky-price">0 TL</p>
             </div>
         </div>
-        <button onclick="orderStickyViaWhatsApp()" class="whatsapp-btn px-8 py-3 rounded-xl font-semibold flex items-center gap-2"><i class="fab fa-whatsapp"></i> WhatsApp Sipariş</button>
+        <button onclick="whatsappContact()" class="bg-green-500 text-white px-8 py-3 rounded-xl font-semibold hover:bg-green-600 transition-colors flex items-center gap-2"><i class="fab fa-whatsapp"></i> WhatsApp ile Sipariş</button>
     </div>
 </div>
 
@@ -1884,142 +1917,99 @@ html{scroll-behavior:smooth}
 </div>
 
 <script>
-// ===== WHATSAPP CONFIG =====
-const WHATSAPP_NUMBER = '905515099815';
-const WHATSAPP_BASE = 'https://wa.me/' + WHATSAPP_NUMBER;
+// ===== LOADER SAFETY - KESİNLİKLE KAPANIR =====
+(function() {
+    // Max 3.5 saniye sonra loader'ı zorla kapat
+    const forceHideLoader = () => {
+        const loader = document.getElementById('loader');
+        if (loader && loader.style.opacity !== '0') {
+            loader.style.opacity = '0';
+            loader.style.pointerEvents = 'none';
+            setTimeout(() => { loader.style.display = 'none'; }, 500);
+        }
+    };
+    // Sayfa yüklendiğinde veya 3.5 saniye sonra hangisi önce gelirse
+    let loaderClosed = false;
+    const closeLoader = () => {
+        if (loaderClosed) return;
+        loaderClosed = true;
+        const loader = document.getElementById('loader');
+        if (loader) {
+            loader.style.opacity = '0';
+            loader.style.pointerEvents = 'none';
+            setTimeout(() => { loader.style.display = 'none'; }, 500);
+        }
+    };
+    window.addEventListener('load', closeLoader);
+    setTimeout(closeLoader, 3500);
+})();
 
 // ===== PRODUCTS DATABASE =====
 const products = {
-    1: { name: 'Saten Midi Elbise - Bej', price: 1299, oldPrice: 1849, image: 'https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=400&q=80', category: 'kadin', rating: 5, reviews: 324, sizes: ['XS','S','M','L'], colors: ['Bej','Siyah','Kırmızı'] },
-    2: { name: 'Slim Fit Blazer Ceket - Lacivert', price: 1599, oldPrice: null, image: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=400&q=80', category: 'erkek', rating: 4.5, reviews: 189, sizes: ['S','M','L','XL'], colors: ['Lacivert','Siyah','Gri'] },
-    3: { name: 'Pamuklu Gömlek - Beyaz', price: 849, oldPrice: 1129, image: 'https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?w=400&q=80', category: 'erkek', rating: 5, reviews: 256, sizes: ['S','M','L','XL'], colors: ['Beyaz','Mavi','Siyah'] },
-    4: { name: 'Wide Leg Pantolon - Siyah', price: 749, oldPrice: null, image: 'https://images.unsplash.com/photo-1509631179647-0177331693ae?w=400&q=80', category: 'kadin', rating: 5, reviews: 403, sizes: ['XS','S','M','L','XL'], colors: ['Siyah','Bej','Krem'] },
-    5: { name: 'Tül Detaylı Abiye - Pudra', price: 2199, oldPrice: 3299, image: 'https://images.unsplash.com/photo-1566174053879-31528523f8ae?w=400&q=80', category: 'kadin', rating: 5, reviews: 512, sizes: ['XS','S','M','L'], colors: ['Pudra','Beyaz','Gümüş'] },
-    6: { name: 'Triko Kazak - Krem', price: 649, oldPrice: 899, image: 'https://images.unsplash.com/photo-1576566588028-4147f3842f27?w=400&q=80', category: 'kadin', rating: 4.5, reviews: 378, sizes: ['S','M','L'], colors: ['Krem','Gri','Siyah'] },
-    7: { name: 'Deri Omuz Çantası - Siyah', price: 1199, oldPrice: null, image: 'https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=400&q=80', category: 'aksesuar', rating: 5, reviews: 195, sizes: ['Standart'], colors: ['Siyah','Taba','Kahve'] },
-    8: { name: 'Klasik Trençkot - Bej', price: 1499, oldPrice: 1999, image: 'https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=400&q=80', category: 'erkek', rating: 4.5, reviews: 467, sizes: ['S','M','L','XL'], colors: ['Bej','Haki','Siyah'] },
-    9: { name: 'Deri Ceket - Siyah', price: 2499, oldPrice: 3299, image: 'https://images.unsplash.com/photo-1551028719-00167b16eac5?w=400&q=80', category: 'erkek', rating: 5, reviews: 156, sizes: ['S','M','L','XL'], colors: ['Siyah','Kahve','Bordo'] },
-    10: { name: 'Klasik Kol Saati - Rose Gold', price: 1899, oldPrice: 2399, image: 'https://images.unsplash.com/photo-1524592094714-0f0654e20314?w=400&q=80', category: 'saat', rating: 4.5, reviews: 89, sizes: ['Standart'], colors: ['Rose Gold','Gümüş','Altın'] },
-    11: { name: 'Altın Kaplama Çiçek Kolye', price: 649, oldPrice: null, image: 'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=400&q=80', category: 'taki', rating: 5, reviews: 212, sizes: ['Standart'], colors: ['Altın','Rose Gold','Gümüş'] },
-    12: { name: 'İpek Fular - Desenli', price: 399, oldPrice: 599, image: 'https://images.unsplash.com/photo-1584030373081-f37b7bb4fa33?w=400&q=80', category: 'aksesuar', rating: 5, reviews: 178, sizes: ['Standart'], colors: ['Desenli','Çizgili','Düz'] },
-    13: { name: 'Polo Yaka T-Shirt - Lacivert', price: 549, oldPrice: null, image: 'https://images.unsplash.com/photo-1625910513413-5fc4e5e6727e?w=400&q=80', category: 'erkek', rating: 5, reviews: 267, sizes: ['S','M','L','XL'], colors: ['Lacivert','Beyaz','Siyah'] },
-    14: { name: 'Chino Pantolon - Bej', price: 699, oldPrice: 799, image: 'https://images.unsplash.com/photo-1473966968600-fa801b869a1a?w=400&q=80', category: 'erkek', rating: 4.5, reviews: 198, sizes: ['S','M','L','XL'], colors: ['Bej','Haki','Siyah'] },
-    15: { name: 'Kaşmir Kazak - Gri', price: 1299, oldPrice: null, image: 'https://images.unsplash.com/photo-1631541909061-71e349d1f203?w=400&q=80', category: 'erkek', rating: 5, reviews: 445, sizes: ['S','M','L','XL'], colors: ['Gri','Lacivert','Siyah'] },
-    16: { name: 'Denim Ceket - Mavi', price: 999, oldPrice: null, image: 'https://images.unsplash.com/photo-1576871337632-b9aef4c17ab9?w=400&q=80', category: 'erkek', rating: 4.5, reviews: 312, sizes: ['S','M','L','XL'], colors: ['Mavi','Siyah','Gri'] },
-    17: { name: 'Kokteyl Elbise - Siyah', price: 1599, oldPrice: 2099, image: 'https://images.unsplash.com/photo-1566174053879-31528523f8ae?w=400&q=80', category: 'kadin', rating: 5, reviews: 189, sizes: ['XS','S','M','L'], colors: ['Siyah','Kırmızı','Bordo'] },
-    18: { name: 'Stiletto Topuklu - Siyah', price: 1199, oldPrice: null, image: 'https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=400&q=80', category: 'ayakkabi', rating: 4.5, reviews: 234, sizes: ['36','37','38','39','40'], colors: ['Siyah','Bej','Kırmızı'] },
-    19: { name: 'Deri Kemer - Taba', price: 349, oldPrice: null, image: 'https://images.unsplash.com/photo-1624222247344-550fb60583dc?w=400&q=80', category: 'aksesuar', rating: 5, reviews: 156, sizes: ['85cm','90cm','95cm','100cm'], colors: ['Taba','Siyah','Kahve'] },
-    20: { name: 'Deri Cüzdan - Kahve', price: 499, oldPrice: 599, image: 'https://images.unsplash.com/photo-1627123424574-724758594e93?w=400&q=80', category: 'aksesuar', rating: 5, reviews: 298, sizes: ['Standart'], colors: ['Kahve','Siyah','Taba'] },
-    21: { name: 'Kronograf Kol Saati - Rose Gold', price: 2299, oldPrice: null, image: 'https://images.unsplash.com/photo-1522312346375-d1a52e2b99b3?w=400&q=80', category: 'saat', rating: 5, reviews: 312, sizes: ['Standart'], colors: ['Rose Gold','Siyah','Gümüş'] },
-    22: { name: 'Altın Kaplama Halka Küpe', price: 449, oldPrice: null, image: 'https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=400&q=80', category: 'taki', rating: 4.5, reviews: 178, sizes: ['Standart'], colors: ['Altın','Rose Gold','Gümüş'] },
-    23: { name: 'Lüks Saat Koleksiyonu - 5'li Set', price: 4999, oldPrice: 6999, image: 'https://images.unsplash.com/photo-1614164185128-e4ec99c436d7?w=400&q=80', category: 'saat', rating: 5, reviews: 89, sizes: ['Standart'], colors: ['Karışık'] },
-    24: { name: 'Deri Oxford Ayakkabı - Siyah', price: 1499, oldPrice: null, image: 'https://images.unsplash.com/photo-1614252235316-8c857d38b5f4?w=400&q=80', category: 'ayakkabi', rating: 5, reviews: 267, sizes: ['40','41','42','43','44'], colors: ['Siyah','Kahve','Bordo'] },
+    1: { name: 'Saten Midi Elbise - Bej', price: 1299, oldPrice: 1849, image: 'https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=400&q=80', category: 'kadin', rating: 5, reviews: 324 },
+    2: { name: 'Slim Fit Blazer Ceket - Lacivert', price: 1599, oldPrice: null, image: 'https://kimi-web-img.moonshot.cn/img/www.frankyfashion.com/8bcad63c4ca2521a799000949d161324158b93ec.jpg', category: 'erkek', rating: 4.5, reviews: 189 },
+    3: { name: 'Pamuklu Gömlek - Beyaz', price: 849, oldPrice: 1129, image: 'https://kimi-web-img.moonshot.cn/img/thomsweeney.com/07dee68db2b43e41d82e745af9d179e6123a03f0.jpg', category: 'erkek', rating: 5, reviews: 256 },
+    4: { name: 'Wide Leg Pantolon - Siyah', price: 749, oldPrice: null, image: 'https://images.unsplash.com/photo-1509631179647-0177331693ae?w=400&q=80', category: 'kadin', rating: 5, reviews: 403 },
+    5: { name: 'Tül Detaylı Abiye - Pudra', price: 2199, oldPrice: 3299, image: 'https://images.unsplash.com/photo-1566174053879-31528523f8ae?w=400&q=80', category: 'kadin', rating: 5, reviews: 512 },
+    6: { name: 'Triko Kazak - Krem', price: 649, oldPrice: 899, image: 'https://images.unsplash.com/photo-1576566588028-4147f3842f27?w=400&q=80', category: 'kadin', rating: 4.5, reviews: 378 },
+    7: { name: 'Deri Omuz Çantası - Siyah', price: 1199, oldPrice: null, image: 'https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=400&q=80', category: 'aksesuar', rating: 5, reviews: 195 },
+    8: { name: 'Klasik Trenckot - Bej', price: 1499, oldPrice: 1999, image: 'https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=400&q=80', category: 'erkek', rating: 4.5, reviews: 467 },
+    9: { name: 'Deri Ceket - Siyah', price: 2499, oldPrice: 3299, image: 'https://kimi-web-img.moonshot.cn/img/cdn.shopify.com/74546d4c635e08c1dc638f3a82010dd10d9a22c9.jpg', category: 'erkek', rating: 5, reviews: 156 },
+    10: { name: 'Klasik Kol Saati - Rose Gold', price: 1899, oldPrice: 2399, image: 'https://kimi-web-img.moonshot.cn/img/thumbs.dreamstime.com/dfdbcf02c987ed5b115bcab0e15c0700214f1371.jpg', category: 'saat', rating: 4.5, reviews: 89 },
+    11: { name: 'Altın Kaplama Çiçek Kolye', price: 649, oldPrice: null, image: 'https://kimi-web-img.moonshot.cn/img/cdn.eternz.com/be56c97bb1febf29b90f731746f0a10314414ebd.png', category: 'taki', rating: 5, reviews: 212 },
+    12: { name: 'İpek Fular - Desenli', price: 399, oldPrice: 599, image: 'https://kimi-web-img.moonshot.cn/img/image.made-in-china.com/600b16c643e149901e4bd0780476776417b8823c.webp', category: 'aksesuar', rating: 5, reviews: 178 },
+    13: { name: 'Polo Yaka T-Shirt - Lacivert', price: 549, oldPrice: null, image: 'https://kimi-web-img.moonshot.cn/img/cdn.shopify.com/0bd1f3b2ce2943a9a6c17a0c798792a7ad82949f.jpg', category: 'erkek', rating: 5, reviews: 267 },
+    14: { name: 'Chino Pantolon - Bej', price: 699, oldPrice: 799, image: 'https://kimi-web-img.moonshot.cn/img/www.lepantalon.com/3729b2f59460e31fd223d3ddf6a3c043dc9a4726.jpg', category: 'erkek', rating: 4.5, reviews: 198 },
+    15: { name: 'Kaşmir Kazak - Gri', price: 1299, oldPrice: null, image: 'https://kimi-web-img.moonshot.cn/img/www.kashmina.com/d1cde9d1e8df8aef5cb8836bd519320abc21f569.jpg', category: 'erkek', rating: 5, reviews: 445 },
+    16: { name: 'Denim Ceket - Mavi', price: 999, oldPrice: null, image: 'https://kimi-web-img.moonshot.cn/img/www.urbanofashion.com/c7d5ff94521d2789f33e10fdb9a1a7a3665f8d41.jpg', category: 'erkek', rating: 4.5, reviews: 312 },
+    17: { name: 'Kokteyl Elbise - Siyah', price: 1599, oldPrice: 2099, image: 'https://kimi-web-img.moonshot.cn/img/32ab338ef8d26dbd1291-8aa6ff30dda6ecf614adfd24686123cd.ssl.cf2.rackcdn.com/295fc7f7e1e3a353d2a1074a4e5fa6f0bbf47923.717958455_type_hugerect_nid_3393105_uid_523275_0', category: 'kadin', rating: 5, reviews: 189 },
+    18: { name: 'Stiletto Topuklu - Siyah', price: 1199, oldPrice: null, image: 'https://kimi-web-img.moonshot.cn/img/www.wittner.com.au/64c88ac91df45576ff2738f0ce4a42723ad081ee.jpg', category: 'kadin', rating: 4.5, reviews: 234 },
+    19: { name: 'Deri Kemer - Taba', price: 349, oldPrice: null, image: 'https://kimi-web-img.moonshot.cn/img/azbelt.com/35d7d759188d170d6005d38620b8f12737b6c96e.jpg', category: 'aksesuar', rating: 5, reviews: 156 },
+    20: { name: 'Deri Cüzdan - Kahve', price: 499, oldPrice: 599, image: 'https://kimi-web-img.moonshot.cn/img/gusti-leather.com/01004d22d24bdc2dcc5603c8227fd31be1b76b12.jpg', category: 'aksesuar', rating: 5, reviews: 298 },
+    21: { name: 'Kronograf Kol Saati - Rose Gold', price: 2299, oldPrice: null, image: 'https://kimi-web-img.moonshot.cn/img/m.media-amazon.com/8b4914c7d33293ae3386e21b8838537670aa636d.jpg', category: 'saat', rating: 5, reviews: 312 },
+    22: { name: 'Altın Kaplama Halka Küpe', price: 449, oldPrice: null, image: 'https://kimi-web-img.moonshot.cn/img/trendia.co/3f113a9a5fe2587170d27f5f6e6133877c3646ad.jpg', category: 'taki', rating: 4.5, reviews: 178 },
+    23: { name: 'Lüks Saat Koleksiyonu - 5\'li Set', price: 4999, oldPrice: 6999, image: 'https://kimi-web-img.moonshot.cn/img/www.shutterstock.com/171ad8b234b965182a7fc95d3efca5283a5e2e40.jpg', category: 'saat', rating: 5, reviews: 89 },
+    24: { name: 'Deri Oxford Ayakkabı - Siyah', price: 1499, oldPrice: null, image: 'https://kimi-web-img.moonshot.cn/img/teakwoodleathers.com/8a740fceb59c1f2e85a051b39a58c2d005c04710.jpg', category: 'erkek', rating: 5, reviews: 267 },
 };
+
+// ===== WHATSAPP INTEGRATION =====
+const WHATSAPP_NUMBER = '905515099815';
+
+function whatsappContact() {
+    const url = `https://wa.me/${WHATSAPP_NUMBER}?text=Merhaba%20MODAvera%20ile%20iletişime%20geçmek%20istiyorum.%20Sipariş%20ve%20ürünler%20hakkında%20bilgi%20alabilir%20miyim%3F`;
+    window.open(url, '_blank');
+}
+
+function orderViaWhatsApp(id) {
+    const p = products[id];
+    if (!p) return;
+    const msg = `Merhaba, MODAvera'dan *${p.name}* (${p.price.toLocaleString()} TL) hakkında bilgi almak ve sipariş vermek istiyorum. Beden: M (örnek). Teşekkürler.`;
+    const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`;
+    window.open(url, '_blank');
+    addToRecentlyViewed(id);
+}
+
+function checkoutViaWhatsApp() {
+    if (cart.length === 0) {
+        showToast('Sepet Boş', 'Lütfen önce sepete ürün ekleyin.');
+        return;
+    }
+    let msg = 'Merhaba, MODAvera üzerinden sipariş vermek istiyorum.%0A%0A*Sipariş Detayları:*%0A';
+    let total = 0;
+    cart.forEach(item => {
+        msg += `- ${item.name} x${item.qty} = ${(item.price * item.qty).toLocaleString()} TL%0A`;
+        total += item.price * item.qty;
+    });
+    msg += `%0A*Toplam: ${total.toLocaleString()} TL*%0A%0Aİletişim bilgilerimi ve adresimi paylaşabilirim.`;
+    const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${msg}`;
+    window.open(url, '_blank');
+}
 
 // ===== USER SESSION =====
 let currentUser = JSON.parse(localStorage.getItem('modavera_user')) || null;
 let cart = JSON.parse(localStorage.getItem('modavera_cart')) || [];
 let wishlist = JSON.parse(localStorage.getItem('modavera_wishlist')) || [];
 let recentlyViewed = JSON.parse(localStorage.getItem('modavera_recently')) || [];
-let selectedSize = {};
-let selectedColor = {};
-
-// ===== LOADER =====
-(function() {
-    function hideLoader() {
-        var loader = document.getElementById('loader');
-        if (!loader) return;
-        loader.style.transition = 'opacity 0.8s cubic-bezier(0.4,0,0.2,1)';
-        loader.style.opacity = '0';
-        loader.style.pointerEvents = 'none';
-        setTimeout(function() {
-            if (loader) loader.style.display = 'none';
-            try {
-                if (typeof initAnimations === 'function') initAnimations();
-            } catch(e) { console.log('Animations skipped'); }
-            try {
-                if (typeof showPromoPopup === 'function') showPromoPopup();
-            } catch(e) { console.log('Popup skipped'); }
-            try {
-                if (typeof showFloatingCoupon === 'function') showFloatingCoupon();
-            } catch(e) { console.log('Coupon skipped'); }
-        }, 800);
-    }
-
-    // Hide on window load
-    window.addEventListener('load', function() {
-        setTimeout(hideLoader, 1500);
-    });
-
-    // Fallback: DOM ready
-    document.addEventListener('DOMContentLoaded', function() {
-        setTimeout(hideLoader, 3000);
-    });
-
-    // Ultimate fallback: always hide after 5 seconds
-    setTimeout(hideLoader, 5000);
-})();
-
-// ===== WHATSAPP FUNCTIONS =====
-function openWhatsAppGeneral() {
-    const message = 'Merhaba MODAvera, sipariş vermek istiyorum.';
-    window.open(WHATSAPP_BASE + '?text=' + encodeURIComponent(message), '_blank');
-}
-
-function orderViaWhatsApp(productId, size, color) {
-    const p = products[productId];
-    if (!p) return;
-    const sizeText = size || (selectedSize[productId] || 'Belirtilmedi');
-    const colorText = color || (selectedColor[productId] || 'Belirtilmedi');
-    const message = `Merhaba MODAvera,
-
-Sipariş vermek istiyorum:
-
-Ürün: ${p.name}
-Beden: ${sizeText}
-Renk: ${colorText}
-Fiyat: ${p.price.toLocaleString()} TL
-
-Lütfen siparişimi onaylayın.`;
-    window.open(WHATSAPP_BASE + '?text=' + encodeURIComponent(message), '_blank');
-}
-
-function orderCartViaWhatsApp() {
-    if (cart.length === 0) {
-        showToast('Sepet Boş', 'Lütfen önce sepete ürün ekleyin.');
-        return;
-    }
-    let message = `Merhaba MODAvera,
-
-Sepetimdeki ürünleri sipariş etmek istiyorum:
-
-`;
-    let total = 0;
-    cart.forEach(item => {
-        message += `- ${item.name} x${item.qty} = ${(item.price * item.qty).toLocaleString()} TL
-`;
-        total += item.price * item.qty;
-    });
-    message += `
-Toplam: ${total.toLocaleString()} TL
-
-Lütfen siparişimi onaylayın.`;
-    window.open(WHATSAPP_BASE + '?text=' + encodeURIComponent(message), '_blank');
-}
-
-function orderStickyViaWhatsApp() {
-    const name = document.getElementById('sticky-name').textContent;
-    const price = document.getElementById('sticky-price').textContent;
-    const message = `Merhaba MODAvera,
-
-Sipariş vermek istiyorum:
-
-Ürün: ${name}
-Fiyat: ${price}
-
-Lütfen siparişimi onaylayın.`;
-    window.open(WHATSAPP_BASE + '?text=' + encodeURIComponent(message), '_blank');
-}
 
 // ===== AUTH SYSTEM =====
 function openAccountModal() {
@@ -2150,6 +2140,7 @@ function toggleUserDropdown() {
     document.getElementById('user-dropdown').classList.toggle('show');
 }
 
+// Close dropdown when clicking outside
 document.addEventListener('click', (e) => {
     const dropdown = document.getElementById('user-dropdown');
     const btn = document.getElementById('user-menu-btn');
@@ -2287,18 +2278,7 @@ function quickView(id) {
     const p = products[id];
     if (!p) return;
     addToRecentlyViewed(id);
-    selectedSize[id] = p.sizes[0];
-    selectedColor[id] = p.colors[0];
     const discount = p.oldPrice ? Math.round((1 - p.price / p.oldPrice) * 100) : 0;
-
-    const sizeButtons = p.sizes.map(s => `<button class="size-btn ${s === p.sizes[0] ? 'active' : ''}" onclick="selectSize(${id}, '${s}', this)">${s}</button>`).join('');
-    const colorSwatches = p.colors.map((c, i) => {
-        const colorMap = {'Bej':'#f5f5dc','Siyah':'#000000','Kırmızı':'#dc2626','Lacivert':'#1e3a8a','Gri':'#6b7280','Beyaz':'#ffffff','Mavi':'#3b82f6','Pudra':'#fbcfe8','Gümüş':'#c0c0c0','Altın':'#ffd700','Rose Gold':'#b76e79','Krem':'#fffdd0','Taba':'#d2b48c','Kahve':'#8b4513','Haki':'#808000','Bordo':'#800020','Çizgili':'#f0f0f0','Desenli':'#e0e0e0','Düz':'#d0d0d0','Karışık':'#a0a0a0'};
-        const bg = colorMap[c] || '#ccc';
-        const textColor = ['Beyaz','Krem','Pudra','Gümüş','Bej'].includes(c) ? 'black' : 'white';
-        return `<button class="color-swatch ${i === 0 ? 'active' : ''}" style="background:${bg}" onclick="selectColor(${id}, '${c}', this)" title="${c}"></button>`;
-    }).join('');
-
     document.getElementById('modal-content').innerHTML = `
         <div class="grid md:grid-cols-2">
             <div class="relative">
@@ -2320,25 +2300,23 @@ function quickView(id) {
                 <p class="text-warm-gray text-sm leading-relaxed mb-6">Premium kalite kumaş, özenli dikiş detayları ve zamansız tasarım. Her mevsim rahatlıkla kullanabileceğiniz, dolabınızın vazgeçilmezi olacak bir parça.</p>
                 <div class="mb-6">
                     <div class="flex items-center justify-between mb-3">
-                        <p class="text-sm font-medium text-noir">Renk Seçin</p>
-                    </div>
-                    <div class="flex gap-2 flex-wrap mb-4">
-                        ${colorSwatches}
-                    </div>
-                    <div class="flex items-center justify-between mb-3">
                         <p class="text-sm font-medium text-noir">Beden Seçin</p>
                         <button onclick="openSizeGuide()" class="text-xs text-gold hover:underline">Beden Rehberi</button>
                     </div>
                     <div class="flex gap-2 flex-wrap">
-                        ${sizeButtons}
+                        <button class="size-btn active">XS</button>
+                        <button class="size-btn">S</button>
+                        <button class="size-btn">M</button>
+                        <button class="size-btn">L</button>
+                        <button class="size-btn">XL</button>
                     </div>
                 </div>
                 <div class="flex gap-3">
-                    <button onclick="orderViaWhatsApp(${id})" class="flex-1 whatsapp-btn py-4 font-semibold tracking-wider uppercase transition-all rounded-xl flex items-center justify-center gap-2"><i class="fab fa-whatsapp text-lg"></i> WhatsApp Sipariş</button>
-                    <button onclick="addToCart(${id});closeModal();" class="flex-1 bg-gold text-white py-4 font-semibold tracking-wider uppercase hover:bg-gold-light transition-all rounded-xl">Sepete Ekle</button>
+                    <button onclick="orderViaWhatsApp(${id});closeModal();" class="flex-1 bg-green-500 text-white py-4 font-semibold tracking-wider uppercase hover:bg-green-600 transition-all rounded-xl flex items-center justify-center gap-2"><i class="fab fa-whatsapp"></i> WhatsApp ile Sipariş</button>
+                    <button onclick="toggleWishlist(this.closest('.modal-content').querySelector('.wishlist-btn') || this, ${id})" class="w-14 border border-gray-200 flex items-center justify-center hover:bg-gray-50 transition-colors rounded-xl wishlist-btn"><i class="far fa-heart text-noir"></i></button>
                 </div>
                 <div class="mt-6 pt-6 border-t border-gray-100 flex items-center gap-4 text-xs text-warm-gray">
-                    <span class="flex items-center gap-1"><i class="fab fa-whatsapp text-whatsapp"></i> WhatsApp Sipariş</span>
+                    <span class="flex items-center gap-1"><i class="fas fa-truck text-gold"></i> Ücretsiz Kargo</span>
                     <span class="flex items-center gap-1"><i class="fas fa-undo text-gold"></i> 30 Gün İade</span>
                     <span class="flex items-center gap-1"><i class="fas fa-shield-alt text-gold"></i> Garanti</span>
                 </div>
@@ -2346,20 +2324,6 @@ function quickView(id) {
         </div>`;
     document.getElementById('product-modal').classList.add('open');
     document.body.style.overflow = 'hidden';
-}
-
-function selectSize(productId, size, btn) {
-    selectedSize[productId] = size;
-    const container = btn.closest('.flex');
-    container.querySelectorAll('.size-btn').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-}
-
-function selectColor(productId, color, btn) {
-    selectedColor[productId] = color;
-    const container = btn.closest('.flex');
-    container.querySelectorAll('.color-swatch').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
 }
 
 function closeModal() {
@@ -2487,6 +2451,7 @@ function closeCouponBanner() {
     document.getElementById('coupon-banner').classList.remove('show');
 }
 
+// Show coupon banner after scrolling
 window.addEventListener('scroll', () => {
     if (window.scrollY > 800) {
         document.getElementById('coupon-banner').classList.add('show');
@@ -2529,31 +2494,44 @@ function createConfetti() {
     }
 }
 
-// ===== ANIMATIONS =====
+// ===== ANIMATIONS (GSAP with error handling) =====
 function initAnimations() {
-    gsap.registerPlugin(ScrollTrigger);
+    try {
+        if (typeof gsap === 'undefined') {
+            console.warn('GSAP not loaded, skipping animations.');
+            return;
+        }
+        gsap.registerPlugin(ScrollTrigger);
 
-    gsap.from('#hero-quote', { opacity: 0, y: 20, duration: 1, delay: 0.2, ease: 'power3.out' });
-    gsap.from('#hero-badge', { opacity: 0, y: 20, duration: 1, delay: 0.4, ease: 'power3.out' });
-    gsap.from('#hero-title', { opacity: 0, y: 50, duration: 1.2, delay: 0.6, ease: 'power3.out' });
-    gsap.from('#hero-subtitle', { opacity: 0, y: 30, duration: 1, delay: 0.9, ease: 'power3.out' });
-    gsap.from('#hero-buttons', { opacity: 0, y: 30, duration: 1, delay: 1.2, ease: 'power3.out' });
-    gsap.from('#hero-stats', { opacity: 0, y: 30, duration: 1, delay: 1.5, ease: 'power3.out' });
+        // Hero animations
+        gsap.from('#hero-quote', { opacity: 0, y: 20, duration: 1, delay: 0.2, ease: 'power3.out' });
+        gsap.from('#hero-badge', { opacity: 0, y: 20, duration: 1, delay: 0.4, ease: 'power3.out' });
+        gsap.from('#hero-title', { opacity: 0, y: 50, duration: 1.2, delay: 0.6, ease: 'power3.out' });
+        gsap.from('#hero-subtitle', { opacity: 0, y: 30, duration: 1, delay: 0.9, ease: 'power3.out' });
+        gsap.from('#hero-buttons', { opacity: 0, y: 30, duration: 1, delay: 1.2, ease: 'power3.out' });
+        gsap.from('#hero-stats', { opacity: 0, y: 30, duration: 1, delay: 1.5, ease: 'power3.out' });
 
-    document.querySelectorAll('.counter-value').forEach(c => {
-        const t = parseInt(c.dataset.target);
-        gsap.to(c, { innerHTML: t, duration: 2, delay: 1.8, snap: { innerHTML: 1 }, ease: 'power2.out', onUpdate: function() { c.innerHTML = Math.round(this.targets()[0].innerHTML).toLocaleString(); } });
-    });
+        // Counter animation
+        document.querySelectorAll('.counter-value').forEach(c => {
+            const t = parseInt(c.dataset.target);
+            gsap.to(c, { innerHTML: t, duration: 2, delay: 1.8, snap: { innerHTML: 1 }, ease: 'power2.out', onUpdate: function() { c.innerHTML = Math.round(this.targets()[0].innerHTML).toLocaleString(); } });
+        });
 
-    document.querySelectorAll('.reveal').forEach(el => {
-        gsap.fromTo(el, { opacity: 0, y: 50 }, { opacity: 1, y: 0, duration: 0.9, ease: 'power3.out', scrollTrigger: { trigger: el, start: 'top 85%', toggleActions: 'play none none none' } });
-    });
+        // Scroll reveal
+        document.querySelectorAll('.reveal').forEach(el => {
+            gsap.fromTo(el, { opacity: 0, y: 50 }, { opacity: 1, y: 0, duration: 0.9, ease: 'power3.out', scrollTrigger: { trigger: el, start: 'top 85%', toggleActions: 'play none none none' } });
+        });
 
-    document.querySelectorAll('.stagger-children').forEach(c => {
-        ScrollTrigger.create({ trigger: c, start: 'top 80%', onEnter: () => c.classList.add('active') });
-    });
+        // Stagger children
+        document.querySelectorAll('.stagger-children').forEach(c => {
+            ScrollTrigger.create({ trigger: c, start: 'top 80%', onEnter: () => c.classList.add('active') });
+        });
 
-    gsap.to('.hero-bg', { yPercent: 30, ease: 'none', scrollTrigger: { trigger: '.hero-section', start: 'top top', end: 'bottom top', scrub: true } });
+        // Parallax hero background
+        gsap.to('.hero-bg', { yPercent: 30, ease: 'none', scrollTrigger: { trigger: '.hero-section', start: 'top top', end: 'bottom top', scrub: true } });
+    } catch (e) {
+        console.warn('Animation error:', e);
+    }
 }
 
 // ===== SCROLL EFFECTS =====
@@ -2578,6 +2556,7 @@ function scrollToTop() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
+// Size button selection
 document.addEventListener('click', (e) => {
     if (e.target.classList.contains('size-btn')) {
         document.querySelectorAll('.size-btn').forEach(b => b.classList.remove('active'));
@@ -2585,6 +2564,7 @@ document.addEventListener('click', (e) => {
     }
 });
 
+// Smooth scroll for anchor links
 document.querySelectorAll('a[href^="#"]').forEach(a => {
     a.addEventListener('click', function(e) {
         e.preventDefault();
@@ -2593,11 +2573,14 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
     });
 });
 
+// Initialize UI on load
 document.addEventListener('DOMContentLoaded', () => {
     updateUserUI();
     updateCartUI();
     updateWishlistUI();
     updateRecentlyViewedUI();
+    // Init animations after DOM ready
+    setTimeout(initAnimations, 100);
 });
 </script>
 
